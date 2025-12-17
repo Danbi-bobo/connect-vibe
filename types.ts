@@ -72,6 +72,13 @@ export interface ArchetypeResult {
   symbol: string;
   symbolMeaning: string;
   symbolUpsell: UpsellItem;
+
+  // Personality & Lifestyle Fields
+  inRelationships: string;
+  atWork: string;
+  leadershipStyle: string;
+  stressResponse: string;
+  growthPath: string;
 }
 
 export interface QuizResult {

@@ -69,7 +69,14 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
     
     symbol: "The Mountain",
     symbolMeaning: "The Mountain represents ancient, immovable presence. It witnesses the changing seasons and storms without being altered by them. It is the ultimate symbol of shelter and perspective.",
-    symbolUpsell: { name: "Nine-Eye Dzi Bead Power Bracelet", description: "Tibetan protection symbol with Black Onyx.", image: IMG.NINE_EYE_DZI }
+    symbolUpsell: { name: "Nine-Eye Dzi Bead Power Bracelet", description: "Tibetan protection symbol with Black Onyx.", image: IMG.NINE_EYE_DZI },
+
+    // Personality & Lifestyle
+    inRelationships: "Absolutely loyal and dependable, always ready to support. Shows love through practical actions and creates safety for their partner.",
+    atWork: "Highly reliable and responsible, excels in support roles. Manages details expertly and maintains systems with precision.",
+    leadershipStyle: "Servant leadership approach. Creates stable environments, cares deeply for team welfare, and maintains beneficial traditions.",
+    stressResponse: "Becomes over-worried and tends to micromanage. May self-sacrifice excessively and finds it hard to refuse requests.",
+    growthPath: "Learn to prioritize self → Develop flexibility → Accept change → Create healthy boundaries"
   },
   [ArchetypeID.Heart]: {
     id: ArchetypeID.Heart,
@@ -93,7 +100,14 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 
     symbol: "The Lotus",
     symbolMeaning: "The Lotus rises from the mud to bloom in the sun, symbolizing the alchemy of turning pain into wisdom. It represents purity of heart untouched by the chaos of the environment.",
-    symbolUpsell: { name: "Energy Alignment Jewelry Set", description: "Full harmonization set for emotional balance.", image: IMG.ENERGY_SET }
+    symbolUpsell: { name: "Energy Alignment Jewelry Set", description: "Full harmonization set for emotional balance.", image: IMG.ENERGY_SET },
+
+    // Personality & Lifestyle
+    inRelationships: "Creates deep connections through high empathy and genuine listening. Provides an emotionally safe space for authentic expression.",
+    atWork: "Builds positive work culture, resolves conflicts effectively, and inspires through authentic values. Creates cohesive, trusting teams.",
+    leadershipStyle: "Inspirational and people-focused. Encourages personal development, creates meaning, and leads through emotional intelligence.",
+    stressResponse: "Gets ruled by emotions, experiences difficulty making decisions. May withdraw inward and lose emotional balance.",
+    growthPath: "Balance emotion and logic → Establish boundaries → Increase practicality → Develop decisiveness"
   },
   [ArchetypeID.Abundance]: {
     id: ArchetypeID.Abundance,
@@ -117,7 +131,14 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 
     symbol: "The Sun",
     symbolMeaning: "The Sun represents the divine masculine frequency—outward-facing, life-giving, and constant. It reminds you that your nature is to shine, not to shrink.",
-    symbolUpsell: { name: "Lucky Fox Queen Stone Yellow", description: "Social charisma enhancer for leaders.", image: IMG.FOX_YELLOW }
+    symbolUpsell: { name: "Lucky Fox Queen Stone Yellow", description: "Social charisma enhancer for leaders.", image: IMG.FOX_YELLOW },
+
+    // Personality & Lifestyle
+    inRelationships: "Generous and positive, spreads good energy naturally. Encourages partner growth and shares opportunities freely.",
+    atWork: "Creates new opportunities and drives growth. Motivates teams effectively and sees potential in every challenge.",
+    leadershipStyle: "Visionary leadership that encourages innovation. Empowers teams and creates a culture of growth and possibility.",
+    stressResponse: "Becomes overly optimistic, ignores red flags, makes hasty decisions, and may invest resources without consideration.",
+    growthPath: "Balance optimism with reality → Develop strategic thinking → Learn financial management → Conscious risk assessment"
   },
   [ArchetypeID.Calm]: {
     id: ArchetypeID.Calm,
@@ -141,7 +162,14 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 
     symbol: "Still Water",
     symbolMeaning: "Still Water reflects the world perfectly without distortion. It represents a mind so quiet that it can perceive the truth of things without the ripples of reactive emotion.",
-    symbolUpsell: { name: "Grounding Healing Bracelet Agarwood", description: "Anxiety reduction through wood energy.", image: IMG.AGARWOOD }
+    symbolUpsell: { name: "Grounding Healing Bracelet Agarwood", description: "Anxiety reduction through wood energy.", image: IMG.AGARWOOD },
+
+    // Personality & Lifestyle
+    inRelationships: "Calm and patient, creates peace naturally. Accepts others without judgment and serves as an excellent, deep listener.",
+    atWork: "Outstanding conflict mediator who maintains team harmony. Works steadily and creates a peaceful, productive environment.",
+    leadershipStyle: "Peaceful leadership that seeks consensus. Respects diverse opinions and avoids imposing personal agenda on others.",
+    stressResponse: "Withdraws and disconnects emotionally. Avoids facing problems directly, delays decisions, and may lose motivation.",
+    growthPath: "Develop self-assertion → Face conflict healthily → Increase decisiveness → Set clear goals"
   },
   [ArchetypeID.Intuitive]: {
     id: ArchetypeID.Intuitive,
@@ -165,7 +193,14 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 
     symbol: "The Moon",
     symbolMeaning: "The Moon illuminates the dark. It represents cycles, shadows, and the feminine mystery of the subconscious. It guides not by burning bright, but by reflecting the hidden.",
-    symbolUpsell: { name: "Quartz Crystal Point Cuff", description: "Intention amplifier for mystics.", image: IMG.QUARTZ_CUFF }
+    symbolUpsell: { name: "Quartz Crystal Point Cuff", description: "Intention amplifier for mystics.", image: IMG.QUARTZ_CUFF },
+
+    // Personality & Lifestyle
+    inRelationships: "Creative and inspiring, shares vision freely. Encourages exploration in partners and creates new, meaningful experiences.",
+    atWork: "Contributes unique ideas and sees future possibilities. Adapts flexibly and connects creative concepts innovatively.",
+    leadershipStyle: "Creative leadership that encourages innovation. Grants creative freedom and guides long-term vision for the team.",
+    stressResponse: "Scatters energy across too many projects. Has difficulty completing tasks, may avoid reality, and loses grounding.",
+    growthPath: "Develop organizational skills → Balance vision and action → Learn to complete projects → Create supportive structure"
   }
 };
 
