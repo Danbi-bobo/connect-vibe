@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { QuizResult, ArchetypeID, ProductRecommendation } from '../types';
 import { ARCHETYPES, PRODUCT_MATRIX } from '../constants';
 import { Button } from './Button';
-import { RefreshCw, Download, Quote, ArrowDown, Minus, Plus, Sparkles, Check, ArrowRight, Star, Heart, Briefcase, Crown, AlertTriangle, TrendingUp } from 'lucide-react';
+import { RefreshCw, Download, Quote, ArrowDown, Minus, Plus, Sparkles, Check, ArrowRight, Star, Heart, Briefcase, Crown, AlertTriangle, TrendingUp, Leaf, Compass } from 'lucide-react';
 import { FloatingParticles } from './FloatingParticles';
 
 interface ResultPageProps {
@@ -287,62 +287,73 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                   </p>
                </div>
 
-               {/* Growth Path - Cosmic Journey */}
-               <div className="bg-gradient-to-br from-cosmic-indigo/5 via-cosmic-ethereal/5 to-cosmic-gold/5 p-6 rounded-sm border border-cosmic-indigo/20">
-                  <div className="flex items-center gap-2 mb-8">
-                     <TrendingUp size={18} className="text-cosmic-indigo" />
-                     <span className="text-[10px] uppercase tracking-[0.2em] text-cosmic-indigo font-bold">Your Path Forward</span>
+               {/* Growth Path - Energetic Card Grid */}
+               <div className="mt-8">
+                  <div className="flex items-center gap-2 mb-6">
+                     <TrendingUp size={18} className="text-sage-600" />
+                     <span className="text-[10px] uppercase tracking-[0.2em] text-sage-700 font-bold">Your Path Forward</span>
                   </div>
                   
-                  {/* Vertical Timeline */}
-                  <div className="relative pl-8">
-                     {/* Cosmic gradient timeline line with draw animation */}
-                     <div className="absolute left-[11px] top-4 bottom-4 w-px bg-gradient-to-b from-cosmic-indigo via-cosmic-ethereal to-cosmic-gold opacity-60 animate-line-draw" />
-                     
+                  {/* Card Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                      {archetype.growthPath.split(' → ').map((step, idx, arr) => {
                         const isLast = idx === arr.length - 1;
+                        const cardStyles = [
+                           { bg: 'from-sage-50 to-lavender-50', border: 'border-sage-200 hover:border-sage-400', accent: 'from-sage-500 to-sage-600', iconBg: 'bg-sage-100', iconColor: 'text-sage-600' },
+                           { bg: 'from-lavender-50 to-rose-50', border: 'border-lavender-200 hover:border-lavender-400', accent: 'from-lavender-500 to-lavender-600', iconBg: 'bg-lavender-100', iconColor: 'text-lavender-600' },
+                           { bg: 'from-rose-50 to-cream-100', border: 'border-rose-200 hover:border-rose-400', accent: 'from-rose-400 to-rose-500', iconBg: 'bg-rose-100', iconColor: 'text-rose-500' },
+                           { bg: 'from-amber-50 to-amber-100', border: 'border-amber-300 hover:border-amber-500', accent: 'from-amber-500 to-amber-600', iconBg: 'bg-amber-100', iconColor: 'text-amber-600' },
+                        ];
+                        const style = isLast ? cardStyles[3] : cardStyles[idx % 3];
+                        const stepIcons = [Leaf, Heart, Compass, Star];
+                        const StepIcon = isLast ? Star : stepIcons[idx % 4];
+                        
                         return (
                            <div 
                               key={idx}
-                              className="relative flex items-start gap-5 mb-6 last:mb-0 group"
+                              className={`
+                                 relative p-6 rounded-xl border-2 cursor-default
+                                 bg-gradient-to-br ${style.bg} ${style.border}
+                                 transition-all duration-300 ease-out
+                                 hover:scale-[1.02] hover:-translate-y-1
+                                 ${isLast 
+                                    ? 'shadow-lg shadow-amber-200/50 hover:shadow-xl hover:shadow-amber-300/60 md:col-span-2' 
+                                    : 'shadow-md hover:shadow-lg'}
+                              `}
                               style={{ 
                                  animation: 'fadeIn 0.5s ease-out forwards',
-                                 animationDelay: `${idx * 150}ms`,
+                                 animationDelay: `${idx * 100}ms`,
                                  opacity: 0 
                               }}
                            >
-                              {/* Step indicator - numbered circle with cosmic glow */}
-                              <div className={`
-                                 relative z-10 w-6 h-6 rounded-full flex items-center justify-center shrink-0
-                                 transition-all duration-300 group-hover:scale-110
-                                 ${isLast 
-                                    ? 'bg-gradient-to-br from-cosmic-gold to-amber-500 shadow-[0_0_16px_rgba(201,169,98,0.5)]' 
-                                    : 'bg-gradient-to-br from-cosmic-indigo to-cosmic-ethereal shadow-[0_0_10px_rgba(79,70,158,0.3)]'}
+                              {/* Large Step Number */}
+                              <span className={`
+                                 text-5xl font-bold bg-gradient-to-r ${style.accent} bg-clip-text text-transparent
+                                 leading-none
                               `}>
-                                 {isLast 
-                                    ? <Star className="w-3 h-3 text-white fill-white" />
-                                    : <span className="text-[10px] font-bold text-white">{idx + 1}</span>
-                                 }
+                                 0{idx + 1}
+                              </span>
+                              
+                              {/* Decorative line */}
+                              <div className={`w-12 h-0.5 mt-3 mb-4 bg-gradient-to-r ${style.accent} opacity-60 rounded-full`} />
+                              
+                              {/* Step Content */}
+                              <h4 className={`text-lg font-semibold ${isLast ? 'text-amber-900' : 'text-charcoal-700'} leading-snug`}>
+                                 {step}
+                              </h4>
+                              
+                              {/* Icon */}
+                              <div className={`mt-4 inline-flex items-center justify-center w-10 h-10 rounded-full ${style.iconBg}`}>
+                                 <StepIcon className={`w-5 h-5 ${style.iconColor}`} />
                               </div>
                               
-                              {/* Step content card */}
-                              <div className={`
-                                 flex-1 p-4 rounded-lg border transition-all duration-300
-                                 ${isLast 
-                                    ? 'bg-gradient-to-r from-cosmic-gold/15 to-amber-50/80 border-cosmic-gold/40 shadow-md' 
-                                    : 'bg-white/80 backdrop-blur-sm border-cosmic-indigo/20 group-hover:border-cosmic-gold/40 group-hover:shadow-md'}
-                                 group-hover:translate-x-1
-                              `}>
-                                 <span className={`font-medium text-sm ${isLast ? 'text-amber-900' : 'text-stone-800'}`}>
-                                    {step}
-                                 </span>
-                                 {isLast && (
-                                    <div className="flex items-center gap-1.5 mt-2">
-                                       <Sparkles className="w-3 h-3 text-cosmic-gold animate-pulse" />
-                                       <span className="text-[9px] text-cosmic-gold/80 uppercase tracking-wider font-medium">Your Destination</span>
-                                    </div>
-                                 )}
-                              </div>
+                              {/* Destination Badge for final card */}
+                              {isLast && (
+                                 <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-amber-200/80 rounded-full">
+                                    <Sparkles className="w-3 h-3 text-amber-700 animate-pulse" />
+                                    <span className="text-[9px] text-amber-800 uppercase tracking-wider font-bold">Your Destination</span>
+                                 </div>
+                              )}
                            </div>
                         );
                      })}
