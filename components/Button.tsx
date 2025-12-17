@@ -12,16 +12,16 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props 
 }) => {
-  // Flat Linear Style: Less rounding, no shadows, distinct borders
-  const baseStyles = "py-3 px-8 rounded-lg font-medium transition-all duration-200 transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center";
+  // Ethereal Light Mode: Soft, dreamy, feminine wellness
+  const baseStyles = "py-3 px-8 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center";
   
   const variants = {
-    // Solid fill, no shadow
-    primary: "bg-stone-900 text-stone-50 border border-stone-900 hover:bg-stone-700 hover:border-stone-700",
-    // Light background
-    secondary: "bg-stone-100 text-stone-900 border border-stone-200 hover:bg-stone-200 hover:border-stone-300",
-    // Explicit outline
-    outline: "bg-transparent border border-stone-300 text-stone-900 hover:border-stone-900 hover:bg-stone-50"
+    // Sage green primary with soft glow
+    primary: "bg-sage-300 text-cream-50 border border-sage-400 hover:bg-sage-400 hover:shadow-lg hover:shadow-sage-300/30",
+    // Dusty rose secondary
+    secondary: "bg-rose-100 text-charcoal-700 border border-rose-200 hover:bg-rose-200 hover:border-rose-300",
+    // Lavender outline
+    outline: "bg-transparent border border-lavender-300 text-charcoal-700 hover:border-lavender-400 hover:bg-lavender-50"
   };
 
   return (
