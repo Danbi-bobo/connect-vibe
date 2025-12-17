@@ -306,7 +306,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                               key={idx}
                               className="relative flex items-start gap-5 mb-6 last:mb-0 group"
                               style={{ 
-                                 animation: 'fade-in 0.5s ease-out forwards',
+                                 animation: 'fadeIn 0.5s ease-out forwards',
                                  animationDelay: `${idx * 150}ms`,
                                  opacity: 0 
                               }}
