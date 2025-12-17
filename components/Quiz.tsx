@@ -4,6 +4,7 @@ import { ArchetypeID, SubNeedID, QuizResult } from '../types';
 import { calculateArchetype, calculateSubNeed } from '../utils/quizLogic';
 import { ArrowLeft, Minus, Sparkles } from 'lucide-react';
 import { Button } from './Button';
+import { FloatingParticles } from './FloatingParticles';
 
 interface QuizProps {
   onComplete: (result: QuizResult) => void;
@@ -93,7 +94,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
         
         {/* Cosmic Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-cosmic-indigo/[0.04] via-cosmic-ethereal/[0.06] to-transparent pointer-events-none"></div>
-        <div className="absolute inset-0 stars opacity-[0.03] pointer-events-none"></div>
+        <FloatingParticles intensity="light" />
         
         <div className="max-w-md w-full relative z-10 text-center">
           <div className="mb-12">
@@ -149,7 +150,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       
        {/* Cosmic Background Layers */}
        <div className="absolute inset-0 ethereal-gradient pointer-events-none"></div>
-       <div className="absolute inset-0 stars opacity-[0.025] pointer-events-none"></div>
+       <FloatingParticles intensity="light" />
 
        {/* Progress Line with cosmic gradient */}
        <div className="absolute top-0 left-0 w-full h-[2px] bg-stone-100 z-20">
