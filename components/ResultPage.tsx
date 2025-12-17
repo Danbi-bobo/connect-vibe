@@ -66,27 +66,41 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
       
       {/* HEADER / COVER */}
       <section className="relative pt-32 pb-24 px-6 bg-stone-50 text-center overflow-hidden">
-        {/* Subtle Background */}
-        <div className={`absolute inset-0 opacity-[0.05] pointer-events-none bg-gradient-to-b ${archetype.bgGradient}`}></div>
+        {/* Cosmic Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-cosmic-indigo/[0.03] via-cosmic-ethereal/[0.05] to-transparent pointer-events-none"></div>
+        
+        {/* Starry Overlay */}
+        <div className="absolute inset-0 stars opacity-[0.03] pointer-events-none"></div>
+        
+        {/* Archetype-specific gradient */}
+        <div className={`absolute inset-0 opacity-[0.04] pointer-events-none bg-gradient-to-b ${archetype.bgGradient}`}></div>
         
         <div className="max-w-4xl mx-auto relative z-10">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-stone-500 font-medium mb-6">Energetic Blueprint</p>
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <Sparkles className="w-3 h-3 text-cosmic-gold/50 animate-twinkle" />
+            <p className="text-[10px] uppercase tracking-[0.3em] text-stone-500 font-medium">Energetic Blueprint</p>
+            <Sparkles className="w-3 h-3 text-cosmic-gold/50 animate-twinkle" style={{ animationDelay: '1s' }} />
+          </div>
           
-          <h1 className="text-6xl md:text-8xl font-serif text-stone-900 mb-6 font-light italic">
+          <h1 className="text-6xl md:text-8xl font-serif text-stone-900 mb-6 font-light italic text-glow">
             {archetype.name}
           </h1>
           
-          <div className="w-16 h-px bg-stone-300 mx-auto mb-8"></div>
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="w-12 h-px bg-gradient-to-r from-transparent via-cosmic-gold/30 to-transparent"></div>
+            <Sparkles className="w-2 h-2 text-cosmic-gold/40" />
+            <div className="w-12 h-px bg-gradient-to-r from-transparent via-cosmic-gold/30 to-transparent"></div>
+          </div>
           
           <p className="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-2xl mx-auto font-reading mb-10">
             {archetype.description}
           </p>
 
-          {/* NEW HIGH CONVERSION BUTTON */}
+          {/* CTA with cosmic glow */}
           <div className="flex justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <button 
               onClick={scrollToProduct}
-              className="group flex items-center gap-4 bg-stone-900 text-stone-50 px-8 py-4 rounded-full hover:bg-stone-800 transition-all duration-500 shadow-xl shadow-stone-200 hover:shadow-stone-300 hover:-translate-y-1"
+              className="group flex items-center gap-4 bg-stone-900 text-stone-50 px-8 py-4 rounded-full hover:bg-cosmic-indigo transition-all duration-500 cosmic-glow hover:-translate-y-1"
             >
               <span className="text-xs uppercase tracking-[0.2em] font-medium">Explore Your Curated Anchor</span>
               <ArrowDown size={16} className="animate-bounce" />
@@ -96,10 +110,17 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
       </section>
 
       {/* ENERGETIC PILLARS: Meanings + Upsells */}
-      <section className="border-y border-stone-200 bg-white py-16 md:py-24 px-6">
-         <div className="max-w-6xl mx-auto">
+      <section className="relative border-y border-stone-200 bg-white py-16 md:py-24 px-6 overflow-hidden">
+         {/* Subtle ethereal gradient */}
+         <div className="absolute inset-0 ethereal-gradient pointer-events-none"></div>
+         
+         <div className="max-w-6xl mx-auto relative z-10">
              <div className="text-center mb-16">
-               <h2 className="font-serif text-3xl md:text-4xl text-stone-900 italic mb-4">Your Energetic Composition</h2>
+               <div className="flex items-center justify-center gap-2 mb-4">
+                  <Sparkles className="w-3 h-3 text-cosmic-gold/40" />
+                  <h2 className="font-serif text-3xl md:text-4xl text-stone-900 italic">Your Energetic Composition</h2>
+                  <Sparkles className="w-3 h-3 text-cosmic-gold/40" />
+               </div>
                <p className="text-stone-500 font-reading max-w-xl mx-auto">The three foundational elements that structure your reality and define your spiritual signature.</p>
              </div>
 
@@ -296,14 +317,28 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
           </div>
       </section>
 
-      {/* MANTRA */}
-      <section className="bg-stone-900 text-stone-100 py-24 px-6 text-center">
-         <div className="max-w-2xl mx-auto">
-            <Quote className="mx-auto mb-8 text-stone-700" size={32} />
-            <h3 className="font-serif text-3xl md:text-5xl italic leading-tight mb-8">
+      {/* MANTRA - Cosmic Night */}
+      <section className="relative bg-cosmic-night text-cosmic-silver py-24 px-6 text-center overflow-hidden">
+         {/* Starry Background */}
+         <div className="absolute inset-0 stars opacity-[0.15]"></div>
+         
+         {/* Ethereal Gradient Overlay */}
+         <div className="absolute inset-0 bg-gradient-to-b from-cosmic-indigo/20 via-transparent to-cosmic-nebula/20 pointer-events-none"></div>
+         
+         <div className="max-w-2xl mx-auto relative z-10">
+            <div className="flex items-center justify-center gap-3 mb-8">
+               <Sparkles className="w-4 h-4 text-cosmic-gold/60 animate-twinkle" />
+               <Quote className="text-cosmic-gold/40" size={32} />
+               <Sparkles className="w-4 h-4 text-cosmic-gold/60 animate-twinkle" style={{ animationDelay: '2s' }} />
+            </div>
+            <h3 className="font-serif text-3xl md:text-5xl italic leading-tight mb-8 text-cosmic-silver animate-float" style={{ textShadow: '0 0 40px rgba(201, 169, 98, 0.2)' }}>
               "{archetype.affirmation}"
             </h3>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-stone-500">Daily Mantra</p>
+            <div className="flex items-center justify-center gap-2">
+               <div className="w-8 h-px bg-gradient-to-r from-transparent to-cosmic-gold/30"></div>
+               <p className="text-[10px] uppercase tracking-[0.3em] text-cosmic-gold/60">Daily Mantra</p>
+               <div className="w-8 h-px bg-gradient-to-l from-transparent to-cosmic-gold/30"></div>
+            </div>
          </div>
       </section>
 
