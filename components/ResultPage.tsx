@@ -296,8 +296,8 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                   
                   {/* Vertical Timeline */}
                   <div className="relative pl-8">
-                     {/* Cosmic gradient timeline line */}
-                     <div className="absolute left-[11px] top-4 bottom-4 w-px bg-gradient-to-b from-cosmic-indigo via-cosmic-ethereal to-cosmic-gold opacity-60" />
+                     {/* Cosmic gradient timeline line with draw animation */}
+                     <div className="absolute left-[11px] top-4 bottom-4 w-px bg-gradient-to-b from-cosmic-indigo via-cosmic-ethereal to-cosmic-gold opacity-60 animate-line-draw" />
                      
                      {archetype.growthPath.split(' → ').map((step, idx, arr) => {
                         const isLast = idx === arr.length - 1;
