@@ -299,10 +299,10 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                      {archetype.growthPath.split(' → ').map((step, idx, arr) => {
                         const isLast = idx === arr.length - 1;
                         const cardStyles = [
-                           { bg: 'from-sage-50 to-lavender-50', border: 'border-sage-200 hover:border-sage-400', accent: 'from-sage-500 to-sage-600', iconBg: 'bg-sage-100', iconColor: 'text-sage-600' },
-                           { bg: 'from-lavender-50 to-rose-50', border: 'border-lavender-200 hover:border-lavender-400', accent: 'from-lavender-500 to-lavender-600', iconBg: 'bg-lavender-100', iconColor: 'text-lavender-600' },
-                           { bg: 'from-rose-50 to-cream-100', border: 'border-rose-200 hover:border-rose-400', accent: 'from-rose-400 to-rose-500', iconBg: 'bg-rose-100', iconColor: 'text-rose-500' },
-                           { bg: 'from-amber-50 to-amber-100', border: 'border-amber-300 hover:border-amber-500', accent: 'from-amber-500 to-amber-600', iconBg: 'bg-amber-100', iconColor: 'text-amber-600' },
+                           { bg: 'from-sage-100 to-sage-200', border: 'border-sage-300 hover:border-sage-500', accent: 'from-sage-400 to-sage-600', iconBg: 'bg-sage-300', iconColor: 'text-sage-600' },
+                           { bg: 'from-lavender-100 to-lavender-200', border: 'border-lavender-300 hover:border-lavender-500', accent: 'from-lavender-400 to-lavender-600', iconBg: 'bg-lavender-300', iconColor: 'text-lavender-600' },
+                           { bg: 'from-rose-100 to-rose-200', border: 'border-rose-300 hover:border-rose-500', accent: 'from-rose-300 to-rose-500', iconBg: 'bg-rose-300', iconColor: 'text-rose-500' },
+                           { bg: 'from-amber-200 to-amber-300', border: 'border-amber-400 hover:border-amber-600', accent: 'from-amber-500 to-amber-700', iconBg: 'bg-amber-400', iconColor: 'text-amber-800' },
                         ];
                         const style = isLast ? cardStyles[3] : cardStyles[idx % 3];
                         const stepIcons = [Leaf, Heart, Compass, Star];
@@ -315,10 +315,10 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                                  relative p-6 rounded-xl border-2 cursor-default
                                  bg-gradient-to-br ${style.bg} ${style.border}
                                  transition-all duration-300 ease-out
-                                 hover:scale-[1.02] hover:-translate-y-1
+                                 hover:scale-[1.03] hover:-translate-y-1.5
                                  ${isLast 
-                                    ? 'shadow-lg shadow-amber-200/50 hover:shadow-xl hover:shadow-amber-300/60 md:col-span-2' 
-                                    : 'shadow-md hover:shadow-lg'}
+                                    ? 'shadow-lg shadow-amber-400/40 hover:shadow-xl hover:shadow-amber-500/50 md:col-span-2' 
+                                    : 'shadow-md shadow-charcoal-200/30 hover:shadow-lg hover:shadow-charcoal-300/40'}
                               `}
                               style={{ 
                                  animation: 'fadeIn 0.5s ease-out forwards',
