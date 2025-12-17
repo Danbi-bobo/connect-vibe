@@ -3,6 +3,7 @@ import { QuizResult, ArchetypeID, ProductRecommendation } from '../types';
 import { ARCHETYPES, PRODUCT_MATRIX } from '../constants';
 import { Button } from './Button';
 import { RefreshCw, Download, Quote, ArrowDown, Minus, Plus, Sparkles, Check, ArrowRight, Star, Heart, Briefcase, Crown, AlertTriangle, TrendingUp } from 'lucide-react';
+import { FloatingParticles } from './FloatingParticles';
 
 interface ResultPageProps {
   result: QuizResult;
@@ -69,8 +70,8 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
         {/* Cosmic Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-cosmic-indigo/[0.03] via-cosmic-ethereal/[0.05] to-transparent pointer-events-none"></div>
         
-        {/* Starry Overlay */}
-        <div className="absolute inset-0 stars opacity-[0.03] pointer-events-none"></div>
+        {/* Animated Floating Particles */}
+        <FloatingParticles intensity="medium" />
         
         {/* Archetype-specific gradient */}
         <div className={`absolute inset-0 opacity-[0.04] pointer-events-none bg-gradient-to-b ${archetype.bgGradient}`}></div>
@@ -319,8 +320,8 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
       {/* MANTRA - Cosmic Night */}
       <section className="relative bg-cosmic-night text-cosmic-silver py-24 px-6 text-center overflow-hidden">
-         {/* Starry Background */}
-         <div className="absolute inset-0 stars opacity-[0.15]"></div>
+         {/* Dense Floating Particles for dramatic effect */}
+         <FloatingParticles intensity="dense" />
          
          {/* Ethereal Gradient Overlay */}
          <div className="absolute inset-0 bg-gradient-to-b from-cosmic-indigo/20 via-transparent to-cosmic-nebula/20 pointer-events-none"></div>

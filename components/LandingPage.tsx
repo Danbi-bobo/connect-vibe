@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './Button';
 import { Sparkles } from 'lucide-react';
+import { FloatingParticles } from './FloatingParticles';
 
 interface LandingPageProps {
   onStart: () => void;
@@ -13,8 +14,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
       {/* Ethereal Gradient Background */}
       <div className="absolute inset-0 ethereal-gradient z-0"></div>
       
-      {/* Starry Overlay */}
-      <div className="absolute inset-0 stars opacity-[0.04] z-0"></div>
+      {/* Animated Floating Particles */}
+      <FloatingParticles intensity="medium" className="z-0" />
 
       {/* Navbar - Ultra Minimal */}
       <nav className="px-8 py-10 flex justify-center items-center relative z-10 animate-fade-in">
