@@ -52,6 +52,7 @@
               'twinkle': 'twinkle 4s ease-in-out infinite',
               'float': 'float 6s ease-in-out infinite',
               'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+              'line-draw': 'lineDraw 1.2s ease-out forwards',
             },
             keyframes: {
               fadeIn: {
@@ -77,6 +78,10 @@
               glowPulse: {
                 '0%, 100%': { boxShadow: '0 0 20px rgba(201, 169, 98, 0.2)' },
                 '50%': { boxShadow: '0 0 40px rgba(201, 169, 98, 0.4)' },
+              },
+              lineDraw: {
+                '0%': { transform: 'scaleY(0)', transformOrigin: 'top' },
+                '100%': { transform: 'scaleY(1)', transformOrigin: 'top' },
               }
             }
           },
