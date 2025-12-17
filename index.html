@@ -18,7 +18,7 @@
             },
             colors: {
               stone: {
-                50: '#FBFBF9', // Warm, paper-like white
+                50: '#FBFBF9',
                 100: '#F2F0EC',
                 200: '#E6E2DC',
                 300: '#D1CDC7',
@@ -27,13 +27,21 @@
                 600: '#5C5750',
                 700: '#403C38',
                 800: '#2B2926',
-                900: '#1A1917', // Soft black
+                900: '#1A1917',
               },
               sand: {
                 50: '#FDFBF7',
                 100: '#F7F4EF',
                 200: '#EBE5D9',
                 800: '#4A453E',
+              },
+              cosmic: {
+                night: '#0F0A1F',
+                indigo: '#2D1B69',
+                ethereal: '#4A3B8C',
+                gold: '#C9A962',
+                nebula: '#6B4E9B',
+                silver: '#E8E4F0',
               }
             },
             animation: {
@@ -41,6 +49,9 @@
               'fade-in-slow': 'fadeIn 2s ease-out forwards',
               'slide-up': 'slideUp 1s ease-out forwards',
               'breathe': 'breathe 6s infinite ease-in-out',
+              'twinkle': 'twinkle 4s ease-in-out infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'glow-pulse': 'glowPulse 3s ease-in-out infinite',
             },
             keyframes: {
               fadeIn: {
@@ -54,6 +65,18 @@
               breathe: {
                 '0%, 100%': { opacity: '0.8' },
                 '50%': { opacity: '0.4' },
+              },
+              twinkle: {
+                '0%, 100%': { opacity: '0.3' },
+                '50%': { opacity: '0.8' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              glowPulse: {
+                '0%, 100%': { boxShadow: '0 0 20px rgba(201, 169, 98, 0.2)' },
+                '50%': { boxShadow: '0 0 40px rgba(201, 169, 98, 0.4)' },
               }
             }
           },
@@ -76,6 +99,44 @@
         background: #D1CDC7;
         border-radius: 3px;
       }
+      
+      /* Starry background effect */
+      .stars {
+        background-image: 
+          radial-gradient(1.5px 1.5px at 20px 30px, #C9A962, transparent),
+          radial-gradient(1px 1px at 40px 70px, rgba(232, 228, 240, 0.6), transparent),
+          radial-gradient(1px 1px at 90px 40px, #E8E4F0, transparent),
+          radial-gradient(1.5px 1.5px at 130px 80px, #C9A962, transparent),
+          radial-gradient(1px 1px at 160px 120px, rgba(232, 228, 240, 0.5), transparent),
+          radial-gradient(1.5px 1.5px at 200px 60px, #C9A962, transparent);
+        background-size: 250px 200px;
+        animation: twinkle 4s ease-in-out infinite;
+      }
+
+      /* Ethereal gradient overlay */
+      .ethereal-gradient {
+        background: linear-gradient(
+          135deg, 
+          rgba(45, 27, 105, 0.04) 0%, 
+          rgba(74, 59, 140, 0.06) 50%, 
+          rgba(107, 78, 155, 0.04) 100%
+        );
+      }
+
+      /* Subtle glow text effect */
+      .text-glow {
+        text-shadow: 0 0 30px rgba(201, 169, 98, 0.25), 0 0 60px rgba(107, 78, 155, 0.15);
+      }
+      
+      /* Cosmic button glow */
+      .cosmic-glow {
+        box-shadow: 0 0 30px rgba(45, 27, 105, 0.3), 0 0 60px rgba(201, 169, 98, 0.15);
+        transition: box-shadow 0.5s ease;
+      }
+      .cosmic-glow:hover {
+        box-shadow: 0 0 40px rgba(45, 27, 105, 0.4), 0 0 80px rgba(201, 169, 98, 0.25);
+      }
+
       @media print {
         .no-print { display: none !important; }
         body { background-color: white !important; color: black !important; }
