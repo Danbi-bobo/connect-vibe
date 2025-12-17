@@ -287,23 +287,65 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                   </p>
                </div>
 
-               {/* Growth Path */}
-               <div className="bg-emerald-50/50 p-6 rounded-sm border border-emerald-100">
-                  <div className="flex items-center gap-2 mb-6">
-                     <TrendingUp size={18} className="text-emerald-500" />
-                     <span className="text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-bold">Your Path Forward</span>
+               {/* Growth Path - Cosmic Journey */}
+               <div className="bg-gradient-to-br from-cosmic-indigo/5 via-cosmic-ethereal/5 to-cosmic-gold/5 p-6 rounded-sm border border-cosmic-indigo/20">
+                  <div className="flex items-center gap-2 mb-8">
+                     <TrendingUp size={18} className="text-cosmic-indigo" />
+                     <span className="text-[10px] uppercase tracking-[0.2em] text-cosmic-indigo font-bold">Your Path Forward</span>
                   </div>
-                  <div className="flex flex-wrap items-center gap-3">
-                     {archetype.growthPath.split(' → ').map((step, idx, arr) => (
-                        <React.Fragment key={idx}>
-                           <div className="bg-white px-4 py-2 rounded-full border border-emerald-200 shadow-sm">
-                              <span className="text-sm font-medium text-stone-800">{step}</span>
+                  
+                  {/* Vertical Timeline */}
+                  <div className="relative pl-8">
+                     {/* Cosmic gradient timeline line */}
+                     <div className="absolute left-[11px] top-4 bottom-4 w-px bg-gradient-to-b from-cosmic-indigo via-cosmic-ethereal to-cosmic-gold opacity-60" />
+                     
+                     {archetype.growthPath.split(' → ').map((step, idx, arr) => {
+                        const isLast = idx === arr.length - 1;
+                        return (
+                           <div 
+                              key={idx}
+                              className="relative flex items-start gap-5 mb-6 last:mb-0 group"
+                              style={{ 
+                                 animation: 'fade-in 0.5s ease-out forwards',
+                                 animationDelay: `${idx * 150}ms`,
+                                 opacity: 0 
+                              }}
+                           >
+                              {/* Step indicator - numbered circle with cosmic glow */}
+                              <div className={`
+                                 relative z-10 w-6 h-6 rounded-full flex items-center justify-center shrink-0
+                                 transition-all duration-300 group-hover:scale-110
+                                 ${isLast 
+                                    ? 'bg-gradient-to-br from-cosmic-gold to-amber-500 shadow-[0_0_16px_rgba(201,169,98,0.5)]' 
+                                    : 'bg-gradient-to-br from-cosmic-indigo to-cosmic-ethereal shadow-[0_0_10px_rgba(79,70,158,0.3)]'}
+                              `}>
+                                 {isLast 
+                                    ? <Star className="w-3 h-3 text-white fill-white" />
+                                    : <span className="text-[10px] font-bold text-white">{idx + 1}</span>
+                                 }
+                              </div>
+                              
+                              {/* Step content card */}
+                              <div className={`
+                                 flex-1 p-4 rounded-lg border transition-all duration-300
+                                 ${isLast 
+                                    ? 'bg-gradient-to-r from-cosmic-gold/15 to-amber-50/80 border-cosmic-gold/40 shadow-md' 
+                                    : 'bg-white/80 backdrop-blur-sm border-cosmic-indigo/20 group-hover:border-cosmic-gold/40 group-hover:shadow-md'}
+                                 group-hover:translate-x-1
+                              `}>
+                                 <span className={`font-medium text-sm ${isLast ? 'text-amber-900' : 'text-stone-800'}`}>
+                                    {step}
+                                 </span>
+                                 {isLast && (
+                                    <div className="flex items-center gap-1.5 mt-2">
+                                       <Sparkles className="w-3 h-3 text-cosmic-gold animate-pulse" />
+                                       <span className="text-[9px] text-cosmic-gold/80 uppercase tracking-wider font-medium">Your Destination</span>
+                                    </div>
+                                 )}
+                              </div>
                            </div>
-                           {idx < arr.length - 1 && (
-                              <ArrowRight size={16} className="text-emerald-400 shrink-0" />
-                           )}
-                        </React.Fragment>
-                     ))}
+                        );
+                     })}
                   </div>
                </div>
             </div>
