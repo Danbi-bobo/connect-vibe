@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { QuizResult, ArchetypeID, ProductRecommendation } from '../types';
 import { ARCHETYPES, PRODUCT_MATRIX } from '../constants';
 import { Button } from './Button';
-import { RefreshCw, Download, Quote, ArrowDown, Minus, Plus, Sparkles, Check, ArrowRight, Star } from 'lucide-react';
+import { RefreshCw, Download, Quote, ArrowDown, Minus, Plus, Sparkles, Check, ArrowRight, Star, Heart, Briefcase, Crown, AlertTriangle, TrendingUp } from 'lucide-react';
 
 interface ResultPageProps {
   result: QuizResult;
@@ -200,6 +200,90 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
             </div>
             <div className="pl-0 md:pl-12 bg-stone-100/50 p-8 rounded-sm border border-stone-100">
                {renderLongText(archetype.blindSpot)}
+           </div>
+          </div>
+
+          {/* Section III: Your Personality in Life */}
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-8">
+               <span className="font-serif text-4xl text-stone-300">III.</span>
+               <h3 className="font-serif text-3xl text-stone-900 italic">Your Personality in Life</h3>
+            </div>
+            <div className="pl-0 md:pl-12">
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Relationships */}
+                  <div className="bg-rose-50/50 p-6 rounded-sm border border-rose-100">
+                     <div className="flex items-center gap-2 mb-4">
+                        <Heart size={18} className="text-rose-400" />
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-rose-600 font-bold">Relationships</span>
+                     </div>
+                     <p className="text-stone-700 text-base leading-relaxed font-reading">
+                        {archetype.inRelationships}
+                     </p>
+                  </div>
+
+                  {/* At Work */}
+                  <div className="bg-blue-50/50 p-6 rounded-sm border border-blue-100">
+                     <div className="flex items-center gap-2 mb-4">
+                        <Briefcase size={18} className="text-blue-400" />
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-blue-600 font-bold">At Work</span>
+                     </div>
+                     <p className="text-stone-700 text-base leading-relaxed font-reading">
+                        {archetype.atWork}
+                     </p>
+                  </div>
+
+                  {/* Leadership */}
+                  <div className="bg-amber-50/50 p-6 rounded-sm border border-amber-100">
+                     <div className="flex items-center gap-2 mb-4">
+                        <Crown size={18} className="text-amber-500" />
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-amber-600 font-bold">Leadership</span>
+                     </div>
+                     <p className="text-stone-700 text-base leading-relaxed font-reading">
+                        {archetype.leadershipStyle}
+                     </p>
+                  </div>
+               </div>
+            </div>
+          </div>
+
+          {/* Section IV: Your Growth Journey */}
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-8">
+               <span className="font-serif text-4xl text-stone-300">IV.</span>
+               <h3 className="font-serif text-3xl text-stone-900 italic">Your Growth Journey</h3>
+            </div>
+            <div className="pl-0 md:pl-12">
+               {/* Stress Response */}
+               <div className="bg-orange-50 p-6 rounded-sm border border-orange-200 mb-8">
+                  <div className="flex items-center gap-2 mb-4">
+                     <AlertTriangle size={18} className="text-orange-500" />
+                     <span className="text-[10px] uppercase tracking-[0.2em] text-orange-700 font-bold">Under Stress</span>
+                  </div>
+                  <p className="text-stone-700 text-base leading-relaxed font-reading">
+                     {archetype.stressResponse}
+                  </p>
+               </div>
+
+               {/* Growth Path */}
+               <div className="bg-emerald-50/50 p-6 rounded-sm border border-emerald-100">
+                  <div className="flex items-center gap-2 mb-6">
+                     <TrendingUp size={18} className="text-emerald-500" />
+                     <span className="text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-bold">Your Path Forward</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3">
+                     {archetype.growthPath.split(' → ').map((step, idx, arr) => (
+                        <React.Fragment key={idx}>
+                           <div className="bg-white px-4 py-2 rounded-full border border-emerald-200 shadow-sm">
+                              <span className="text-sm font-medium text-stone-800">{step}</span>
+                           </div>
+                           {idx < arr.length - 1 && (
+                              <ArrowRight size={16} className="text-emerald-400 shrink-0" />
+                           )}
+                        </React.Fragment>
+                     ))}
+                  </div>
+               </div>
             </div>
           </div>
 
