@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       quiz_results: {
         Row: {
+          answers: Json | null
           archetype: string
           created_at: string
           email: string | null
@@ -25,6 +26,7 @@ export type Database = {
           zodiac: string | null
         }
         Insert: {
+          answers?: Json | null
           archetype: string
           created_at?: string
           email?: string | null
@@ -34,6 +36,7 @@ export type Database = {
           zodiac?: string | null
         }
         Update: {
+          answers?: Json | null
           archetype?: string
           created_at?: string
           email?: string | null
