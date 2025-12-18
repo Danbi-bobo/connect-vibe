@@ -103,7 +103,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
   // --- VIEW: EMAIL CAPTURE ---
   if (showEmailCapture) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden cosmic-texture animate-fade-in" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="min-h-screen flex flex-col items-center justify-center p-6 pb-20 relative overflow-hidden cosmic-texture animate-fade-in" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-cosmic-600/50 backdrop-blur-sm"></div>
@@ -171,7 +171,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
 
   // --- VIEW: QUIZ ---
   return (
-    <div className="min-h-screen flex flex-col items-center relative overflow-hidden cosmic-texture" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+    <div className="min-h-screen flex flex-col items-center relative overflow-hidden cosmic-texture pb-20" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-cosmic-600/50 backdrop-blur-sm pointer-events-none"></div>
