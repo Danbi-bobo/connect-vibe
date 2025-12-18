@@ -39,6 +39,8 @@ export interface ProductRecommendation {
   price: string;
   type: 'Primary' | 'Supportive';
   tags: SubNeedID[];
+  url?: string; // Shopify product URL
+  variantId?: string; // Shopify variant ID for cart
   upsells?: ProductRecommendation[];
 }
 
@@ -46,6 +48,7 @@ export interface UpsellItem {
   name: string;
   description: string;
   image: string;
+  url?: string; // Shopify product URL
 }
 
 export interface ArchetypeResult {
@@ -59,7 +62,7 @@ export interface ArchetypeResult {
   color: string;
   textColor: string;
   bgGradient: string;
-  
+
   // Core Specs
   chakra: string;
   chakraMeaning: string;

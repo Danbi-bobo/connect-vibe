@@ -1,0 +1,648 @@
+{
+    "data": {
+        "productVariants": {
+            "nodes": [
+                {
+                    "id": "gid://shopify/ProductVariant/51745520288025",
+                    "title": "Titanium (Gold Plated) - Emerald (Zircon) - Zircon Stone"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51745529889049",
+                    "title": "Titanium (Gold Plated)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51745532379417",
+                    "title": "Agarwood (Oud)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51745534476569",
+                    "title": "Metal Alloy Charms / Success"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51745535918361",
+                    "title": "Braided Cord / Heart Chakra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51745536704793",
+                    "title": "Crystal Quartz / Pink"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51745577435417",
+                    "title": "Natural Stone"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51747345563929",
+                    "title": "Natural Stone / Aries"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51747364569369",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Magician (Magician Arc – Golden Manifestation)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51747373809945",
+                    "title": "Natural Stone / Aries"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51747379085593",
+                    "title": "Natural Stone / Aries"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51747386753305",
+                    "title": "Natural Stone / Aries"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51747681108249",
+                    "title": "Titanium (Gold Plated) / Green"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51747681141017",
+                    "title": "Titanium (Gold Plated) / Pink"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749913919769",
+                    "title": "Metal Chain / Aries"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749913952537",
+                    "title": "Metal Chain / Taurus"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749913985305",
+                    "title": "Metal Chain / Gemini"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749914018073",
+                    "title": "Metal Chain / Cancer"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749914050841",
+                    "title": "Metal Chain / Leo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749914083609",
+                    "title": "Metal Chain / Virgo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749914116377",
+                    "title": "Metal Chain / Libra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749914149145",
+                    "title": "Metal Chain / Scorpio"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749914181913",
+                    "title": "Metal Chain / Sagittarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749914214681",
+                    "title": "Metal Chain / Capricorn"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749914247449",
+                    "title": "Metal Chain / Aquarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749914280217",
+                    "title": "Metal Chain / Pisces"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749938725145",
+                    "title": "Crystal Quartz - Raw Crystal - Metal Alloy Charms - Braided Cord (1 - 2mm)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749940953369",
+                    "title": "Metal Alloy Charms - Braided Cord (8 -10mm/25 beads)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749941117209",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Aries"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948391705",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Taurus"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948424473",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Gemini"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948457241",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Virgo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948490009",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Leo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948522777",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Cancer"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948555545",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Libra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948588313",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Scorpio"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948621081",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Sagittarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948653849",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Capricorn"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948686617",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Aquarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51749948719385",
+                    "title": "Natural Stone (Wrist Circumference: 15 – 17 cm (5.9 – 6.7 inches)) / Pisces"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135660825",
+                    "title": "Metal Chain / Aries"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135693593",
+                    "title": "Metal Chain / Taurus"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135726361",
+                    "title": "Metal Chain / Gemini"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135759129",
+                    "title": "Metal Chain / Cancer"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135791897",
+                    "title": "Metal Chain / Leo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135824665",
+                    "title": "Metal Chain / Virgo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135857433",
+                    "title": "Metal Chain / Libra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135890201",
+                    "title": "Metal Chain / Scorpio"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135922969",
+                    "title": "Metal Chain / Sagittarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135955737",
+                    "title": "Metal Chain / Capricorn"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750135988505",
+                    "title": "Metal Chain / Aquarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750136021273",
+                    "title": "Metal Chain / Pisces"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194086169",
+                    "title": "Natural Stone / Taurus"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194118937",
+                    "title": "Natural Stone / Gemini"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194151705",
+                    "title": "Natural Stone / Virgo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194184473",
+                    "title": "Natural Stone / Leo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194217241",
+                    "title": "Natural Stone / Cancer"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194250009",
+                    "title": "Natural Stone / Libra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194282777",
+                    "title": "Natural Stone / Scorpio"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194315545",
+                    "title": "Natural Stone / Sagittarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194348313",
+                    "title": "Natural Stone / Capricorn"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194381081",
+                    "title": "Natural Stone / Aquarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750194413849",
+                    "title": "Natural Stone / Pisces"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750238716185",
+                    "title": "Natural Stone / Taurus"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750238748953",
+                    "title": "Natural Stone / Gemini"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750238781721",
+                    "title": "Natural Stone / Virgo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750238814489",
+                    "title": "Natural Stone / Leo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750238847257",
+                    "title": "Natural Stone / Cancer"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750238880025",
+                    "title": "Natural Stone / Libra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750238912793",
+                    "title": "Natural Stone / Scorpio"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750238945561",
+                    "title": "Natural Stone / Sagittarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750238978329",
+                    "title": "Natural Stone / Capricorn"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750239011097",
+                    "title": "Natural Stone / Aquarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750239043865",
+                    "title": "Natural Stone / Pisces"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260539673",
+                    "title": "Natural Stone / Taurus"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260572441",
+                    "title": "Natural Stone / Gemini"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260605209",
+                    "title": "Natural Stone / Virgo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260637977",
+                    "title": "Natural Stone / Leo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260670745",
+                    "title": "Natural Stone / Cancer"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260703513",
+                    "title": "Natural Stone / Libra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260736281",
+                    "title": "Natural Stone / Scorpio"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260769049",
+                    "title": "Natural Stone / Sagittarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260801817",
+                    "title": "Natural Stone / Capricorn"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260834585",
+                    "title": "Natural Stone / Aquarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51750260867353",
+                    "title": "Natural Stone / Pisces"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751296827673",
+                    "title": "Raw Quartz"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751793918233",
+                    "title": "Red Agate - Metal Alloy Charms (Wrist circumference 18–25 cm)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751858536729",
+                    "title": "Braided Red Cord (Adjustable)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751869022489",
+                    "title": "Wood-Grain Leather Exterior (Plastic Core)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751941144857",
+                    "title": "Crystal Quartz / Gold"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751941177625",
+                    "title": "Crystal Quartz / Green"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751941210393",
+                    "title": "Crystal Quartz / Black"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751941243161",
+                    "title": "Crystal Quartz / Purple"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751955824921",
+                    "title": "Crystal Quartz / Opalite"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751955857689",
+                    "title": "Crystal Quartz / Labradorite"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751956218137",
+                    "title": "Traditional Herbal Medicine Powder (Wrist circumference 15–19 cm)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751977353497",
+                    "title": "Braided Cord / Crown Chakra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751977386265",
+                    "title": "Braided Cord / Third Eye Chakra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751977419033",
+                    "title": "Braided Cord / Throat Chakra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751977451801",
+                    "title": "Braided Cord / Solar Plexus Chakra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751977484569",
+                    "title": "Braided Cord / Sacral Chakra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751977517337",
+                    "title": "Braided Cord / Root Chakra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751977550105",
+                    "title": "Braided Cord / 7 Chakra Bracelet"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751987708185",
+                    "title": "Metal Alloy Charms / Money"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751987740953",
+                    "title": "Metal Alloy Charms / Friendship"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751987773721",
+                    "title": "Metal Alloy Charms / Protection"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751987806489",
+                    "title": "Metal Alloy Charms / Calm"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751987839257",
+                    "title": "Metal Alloy Charms / Good luck"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751987872025",
+                    "title": "Metal Alloy Charms / Love"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751987904793",
+                    "title": "Metal Alloy Charms / Dream"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51751987937561",
+                    "title": "Metal Alloy Charms / Anxiety"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855366937",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Empress"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855399705",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Wheel (Fortune Wheel – Destiny Orbit)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855432473",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Magician (Magician Arc – Starweaver Pendant)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855465241",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Star (Starlight Muse – Guiding Hope)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855498009",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Moon (Moon Aura – Luminous Dream)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855530777",
+                    "title": "Titanium (Gold Plated) Zircon Stone / Knight of Cups – Messenger of Heart"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855563545",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The World"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855596313",
+                    "title": "Titanium (Gold Plated) Zircon Stone / Strength"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855629081",
+                    "title": "Titanium (Gold Plated) Zircon Stone / Temperance"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855661849",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Moon (Moon Aura – Lunar Whisper)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855694617",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Sun (Solar Bloom – Radiant Joy)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855727385",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Star (Starlit Muse – Midnight Hope)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855760153",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The World (Cosmic World – Universal Orbit)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855792921",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Wheel (Eternal Cycle – Pearl Wheel)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855825689",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Empress (Regal Empress – Turquoise Grace)"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855858457",
+                    "title": "Titanium (Gold Plated) Zircon Stone / The Lovers"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754855891225",
+                    "title": "Titanium (Gold Plated) Zircon Stone / Knight of Cups – Midnight Quest"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860544281",
+                    "title": "Natural Stone / Taurus"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860577049",
+                    "title": "Natural Stone / Gemini"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860609817",
+                    "title": "Natural Stone / Virgo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860642585",
+                    "title": "Natural Stone / Leo"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860675353",
+                    "title": "Natural Stone / Cancer"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860708121",
+                    "title": "Natural Stone / Libra"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860740889",
+                    "title": "Natural Stone / Scorpio"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860773657",
+                    "title": "Natural Stone / Sagittarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860806425",
+                    "title": "Natural Stone / Capricorn"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860839193",
+                    "title": "Natural Stone / Aquarius"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754860871961",
+                    "title": "Natural Stone / Pisces"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754888790297",
+                    "title": "Crystal Quartz / White"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754912776473",
+                    "title": "Titanium (Gold Plated) / Opalite"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754990764313",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754990829849",
+                    "title": "gold"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754990862617",
+                    "title": "floral"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754990895385",
+                    "title": "green"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754990928153",
+                    "title": "purple"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754990960921",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754991026457",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754991059225",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754991124761",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754991190297",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754991223065",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754993058073",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754993123609",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754993156377",
+                    "title": "Default Title"
+                },
+                {
+                    "id": "gid://shopify/ProductVariant/51754993189145",
+                    "title": "Default Title"
+                }
+            ],
+            "pageInfo": {
+                "startCursor": "eyJsYXN0X2lkIjo1MTc0NTUyMDI4ODAyNSwibGFzdF92YWx1ZSI6IjUxNzQ1NTIwMjg4MDI1In0=",
+                "endCursor": "eyJsYXN0X2lkIjo1MTc1NDk5MzE4OTE0NSwibGFzdF92YWx1ZSI6IjUxNzU0OTkzMTg5MTQ1In0="
+            }
+        }
+    },
+    "extensions": {
+        "cost": {
+            "requestedQueryCost": 13,
+            "actualQueryCost": 9,
+            "throttleStatus": {
+                "maximumAvailable": 4000.0,
+                "currentlyAvailable": 3991,
+                "restoreRate": 200.0
+            }
+        }
+    }
+}
+
