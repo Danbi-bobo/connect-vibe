@@ -10,7 +10,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
     <div className="min-h-screen flex flex-col cosmic-texture relative overflow-hidden" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
       {/* Cosmic overlay for readability */}
-      <div className="absolute inset-0 bg-cosmic-600/35 backdrop-blur-sm pointer-events-none"></div>
+      <div className="absolute inset-0 bg-cosmic-600/50 backdrop-blur-sm pointer-events-none"></div>
 
       {/* Floating stars */}
       <div className="absolute top-20 left-10 text-gold-400 star-sparkle"><Star size={20} fill="currentColor" /></div>

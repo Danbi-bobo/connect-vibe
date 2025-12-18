@@ -174,7 +174,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
     <div className="min-h-screen flex flex-col items-center relative overflow-hidden cosmic-texture" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-cosmic-600/40 backdrop-blur-sm pointer-events-none"></div>
+      <div className="absolute inset-0 bg-cosmic-600/50 backdrop-blur-sm pointer-events-none"></div>
 
       {/* Floating stars */}
       <div className="absolute top-24 left-16 text-gold-500 star-sparkle" style={{ animationDelay: '0s' }}>
