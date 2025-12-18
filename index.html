@@ -21,73 +21,66 @@
               sans: ['"Quicksand"', "system-ui", "sans-serif"],
             },
             colors: {
-              // Celestial Sunset palette - mystical healing energy
+              // Muted earthy Pinterest palette
               warm: {
-                50: "#1a0a2e",
-                100: "#2d1b4e",
-                200: "#3d2860",
-                300: "#4a2c6a",
-                400: "#5c3a7e",
+                50: "#FDFCFA",
+                100: "#FAF7F2",
+                200: "#F5EFE6",
+                300: "#EDE4D6",
+                400: "#E0D4C2",
               },
               terracotta: {
-                50: "#ffb36620",
-                100: "#ffb36640",
-                200: "#ffb366",
-                300: "#ff9966",
-                400: "#ff8855",
-                500: "#ff7744",
+                50: "#FBF5F2",
+                100: "#F3E8E2",
+                200: "#E8D4CA",
+                300: "#D4B5A5",
+                400: "#C49B88",
+                500: "#B08670",
               },
               olive: {
-                50: "#ffd70015",
-                100: "#ffd70030",
-                200: "#ffd70060",
-                300: "#ffd700",
-                400: "#f4c430",
-                500: "#e6b800",
+                50: "#F6F7F4",
+                100: "#EBEFE6",
+                200: "#D4DCCA",
+                300: "#A8B898",
+                400: "#8A9E78",
+                500: "#6B7F5A",
               },
               dusty: {
-                50: "#9b6dff20",
-                100: "#9b6dff40",
-                200: "#9b6dff",
-                300: "#b388ff",
-                400: "#c9a0ff",
-                500: "#d4b8ff",
+                50: "#F9F6F7",
+                100: "#F0EAEC",
+                200: "#E2D6DA",
+                300: "#C9B6BE",
+                400: "#B09AA5",
+                500: "#967D8A",
               },
               sand: {
-                50: "#0d1b2a",
-                100: "#1b2838",
-                200: "#243447",
-                300: "#2d4056",
-                400: "#3a5068",
-                500: "#4a6278",
+                50: "#FDFBF8",
+                100: "#F8F4ED",
+                200: "#F0E8DB",
+                300: "#E4D5C1",
+                400: "#D4C0A5",
+                500: "#C2AA88",
               },
               clay: {
-                50: "#e8deff",
-                100: "#d4c4f0",
-                200: "#c0aae0",
-                300: "#b49ad4",
-                400: "#a088c4",
-                500: "#9078b4",
+                50: "#F8F6F5",
+                100: "#EDE9E6",
+                200: "#DDD6D0",
+                300: "#C4B8AD",
+                400: "#A89788",
+                500: "#8D7A6A",
               },
-              // Glow accent colors
-              glow: {
-                gold: "#ffd700",
-                peach: "#ffb366",
-                purple: "#9b6dff",
-                pink: "#ff6b9d",
-              },
-              // Keep stone for compatibility  
+              // Keep stone for compatibility
               stone: {
-                50: "#f8f4ff",
-                100: "#e8deff",
-                200: "#d4c4f0",
-                300: "#b49ad4",
-                400: "#9078b4",
-                500: "#7a5fa0",
-                600: "#5c3a7e",
-                700: "#4a2c6a",
-                800: "#2d1b4e",
-                900: "#1a0a2e",
+                50: "#FAFAF9",
+                100: "#F5F5F4",
+                200: "#E7E5E4",
+                300: "#D6D3D1",
+                400: "#A8A29E",
+                500: "#78716C",
+                600: "#57534E",
+                700: "#44403C",
+                800: "#292524",
+                900: "#1C1917",
               },
             },
             animation: {
@@ -134,10 +127,10 @@
         width: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #1a0a2e;
+        background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #ffd700, #ffb366);
+        background: #E0D4C2;
         border-radius: 3px;
       }
 
@@ -152,29 +145,28 @@
         border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
       }
 
-      /* Celestial gradient background */
+      /* Soft paper texture background */
       .paper-texture {
         background-image: 
-          radial-gradient(ellipse at 20% 30%, rgba(155, 109, 255, 0.15) 0%, transparent 50%),
-          radial-gradient(ellipse at 80% 70%, rgba(255, 179, 102, 0.12) 0%, transparent 50%),
-          radial-gradient(ellipse at 50% 90%, rgba(255, 215, 0, 0.08) 0%, transparent 40%);
+          radial-gradient(circle at 20% 30%, rgba(168, 184, 152, 0.08) 0%, transparent 50%),
+          radial-gradient(circle at 80% 70%, rgba(212, 181, 165, 0.08) 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, rgba(201, 182, 190, 0.05) 0%, transparent 70%);
       }
 
-      /* Celestial card shadow with glow */
+      /* Cozy card shadow */
       .cozy-shadow {
         box-shadow: 
-          0 4px 20px rgba(155, 109, 255, 0.15),
-          0 1px 3px rgba(255, 215, 0, 0.1);
+          0 4px 20px rgba(139, 122, 106, 0.08),
+          0 1px 3px rgba(139, 122, 106, 0.06);
       }
 
       .cozy-shadow-hover:hover {
         box-shadow: 
-          0 8px 30px rgba(155, 109, 255, 0.25),
-          0 2px 6px rgba(255, 215, 0, 0.15),
-          0 0 40px rgba(255, 179, 102, 0.1);
+          0 8px 30px rgba(139, 122, 106, 0.12),
+          0 2px 6px rgba(139, 122, 106, 0.08);
       }
 
-      /* Golden glow underline */
+      /* Sketch-style underline */
       .sketch-underline {
         position: relative;
       }
@@ -185,27 +177,10 @@
         left: 0;
         width: 100%;
         height: 3px;
-        background: linear-gradient(90deg, #ffd700, #ffb366);
-        opacity: 0.6;
+        background: currentColor;
+        opacity: 0.3;
         border-radius: 50%;
         transform: scaleX(0.9) rotate(-0.5deg);
-      }
-
-      /* Glow effects */
-      .glow-gold {
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
-      }
-      .glow-peach {
-        box-shadow: 0 0 20px rgba(255, 179, 102, 0.4), 0 0 40px rgba(255, 179, 102, 0.2);
-      }
-      .glow-purple {
-        box-shadow: 0 0 20px rgba(155, 109, 255, 0.4), 0 0 40px rgba(155, 109, 255, 0.2);
-      }
-      .text-glow-gold {
-        text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.3);
-      }
-      .text-glow-peach {
-        text-shadow: 0 0 20px rgba(255, 179, 102, 0.6), 0 0 40px rgba(255, 179, 102, 0.3);
       }
 
       @media print {
@@ -231,7 +206,7 @@
     <link rel="stylesheet" href="/index.css">
   </head>
   <body
-    class="bg-warm-50 text-stone-100 antialiased font-body selection:bg-dusty-200 selection:text-warm-50"
+    class="bg-warm-100 text-clay-500 antialiased font-body selection:bg-olive-100 selection:text-clay-500"
   >
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
