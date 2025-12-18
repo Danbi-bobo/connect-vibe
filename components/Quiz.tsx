@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { QUESTIONS } from '../constants';
 import { ArchetypeID, SubNeedID, QuizResult } from '../types';
 import { calculateArchetype, calculateSubNeed } from '../utils/quizLogic';
-import { ArrowLeft, Minus, Sparkles } from 'lucide-react';
-import { Button } from './Button';
-import { FloatingParticles } from './FloatingParticles';
+import { ArrowLeft, Heart, Flower2, Send, Sparkles } from 'lucide-react';
 
 interface QuizProps {
   onComplete: (result: QuizResult) => void;
@@ -41,7 +39,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
         setShowEmailCapture(true);
         setIsTransitioning(false);
       }
-    }, 600);
+    }, 400);
   };
 
   const finishQuiz = (finalAnswers: typeof answers, email?: string) => {
@@ -87,57 +85,64 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
 
   const isZodiacQuestion = currentQuestion && currentQuestion.id === 9;
 
+  // Option colors for variety
+  const optionColors = [
+    'hover:bg-olive-100/50 hover:border-olive-300',
+    'hover:bg-terracotta-100/50 hover:border-terracotta-300',
+    'hover:bg-dusty-100/50 hover:border-dusty-300',
+    'hover:bg-sand-200/50 hover:border-sand-400',
+    'hover:bg-olive-100/50 hover:border-olive-300',
+  ];
+
   // --- VIEW: EMAIL CAPTURE ---
   if (showEmailCapture) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans animate-fade-in bg-stone-50 text-stone-900">
+      <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden bg-warm-100 animate-fade-in">
 
-        {/* Cosmic Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-cosmic-indigo/[0.04] via-cosmic-ethereal/[0.06] to-transparent pointer-events-none"></div>
-        <FloatingParticles intensity="light" />
+        {/* Background shapes */}
+        <div className="absolute inset-0 paper-texture pointer-events-none"></div>
+        <div className="absolute top-20 right-20 w-32 h-32 bg-olive-200/30 blob-shape animate-blob"></div>
+        <div className="absolute bottom-32 left-16 w-24 h-24 bg-terracotta-200/30 blob-shape animate-blob" style={{ animationDelay: '-3s' }}></div>
 
-        <div className="max-w-md w-full relative z-10 text-center">
-          <div className="mb-12">
-            {/* Cosmic ornament */}
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Sparkles className="w-4 h-4 text-cosmic-gold/50 animate-twinkle" />
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-cosmic-gold/30 to-transparent"></div>
-              <Sparkles className="w-4 h-4 text-cosmic-gold/50 animate-twinkle" style={{ animationDelay: '1.5s' }} />
+        <div className="max-w-sm w-full relative z-10 text-center">
+          
+          {/* Icon */}
+          <div className="mb-8 flex justify-center">
+            <div className="w-16 h-16 bg-warm-200 rounded-full flex items-center justify-center cozy-shadow">
+              <Send className="w-6 h-6 text-terracotta-400" />
             </div>
-
-            <h2 className="text-4xl md:text-5xl font-serif text-stone-900 mb-6 font-light italic text-glow">Your Guide Awaits</h2>
-            <p className="text-stone-600 font-reading leading-relaxed">
-              Enter your email to receive your full energetic blueprint, ritual recommendations, and a copy of your results.
-            </p>
           </div>
 
-          <form onSubmit={handleEmailSubmit} className="space-y-8">
+          <h2 className="text-3xl md:text-4xl font-serif text-clay-500 mb-4">almost there!</h2>
+          <p className="text-clay-400 leading-relaxed mb-10 text-sm">
+            enter your email to receive your complete energy blueprint and personalized recommendations
+          </p>
+
+          <form onSubmit={handleEmailSubmit} className="space-y-6">
             <div className="relative">
               <input
                 type="email"
-                placeholder="name@example.com"
-                className="w-full p-4 bg-transparent border-b border-stone-300 focus:border-cosmic-indigo outline-none transition-colors text-stone-900 placeholder:text-stone-400 text-center font-serif text-xl"
+                placeholder="your@email.com"
+                className="w-full p-4 bg-warm-50 border-2 border-sand-300 hand-drawn focus:border-terracotta-400 outline-none transition-colors text-clay-500 placeholder:text-clay-300 text-center"
                 value={userEmail}
                 onChange={(e) => { setUserEmail(e.target.value); setEmailError(''); }}
               />
-              {emailError && <p className="text-red-500 text-xs mt-4">{emailError}</p>}
+              {emailError && <p className="text-terracotta-500 text-xs mt-3">{emailError}</p>}
             </div>
 
-            <div className="pt-4">
-              <button
-                type="submit"
-                className="w-full py-4 uppercase tracking-[0.2em] text-xs font-medium bg-stone-900 text-stone-50 hover:bg-cosmic-indigo border-none transition-all duration-700 cosmic-glow rounded-full"
-              >
-                Reveal My Results
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="w-full py-4 bg-clay-500 text-warm-50 hand-drawn transition-all duration-300 hover:bg-terracotta-400 cozy-shadow text-sm tracking-wider font-medium"
+            >
+              reveal my results ✨
+            </button>
           </form>
 
           <button
             onClick={handleEmailSkip}
-            className="mt-8 text-[10px] text-stone-400 hover:text-cosmic-gold transition-colors uppercase tracking-[0.15em]"
+            className="mt-6 text-xs text-clay-300 hover:text-terracotta-400 transition-colors"
           >
-            Skip for now
+            skip for now
           </button>
         </div>
       </div>
@@ -146,92 +151,87 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
 
   // --- VIEW: QUIZ ---
   return (
-    <div className="min-h-screen flex flex-col items-center relative overflow-hidden font-sans selection:bg-stone-200 selection:text-stone-900 bg-stone-50 text-stone-900">
+    <div className="min-h-screen flex flex-col items-center relative overflow-hidden bg-warm-100">
 
-      {/* Cosmic Background Layers */}
-      <div className="absolute inset-0 ethereal-gradient pointer-events-none"></div>
-      <FloatingParticles intensity="light" />
+      {/* Background */}
+      <div className="absolute inset-0 paper-texture pointer-events-none"></div>
+      
+      {/* Decorative blobs */}
+      <div className="absolute top-32 left-8 w-20 h-20 bg-olive-200/30 blob-shape animate-blob"></div>
+      <div className="absolute top-60 right-12 w-16 h-16 bg-dusty-200/30 blob-shape animate-blob" style={{ animationDelay: '-2s' }}></div>
+      <div className="absolute bottom-40 left-1/3 w-24 h-24 bg-terracotta-200/20 blob-shape animate-blob" style={{ animationDelay: '-4s' }}></div>
 
-      {/* Progress Line with cosmic gradient */}
-      <div className="absolute top-0 left-0 w-full h-[2px] bg-stone-100 z-20">
+      {/* Progress Bar */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-warm-200 z-20">
         <div
-          className="h-full bg-gradient-to-r from-cosmic-indigo via-cosmic-ethereal to-cosmic-gold transition-all duration-[1.5s] ease-out"
+          className="h-full bg-gradient-to-r from-olive-400 via-terracotta-400 to-dusty-400 transition-all duration-700 ease-out"
           style={{ width: `${progress}%` }}
         ></div>
       </div>
 
       {/* Top Nav */}
-      <div className="w-full max-w-5xl mx-auto px-6 py-8 flex justify-between items-center relative z-20">
+      <div className="w-full max-w-2xl mx-auto px-6 py-6 flex justify-between items-center relative z-20">
         <button
           onClick={handleBack}
           disabled={currentQIndex === 0}
-          className={`text-stone-400 hover:text-stone-900 transition-colors duration-500 ${currentQIndex === 0 ? 'opacity-0 pointer-events-none' : ''}`}
+          className={`p-2 text-clay-400 hover:text-clay-500 transition-colors ${currentQIndex === 0 ? 'opacity-0 pointer-events-none' : ''}`}
         >
-          <ArrowLeft size={16} strokeWidth={1} />
+          <ArrowLeft size={20} strokeWidth={1.5} />
         </button>
 
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-2 h-2 text-cosmic-gold/40 animate-twinkle" />
-          <span className="font-serif text-lg tracking-[0.2em] text-stone-400">
-            {currentQIndex + 1} <span className="text-stone-300">/</span> {QUESTIONS.length}
+        <div className="flex items-center gap-2 px-4 py-2 bg-warm-50 hand-drawn">
+          <Flower2 className="w-3 h-3 text-olive-400" />
+          <span className="font-serif text-sm text-clay-400">
+            {currentQIndex + 1} of {QUESTIONS.length}
           </span>
-          <Sparkles className="w-2 h-2 text-cosmic-gold/40 animate-twinkle" style={{ animationDelay: '2s' }} />
         </div>
 
-        {/* Spacer */}
-        <div className="w-4"></div>
+        <div className="w-9"></div>
       </div>
 
-      <div className={`flex-1 flex flex-col justify-center w-full relative z-10 px-6 pb-20 transition-all duration-700 ease-out ${isTransitioning ? 'opacity-0 translate-y-4 scale-[0.98]' : 'opacity-100 translate-y-0 scale-100'}`}>
+      <div className={`flex-1 flex flex-col justify-center w-full relative z-10 px-6 pb-16 transition-all duration-500 ease-out ${isTransitioning ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}`}>
 
-        <div className={`mx-auto ${isZodiacQuestion ? 'max-w-4xl' : 'max-w-xl'} w-full`}>
+        <div className={`mx-auto ${isZodiacQuestion ? 'max-w-3xl' : 'max-w-lg'} w-full`}>
 
           {/* Question Card */}
-          <div className="mb-8 border border-stone-200 rounded-lg p-8">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-medium text-stone-500 uppercase tracking-wider">
-                Step {currentQIndex + 1}
+          <div className="mb-8 bg-warm-50 hand-drawn p-6 md:p-8 cozy-shadow">
+            <div className="flex items-center gap-2 mb-4">
+              <Heart className="w-4 h-4 text-terracotta-400" fill="currentColor" />
+              <span className="text-xs font-medium text-clay-300 tracking-wide">
+                question {currentQIndex + 1}
               </span>
-              <div className="flex-1 h-px bg-stone-200"></div>
             </div>
-            <h2 className="text-2xl md:text-3xl font-serif text-stone-900 leading-relaxed font-light">
+            <h2 className="text-xl md:text-2xl font-serif text-clay-500 leading-relaxed">
               {currentQuestion.question}
             </h2>
           </div>
 
           {/* Options */}
-          <div className="flex flex-col gap-3">
+          <div className={`${isZodiacQuestion ? 'grid grid-cols-2 md:grid-cols-3 gap-3' : 'flex flex-col gap-3'}`}>
             {currentQuestion.options.map((option, idx) => (
               <button
                 key={option.id}
                 onClick={() => handleOptionSelect(option)}
-                className={`group w-full text-left transition-all duration-300 ease-out border border-stone-200 rounded-lg hover:border-stone-300
-                    ${isZodiacQuestion
-                    ? "p-5 flex items-center gap-5"
-                    : "p-4 flex items-center justify-between"
-                  }`}
+                className={`group w-full text-left transition-all duration-300 ease-out bg-warm-50 border-2 border-warm-300 hand-drawn cozy-shadow cozy-shadow-hover ${optionColors[idx % optionColors.length]}
+                    ${isZodiacQuestion ? "p-4 flex flex-col items-center text-center" : "p-4 flex items-center gap-4"}`}
               >
                 {isZodiacQuestion ? (
                   // --- ZODIAC STYLE ---
                   <>
-                    <span className="font-serif text-3xl text-stone-900 font-light group-hover:text-stone-600 transition-colors">{option.symbol}</span>
-                    <div>
-                      <span className="block font-serif text-lg text-stone-900 mb-1 group-hover:text-stone-600 transition-colors">{option.text}</span>
-                      <span className="block text-[10px] uppercase tracking-wider text-stone-500">{option.detail}</span>
-                    </div>
+                    <span className="font-serif text-2xl text-clay-400 mb-2 group-hover:text-terracotta-400 transition-colors">{option.symbol}</span>
+                    <span className="block font-serif text-sm text-clay-500 mb-1 group-hover:text-clay-400 transition-colors">{option.text}</span>
+                    <span className="block text-[10px] text-clay-300">{option.detail}</span>
                   </>
                 ) : (
                   // --- STANDARD STYLE ---
                   <>
-                    <div className="flex items-center gap-3 flex-1">
-                      <span className="text-xs font-medium text-stone-400 group-hover:text-stone-600 transition-colors w-6">{String.fromCharCode(65 + idx)}</span>
-                      <span className="font-sans text-base md:text-lg text-stone-900 group-hover:text-stone-600 transition-colors leading-relaxed">
-                        {option.text}
-                      </span>
+                    <div className="w-8 h-8 rounded-full bg-warm-200 flex items-center justify-center flex-shrink-0 group-hover:bg-terracotta-200 transition-colors">
+                      <span className="text-xs font-medium text-clay-400 group-hover:text-terracotta-500">{String.fromCharCode(65 + idx)}</span>
                     </div>
-                    <div className="w-5 h-5 rounded-full border-2 border-stone-300 group-hover:border-stone-400 transition-colors flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-stone-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    </div>
+                    <span className="text-sm md:text-base text-clay-500 group-hover:text-clay-400 transition-colors leading-relaxed flex-1">
+                      {option.text}
+                    </span>
+                    <Sparkles className="w-4 h-4 text-clay-200 group-hover:text-terracotta-400 transition-colors opacity-0 group-hover:opacity-100" />
                   </>
                 )}
               </button>
