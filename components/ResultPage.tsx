@@ -3,6 +3,7 @@ import { QuizResult, ArchetypeID, ProductRecommendation } from '../types';
 import { ARCHETYPES, PRODUCT_MATRIX } from '../constants';
 import { RefreshCw, Download, Quote, ArrowDown, Plus, Check, ArrowRight, Star, Heart, Briefcase, Crown, AlertTriangle, TrendingUp, Flower2, Sparkles } from 'lucide-react';
 import { enhanceProduct } from '../utils/productEnhancer';
+import { supabase } from '@/src/integrations/supabase/client';
 
 interface ResultPageProps {
    result: QuizResult;
@@ -12,6 +13,7 @@ interface ResultPageProps {
 export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
    const [email, setEmail] = useState('');
    const [subscribed, setSubscribed] = useState(false);
+   const [isSubmitting, setIsSubmitting] = useState(false);
 
    const productSectionRef = useRef<HTMLDivElement>(null);
 
@@ -47,9 +49,33 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
    const handleDownloadPDF = () => { window.print(); };
 
-   const handleSubscribe = (e: React.FormEvent) => {
+   const handleSubscribe = async (e: React.FormEvent) => {
       e.preventDefault();
-      if (email && email.includes('@')) setSubscribed(true);
+      if (!email || !email.includes('@')) return;
+      
+      setIsSubmitting(true);
+      try {
+         // Save email subscription with quiz result context
+         const { error } = await supabase
+            .from('quiz_results')
+            .insert({
+               email: email,
+               archetype: result.archetype,
+               sub_need: result.subNeed,
+               preference: result.preference,
+               zodiac: result.zodiac || null,
+            });
+
+         if (error) {
+            console.error('Error saving email subscription:', error);
+         } else {
+            setSubscribed(true);
+         }
+      } catch (err) {
+         console.error('Failed to save email:', err);
+      } finally {
+         setIsSubmitting(false);
+      }
    };
 
    const scrollToProduct = () => {
