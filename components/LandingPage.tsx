@@ -39,14 +39,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif text-4xl md:text-6xl text-clay-500 leading-tight mb-6 animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
+          <h1 className="font-serif text-4xl md:text-6xl text-clay-600 leading-tight mb-6 animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
             discover your
             <br />
-            <span className="italic text-terracotta-400">inner energy</span>
+            <span className="italic text-terracotta-500">inner energy</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base md:text-lg text-clay-400 leading-relaxed max-w-sm mx-auto mb-12 animate-slide-up opacity-0 font-light" style={{ animationDelay: '0.3s' }}>
+          <p className="text-base md:text-lg text-clay-500 leading-relaxed max-w-sm mx-auto mb-12 animate-slide-up opacity-0" style={{ animationDelay: '0.3s' }}>
             a gentle journey to understand yourself better through mindful reflection
           </p>
 
