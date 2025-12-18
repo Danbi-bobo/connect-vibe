@@ -4,6 +4,7 @@ import { Quiz } from './components/Quiz';
 import { ResultPage } from './components/ResultPage';
 import { AudioPlayer } from './components/AudioPlayer';
 import { QuizResult } from './types';
+import { supabase } from '@/src/integrations/supabase/client';
 
 type ViewState = 'landing' | 'quiz' | 'result';
 
@@ -16,10 +17,33 @@ function App() {
     setView('quiz');
   };
 
-  const handleQuizComplete = (quizResult: QuizResult) => {
+  const saveQuizResult = async (quizResult: QuizResult) => {
+    try {
+      const { error } = await supabase
+        .from('quiz_results')
+        .insert({
+          email: quizResult.email || null,
+          archetype: quizResult.archetype,
+          sub_need: quizResult.subNeed,
+          preference: quizResult.preference,
+          zodiac: quizResult.zodiac || null,
+        });
+
+      if (error) {
+        console.error('Error saving quiz result:', error);
+      }
+    } catch (err) {
+      console.error('Failed to save quiz result:', err);
+    }
+  };
+
+  const handleQuizComplete = async (quizResult: QuizResult) => {
     setResult(quizResult);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setView('result');
+    
+    // Save to database
+    await saveQuizResult(quizResult);
   };
 
   const handleRetake = () => {
