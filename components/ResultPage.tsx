@@ -146,7 +146,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
          <div className="fixed inset-0 paper-texture pointer-events-none"></div>
 
          {/* HEADER / COVER */}
-         <section className="relative pt-16 pb-12 px-6 text-center overflow-hidden">
+         <section className="relative pt-4 pb-4 px-6 text-center overflow-hidden">
             {/* Decorative blobs */}
             <div className="absolute top-20 left-10 w-40 h-40 bg-olive-200/30 blob-shape animate-blob"></div>
             <div className="absolute top-40 right-16 w-28 h-28 bg-terracotta-200/30 blob-shape animate-blob" style={{ animationDelay: '-2s' }}></div>
@@ -184,7 +184,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
          </section>
 
          {/* ENERGETIC PILLARS */}
-         <section className="relative py-12 px-6 overflow-hidden">
+         <section className="relative py-4 px-3 overflow-hidden">
             <div className="max-w-5xl mx-auto relative z-10">
                <div className="text-center mb-8">
                   <h2 className="font-serif text-2xl md:text-3xl text-white italic mb-3 celestial-glow">your energetic composition</h2>
@@ -193,15 +193,15 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* Chakra */}
-                  <div className="bg-cosmic-600/80 p-6 rounded-2xl cosmic-shadow mystical-border backdrop-blur-md text-center">
-                     <span className="text-xs uppercase tracking-widest text-gold-300 font-semibold mb-3 block">chakra center</span>
-                     <h3 className="font-serif text-2xl text-white mb-3">{archetype.chakra}</h3>
+                  <div className="p-6 text-center">
+                     <span className="text-xs uppercase tracking-widest text-gold-300 font-semibold mb-3 block" style={{ textShadow: '0 0 8px rgba(234, 179, 8, 0.7), 0 0 15px rgba(234, 179, 8, 0.4)' }}>chakra center</span>
+                     <h3 className="font-serif text-2xl text-white mb-3" style={{ textShadow: '0 0 10px rgba(234, 179, 8, 0.8), 0 0 20px rgba(234, 179, 8, 0.5), 0 0 30px rgba(234, 179, 8, 0.3)' }}>{archetype.chakra}</h3>
                      <p className="text-moon-100 text-sm leading-relaxed mb-6">{archetype.chakraMeaning}</p>
 
-                     <div className="bg-cosmic-700/70 p-4 rounded-xl mystical-border">
+                     <div className="p-4">
                         <p className="text-xs uppercase tracking-wider text-gold-200 font-medium mb-3">harmonizing tool</p>
                         <a href={archetype.chakraUpsell.url || "#"} target="_blank" rel="noopener noreferrer" className="block">
-                           <div className="aspect-square w-full bg-cosmic-600/80 overflow-hidden mb-3 rounded-lg">
+                           <div className="aspect-square w-full overflow-hidden mb-3">
                               <img src={archetype.chakraUpsell.image} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt={archetype.chakraUpsell.name} />
                            </div>
                            <h4 className="font-serif text-base text-white italic mb-1">{archetype.chakraUpsell.name}</h4>
@@ -211,15 +211,15 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                   </div>
 
                   {/* Element */}
-                  <div className="bg-cosmic-600/80 p-6 rounded-2xl cosmic-shadow mystical-border backdrop-blur-md text-center">
-                     <span className="text-xs uppercase tracking-widest text-gold-300 font-semibold mb-3 block">ruling element</span>
-                     <h3 className="font-serif text-2xl text-white mb-3">{archetype.element}</h3>
+                  <div className="p-6 text-center">
+                     <span className="text-xs uppercase tracking-widest text-gold-300 font-semibold mb-3 block" style={{ textShadow: '0 0 8px rgba(234, 179, 8, 0.7), 0 0 15px rgba(234, 179, 8, 0.4)' }}>ruling element</span>
+                     <h3 className="font-serif text-2xl text-white mb-3" style={{ textShadow: '0 0 10px rgba(234, 179, 8, 0.8), 0 0 20px rgba(234, 179, 8, 0.5), 0 0 30px rgba(234, 179, 8, 0.3)' }}>{archetype.element}</h3>
                      <p className="text-moon-100 text-sm leading-relaxed mb-6">{archetype.elementMeaning}</p>
 
-                     <div className="bg-cosmic-700/70 p-4 rounded-xl mystical-border">
+                     <div className="p-4">
                         <p className="text-xs uppercase tracking-wider text-gold-200 font-medium mb-3">elemental tool</p>
                         <a href={archetype.elementUpsell.url || "#"} target="_blank" rel="noopener noreferrer" className="block">
-                           <div className="aspect-square w-full bg-cosmic-600/80 overflow-hidden mb-3 rounded-lg">
+                           <div className="aspect-square w-full overflow-hidden mb-3">
                               <img src={archetype.elementUpsell.image} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt={archetype.elementUpsell.name} />
                            </div>
                            <h4 className="font-serif text-base text-white italic mb-1">{archetype.elementUpsell.name}</h4>
@@ -229,15 +229,15 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                   </div>
 
                   {/* Symbol */}
-                  <div className="bg-cosmic-600/80 p-6 rounded-2xl cosmic-shadow mystical-border backdrop-blur-md text-center">
-                     <span className="text-xs uppercase tracking-widest text-gold-300 font-semibold mb-3 block">archetypal symbol</span>
-                     <h3 className="font-serif text-2xl text-white mb-3">{archetype.symbol}</h3>
+                  <div className="p-6 text-center">
+                     <span className="text-xs uppercase tracking-widest text-gold-300 font-semibold mb-3 block" style={{ textShadow: '0 0 8px rgba(234, 179, 8, 0.7), 0 0 15px rgba(234, 179, 8, 0.4)' }}>archetypal symbol</span>
+                     <h3 className="font-serif text-2xl text-white mb-3" style={{ textShadow: '0 0 10px rgba(234, 179, 8, 0.8), 0 0 20px rgba(234, 179, 8, 0.5), 0 0 30px rgba(234, 179, 8, 0.3)' }}>{archetype.symbol}</h3>
                      <p className="text-moon-100 text-sm leading-relaxed mb-6">{archetype.symbolMeaning}</p>
 
-                     <div className="bg-cosmic-700/70 p-4 rounded-xl mystical-border">
+                     <div className="p-4">
                         <p className="text-xs uppercase tracking-wider text-gold-200 font-medium mb-3">symbolic totem</p>
                         <a href={archetype.symbolUpsell.url || "#"} target="_blank" rel="noopener noreferrer" className="block">
-                           <div className="aspect-square w-full bg-cosmic-600/80 overflow-hidden mb-3 rounded-lg">
+                           <div className="aspect-square w-full overflow-hidden mb-3">
                               <img src={archetype.symbolUpsell.image} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt={archetype.symbolUpsell.name} />
                            </div>
                            <h4 className="font-serif text-base text-white italic mb-1">{archetype.symbolUpsell.name}</h4>
@@ -250,7 +250,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
          </section>
 
          {/* ANALYSIS CONTENT */}
-         <section className="py-12 px-6 max-w-2xl mx-auto relative z-10">
+         <section className="py-4 px-3 max-w-2xl mx-auto relative z-10">
             {/* Insight 1 */}
             <div className="mb-10">
                <div className="flex items-center gap-3 mb-6">
@@ -334,8 +334,10 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                         const isLast = idx === arr.length - 1;
                         return (
                            <div key={idx} className={`relative p-4 rounded-xl cosmic-shadow ${isLast ? 'bg-cosmic-500/40 mystical-border border-gold-400' : 'bg-cosmic-700/70 mystical-border'}`}>
-                              <span className="text-xl font-light text-gold-300 leading-none">0{idx + 1}</span>
-                              <h4 className="text-sm font-medium text-white leading-relaxed mt-2">{step}</h4>
+                              <div className="flex items-center gap-3">
+                                 <span className="text-xl font-light text-gold-300 leading-none">0{idx + 1}</span>
+                                 <h4 className="text-sm font-medium text-white leading-relaxed">{step}</h4>
+                              </div>
                               {isLast && (
                                  <div className="absolute top-3 right-3 text-[9px] text-gold-200 uppercase tracking-wider font-medium">✦ destination</div>
                               )}
@@ -372,7 +374,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
          </section>
 
          {/* PRIMARY RITUAL ANCHOR */}
-         <section ref={productSectionRef} className="py-12 px-6 max-w-6xl mx-auto scroll-mt-10 relative z-10">
+         <section ref={productSectionRef} className="py-4 px-3 max-w-6xl mx-auto scroll-mt-10 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
                {/* LEFT COLUMN: Main Image */}
