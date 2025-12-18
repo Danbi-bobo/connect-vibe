@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+﻿import React, { useState, useRef, useMemo } from 'react';
 import { QuizResult, ArchetypeID, ProductRecommendation } from '../types';
 import { ARCHETYPES, PRODUCT_MATRIX } from '../constants';
 import { Button } from './Button';
 import { RefreshCw, Download, Quote, ArrowDown, Minus, Plus, Sparkles, Check, ArrowRight, Star, Heart, Briefcase, Crown, AlertTriangle, TrendingUp, Leaf, Compass } from 'lucide-react';
 import { FloatingParticles } from './FloatingParticles';
+import { enhanceProduct } from '../utils/productEnhancer';
 
 interface ResultPageProps {
    result: QuizResult;
@@ -18,11 +19,29 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
    const productSectionRef = useRef<HTMLDivElement>(null);
 
    const archetype = ARCHETYPES[result.archetype];
-   const recommendations = PRODUCT_MATRIX[result.archetype][result.subNeed] ||
+   const baseRecommendations = PRODUCT_MATRIX[result.archetype][result.subNeed] ||
       PRODUCT_MATRIX[result.archetype]['protection'];
 
+   // Enhance recommendations with data from products.json
+   const recommendations = useMemo(() => {
+      return enhanceProduct(baseRecommendations);
+   }, [baseRecommendations]);
+
    // --- Price Calculation Logic ---
-   const parsePrice = (priceStr: string) => parseInt(priceStr.replace(/[^0-9]/g, ''), 10);
+   const parsePrice = (priceStr?: string) => {
+      if (!priceStr) return 0;
+      // Remove $ and other currency symbols, then parse as float
+      const numericValue = parseFloat(priceStr.replace(/[$,]/g, ''));
+      return isNaN(numericValue) ? 0 : numericValue;
+   };
+
+   // Format number with commas and 2 decimal places
+   const formatPrice = (value: number) => {
+      return value.toLocaleString('en-US', {
+         minimumFractionDigits: 2,
+         maximumFractionDigits: 2
+      });
+   };
 
    const mainPrice = parsePrice(recommendations.price);
    const upsellTotal = recommendations.upsells
@@ -44,56 +63,39 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
       productSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
    };
 
-   const handleClaimBundle = async () => {
+   const handleClaimBundle = () => {
       try {
-         // Collect all items (main product + upsells) with variant IDs
-         const items = [];
+         // Collect all variant IDs from main product + upsells
+         const variantIds: string[] = [];
 
-         // Add main product if it has variantId
+         // Add main product variant ID
          if (recommendations.variantId) {
-            items.push({
-               id: recommendations.variantId,
-               quantity: 1
-            });
+            variantIds.push(recommendations.variantId);
          }
 
-         // Add all upsells that have variantId
+         // Add all upsell variant IDs
          if (recommendations.upsells) {
             recommendations.upsells.forEach(upsell => {
                if (upsell.variantId) {
-                  items.push({
-                     id: upsell.variantId,
-                     quantity: 1
-                  });
+                  variantIds.push(upsell.variantId);
                }
             });
          }
 
          // If no variant IDs found, fallback to collections page
-         if (items.length === 0) {
+         if (variantIds.length === 0) {
             window.open('https://store.taichigemstone.com/collections/all', '_blank');
             return;
          }
 
-         // Add items to cart using Shopify Ajax API
-         const response = await fetch('https://store.taichigemstone.com/cart/add.js', {
-            method: 'POST',
-            headers: {
-               'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ items })
-         });
+         // Build cart URL: /cart/variantId:1,variantId:1,...
+         const cartItems = variantIds.map(id => `${id}:1`).join(',');
+         const cartUrl = `https://store.taichigemstone.com/cart/${cartItems}`;
 
-         if (response.ok) {
-            // Redirect to cart page after successful add
-            window.open('https://store.taichigemstone.com/cart', '_blank');
-         } else {
-            // Fallback if API fails
-            console.error('Failed to add to cart');
-            window.open('https://store.taichigemstone.com/collections/all', '_blank');
-         }
+         // Redirect to cart
+         window.open(cartUrl, '_blank');
       } catch (error) {
-         console.error('Error adding to cart:', error);
+         console.error('Error building cart URL:', error);
          // Fallback to collections page on error
          window.open('https://store.taichigemstone.com/collections/all', '_blank');
       }
@@ -192,13 +194,13 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                      {/* Integrated Upsell Card */}
                      <div className="w-full max-w-[260px] bg-stone-50 p-6 mt-8 rounded-sm border border-stone-100 shadow-sm group/card hover:shadow-md transition-all duration-500 flex flex-col items-center">
                         <p className="text-[10px] uppercase tracking-widest text-stone-400 font-bold mb-4 text-center">Harmonizing Tool</p>
-                        <div className="aspect-square w-full bg-white relative overflow-hidden mb-4 rounded-sm">
+                        <a href={archetype.chakraUpsell.url || "https://store.taichigemstone.com/"} target="_blank" rel="noopener noreferrer" className="aspect-square w-full bg-white relative overflow-hidden mb-4 rounded-sm block cursor-pointer">
                            <img
                               src={archetype.chakraUpsell.image}
                               className="w-full h-full object-cover opacity-90 group-hover/card:opacity-100 group-hover/card:scale-105 transition-all duration-1000"
                               alt={archetype.chakraUpsell.name}
                            />
-                        </div>
+                        </a>
                         <h4 className="font-serif text-lg italic text-stone-900 text-center mb-2">{archetype.chakraUpsell.name}</h4>
                         <p className="text-xs text-stone-500 font-reading leading-relaxed text-center mb-4">{archetype.chakraUpsell.description}</p>
                         <a href={archetype.chakraUpsell.url || "https://store.taichigemstone.com/"} target="_blank" rel="noopener noreferrer" className="w-full py-2 border border-stone-200 text-[10px] uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-colors text-center block">Explore</a>
@@ -216,13 +218,13 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                      {/* Integrated Upsell Card */}
                      <div className="w-full max-w-[260px] bg-stone-50 p-6 mt-8 rounded-sm border border-stone-100 shadow-sm group/card hover:shadow-md transition-all duration-500 flex flex-col items-center">
                         <p className="text-[10px] uppercase tracking-widest text-stone-400 font-bold mb-4 text-center">Elemental Tool</p>
-                        <div className="aspect-square w-full bg-white relative overflow-hidden mb-4 rounded-sm">
+                        <a href={archetype.elementUpsell.url || "https://store.taichigemstone.com/"} target="_blank" rel="noopener noreferrer" className="aspect-square w-full bg-white relative overflow-hidden mb-4 rounded-sm block cursor-pointer">
                            <img
                               src={archetype.elementUpsell.image}
                               className="w-full h-full object-cover opacity-90 group-hover/card:opacity-100 group-hover/card:scale-105 transition-all duration-1000"
                               alt={archetype.elementUpsell.name}
                            />
-                        </div>
+                        </a>
                         <h4 className="font-serif text-lg italic text-stone-900 text-center mb-2">{archetype.elementUpsell.name}</h4>
                         <p className="text-xs text-stone-500 font-reading leading-relaxed text-center mb-4">{archetype.elementUpsell.description}</p>
                         <a href={archetype.elementUpsell.url || "https://store.taichigemstone.com/"} target="_blank" rel="noopener noreferrer" className="w-full py-2 border border-stone-200 text-[10px] uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-colors text-center block">Explore</a>
@@ -240,13 +242,13 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                      {/* Integrated Upsell Card */}
                      <div className="w-full max-w-[260px] bg-stone-50 p-6 mt-8 rounded-sm border border-stone-100 shadow-sm group/card hover:shadow-md transition-all duration-500 flex flex-col items-center">
                         <p className="text-[10px] uppercase tracking-widest text-stone-400 font-bold mb-4 text-center">Symbolic Totem</p>
-                        <div className="aspect-square w-full bg-white relative overflow-hidden mb-4 rounded-sm">
+                        <a href={archetype.symbolUpsell.url || "https://store.taichigemstone.com/"} target="_blank" rel="noopener noreferrer" className="aspect-square w-full bg-white relative overflow-hidden mb-4 rounded-sm block cursor-pointer">
                            <img
                               src={archetype.symbolUpsell.image}
                               className="w-full h-full object-cover opacity-90 group-hover/card:opacity-100 group-hover/card:scale-105 transition-all duration-1000"
                               alt={archetype.symbolUpsell.name}
                            />
-                        </div>
+                        </a>
                         <h4 className="font-serif text-lg italic text-stone-900 text-center mb-2">{archetype.symbolUpsell.name}</h4>
                         <p className="text-xs text-stone-500 font-reading leading-relaxed text-center mb-4">{archetype.symbolUpsell.description}</p>
                         <a href={archetype.symbolUpsell.url || "https://store.taichigemstone.com/"} target="_blank" rel="noopener noreferrer" className="w-full py-2 border border-stone-200 text-[10px] uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-colors text-center block">Explore</a>
@@ -427,7 +429,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
                {/* LEFT COLUMN: Main Image (Sticky) */}
                <div className="lg:col-span-6 lg:sticky lg:top-24">
-                  <div className="relative aspect-[4/5] bg-stone-100 overflow-hidden shadow-2xl shadow-stone-200/50 group rounded-sm">
+                  <a href={recommendations.url || "https://store.taichigemstone.com/"} target="_blank" rel="noopener noreferrer" className="relative aspect-[4/5] bg-stone-100 overflow-hidden shadow-2xl shadow-stone-200/50 group rounded-sm block cursor-pointer">
                      <img
                         src={recommendations.image}
                         className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105"
@@ -442,7 +444,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                            <Star size={10} fill="currentColor" /> Primary Anchor
                         </span>
                      </div>
-                  </div>
+                  </a>
                </div>
 
                {/* RIGHT COLUMN: Details + Upsells + Bundle */}
@@ -540,12 +542,12 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                               <div>
                                  <p className="text-stone-400 text-xs uppercase tracking-widest mb-1">Total Bundle Value</p>
                                  <div className="flex items-baseline gap-3">
-                                    <span className="text-stone-500 line-through text-lg">${totalValue}</span>
-                                    <span className="font-serif text-4xl md:text-5xl text-white italic">${bundlePrice}</span>
+                                    <span className="text-stone-500 line-through text-lg">${formatPrice(totalValue)}</span>
+                                    <span className="font-serif text-4xl md:text-5xl text-white italic">${formatPrice(bundlePrice)}</span>
                                  </div>
                                  <div className="inline-flex items-center gap-2 mt-2 bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
                                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                                    <span className="text-[10px] uppercase tracking-widest text-white font-bold">You Save ${savings} (15%)</span>
+                                    <span className="text-[10px] uppercase tracking-widest text-white font-bold">You Save ${formatPrice(savings)} (15%)</span>
                                  </div>
                               </div>
 

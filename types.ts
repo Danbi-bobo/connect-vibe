@@ -32,15 +32,15 @@ export interface QuizQuestion {
 
 export interface ProductRecommendation {
   id: string;
-  name: string;
+  name?: string; // Loaded from products.json
   description: string;
   ritual: string; // Context on HOW/WHEN to use this item
-  image: string; // URL placeholder
-  price: string;
+  image?: string; // Loaded from products.json
+  price?: string; // Loaded from products.json
   type: 'Primary' | 'Supportive';
   tags: SubNeedID[];
-  url?: string; // Shopify product URL
-  variantId?: string; // Shopify variant ID for cart
+  url?: string; // Loaded from products.json
+  variantId: string; // Required: Shopify variant ID for cart and loading data
   upsells?: ProductRecommendation[];
 }
 
