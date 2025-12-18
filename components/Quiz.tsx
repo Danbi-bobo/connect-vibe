@@ -113,8 +113,8 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
             </div>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-serif text-clay-500 mb-4">almost there!</h2>
-          <p className="text-clay-400 leading-relaxed mb-10 text-sm">
+          <h2 className="text-3xl md:text-4xl font-serif text-clay-600 mb-4">almost there!</h2>
+          <p className="text-clay-500 leading-relaxed mb-10 text-sm">
             enter your email to receive your complete energy blueprint and personalized recommendations
           </p>
 
@@ -197,11 +197,11 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
           <div className="mb-8 bg-warm-50 hand-drawn p-6 md:p-8 cozy-shadow">
             <div className="flex items-center gap-2 mb-4">
               <Heart className="w-4 h-4 text-terracotta-400" fill="currentColor" />
-              <span className="text-xs font-medium text-clay-300 tracking-wide">
+              <span className="text-xs font-medium text-clay-400 tracking-wide">
                 question {currentQIndex + 1}
               </span>
             </div>
-            <h2 className="text-xl md:text-2xl font-serif text-clay-500 leading-relaxed">
+            <h2 className="text-xl md:text-2xl font-serif text-clay-600 leading-relaxed">
               {currentQuestion.question}
             </h2>
           </div>
@@ -218,17 +218,17 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
                 {isZodiacQuestion ? (
                   // --- ZODIAC STYLE ---
                   <>
-                    <span className="font-serif text-2xl text-clay-400 mb-2 group-hover:text-terracotta-400 transition-colors">{option.symbol}</span>
-                    <span className="block font-serif text-sm text-clay-500 mb-1 group-hover:text-clay-400 transition-colors">{option.text}</span>
-                    <span className="block text-[10px] text-clay-300">{option.detail}</span>
+                    <span className="font-serif text-2xl text-clay-500 mb-2 group-hover:text-terracotta-500 transition-colors">{option.symbol}</span>
+                    <span className="block font-serif text-sm text-clay-600 mb-1 group-hover:text-clay-500 transition-colors">{option.text}</span>
+                    <span className="block text-[10px] text-clay-400">{option.detail}</span>
                   </>
                 ) : (
                   // --- STANDARD STYLE ---
                   <>
                     <div className="w-8 h-8 rounded-full bg-warm-200 flex items-center justify-center flex-shrink-0 group-hover:bg-terracotta-200 transition-colors">
-                      <span className="text-xs font-medium text-clay-400 group-hover:text-terracotta-500">{String.fromCharCode(65 + idx)}</span>
+                      <span className="text-xs font-semibold text-clay-500 group-hover:text-terracotta-600">{String.fromCharCode(65 + idx)}</span>
                     </div>
-                    <span className="text-sm md:text-base text-clay-500 group-hover:text-clay-400 transition-colors leading-relaxed flex-1">
+                    <span className="text-sm md:text-base text-clay-600 group-hover:text-clay-500 transition-colors leading-relaxed flex-1">
                       {option.text}
                     </span>
                     <Sparkles className="w-4 h-4 text-clay-200 group-hover:text-terracotta-400 transition-colors opacity-0 group-hover:opacity-100" />
