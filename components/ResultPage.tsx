@@ -458,7 +458,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                                  </div>
                               </div>
 
-                              <button onClick={handleClaimBundle} className="flex-1 md:flex-none bg-warm-50 hover:bg-terracotta-100 text-clay-600 px-6 py-3 uppercase tracking-wider text-xs font-semibold transition-all flex items-center justify-center gap-2 hand-drawn">
+                              <button onClick={handleClaimBundle} className="flex-1 md:flex-none bg-warm-100 hover:bg-terracotta-100 text-clay-500 px-6 py-3 uppercase tracking-wider text-xs font-semibold transition-all flex items-center justify-center gap-2 hand-drawn border-2 border-clay-500">
                                  claim full bundle <ArrowRight size={14} />
                               </button>
                            </div>
