@@ -84,10 +84,18 @@ export interface ArchetypeResult {
   growthPath: string;
 }
 
+export interface DetailedAnswer {
+  questionId: number;
+  questionText: string;
+  answerId: string;
+  answerText: string;
+}
+
 export interface QuizResult {
   archetype: ArchetypeID;
   subNeed: SubNeedID;
   preference: string; // From Q8
   zodiac?: string; // From Q10
   email?: string;
+  answers?: DetailedAnswer[]; // Full question/answer content
 }

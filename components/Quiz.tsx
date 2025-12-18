@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { QUESTIONS } from '../constants';
-import { ArchetypeID, SubNeedID, QuizResult } from '../types';
+import { ArchetypeID, SubNeedID, QuizResult, DetailedAnswer } from '../types';
 import { calculateArchetype, calculateSubNeed } from '../utils/quizLogic';
 import { ArrowLeft, Heart, Flower2, Send, Sparkles } from 'lucide-react';
 
@@ -10,7 +10,7 @@ interface QuizProps {
 
 export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
   const [currentQIndex, setCurrentQIndex] = useState(0);
-  const [answers, setAnswers] = useState<{ questionId: number; optionId: string; mapsTo?: SubNeedID }[]>([]);
+  const [answers, setAnswers] = useState<{ questionId: number; optionId: string; mapsTo?: SubNeedID; questionText: string; answerText: string }[]>([]);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Email Capture State
@@ -29,7 +29,13 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
     setIsTransitioning(true);
 
     setTimeout(() => {
-      const newAnswers = [...answers, { questionId: currentQuestion.id, optionId: option.id, mapsTo: option.mapsTo }];
+      const newAnswers = [...answers, { 
+        questionId: currentQuestion.id, 
+        optionId: option.id, 
+        mapsTo: option.mapsTo,
+        questionText: currentQuestion.question,
+        answerText: option.text
+      }];
       setAnswers(newAnswers);
 
       if (currentQIndex < QUESTIONS.length - 1) {
@@ -48,12 +54,21 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
     const preference = finalAnswers.find(a => a.questionId === 8)?.optionId || 'A';
     const zodiac = finalAnswers.find(a => a.questionId === 9)?.optionId;
 
+    // Build detailed answers array
+    const detailedAnswers: DetailedAnswer[] = finalAnswers.map(a => ({
+      questionId: a.questionId,
+      questionText: a.questionText,
+      answerId: a.optionId,
+      answerText: a.answerText
+    }));
+
     onComplete({
       archetype,
       subNeed,
       preference,
       zodiac,
-      email
+      email,
+      answers: detailedAnswers
     });
   };
 

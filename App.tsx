@@ -27,7 +27,8 @@ function App() {
           sub_need: quizResult.subNeed,
           preference: quizResult.preference,
           zodiac: quizResult.zodiac || null,
-        });
+          answers: quizResult.answers ? JSON.parse(JSON.stringify(quizResult.answers)) : null,
+        } as any);
 
       if (error) {
         console.error('Error saving quiz result:', error);
