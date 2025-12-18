@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Sparkles, Flower2 } from 'lucide-react';
+import { Heart, Sparkles, Moon, Star } from 'lucide-react';
 
 interface LandingPageProps {
   onStart: () => void;
@@ -7,67 +7,67 @@ interface LandingPageProps {
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-warm-100 relative overflow-hidden">
-      
-      {/* Soft organic background shapes */}
-      <div className="absolute inset-0 paper-texture pointer-events-none"></div>
-      
-      {/* Decorative blobs */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-olive-200/40 blob-shape animate-blob"></div>
-      <div className="absolute top-40 right-20 w-24 h-24 bg-terracotta-200/30 blob-shape animate-blob" style={{ animationDelay: '-2s' }}></div>
-      <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-dusty-200/30 blob-shape animate-blob" style={{ animationDelay: '-4s' }}></div>
-      <div className="absolute bottom-20 right-10 w-28 h-28 bg-sand-300/30 blob-shape animate-blob" style={{ animationDelay: '-6s' }}></div>
+    <div className="min-h-screen flex flex-col cosmic-texture relative overflow-hidden" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+
+      {/* Cosmic overlay for readability */}
+      <div className="absolute inset-0 bg-cosmic-600/35 backdrop-blur-sm pointer-events-none"></div>
+
+      {/* Floating stars */}
+      <div className="absolute top-20 left-10 text-gold-400 star-sparkle"><Star size={20} fill="currentColor" /></div>
+      <div className="absolute top-40 right-20 text-gold-500 star-sparkle" style={{ animationDelay: '-1s' }}><Star size={16} fill="currentColor" /></div>
+      <div className="absolute bottom-40 left-1/4 text-ethereal-200 star-sparkle" style={{ animationDelay: '-0.5s' }}><Star size={18} fill="currentColor" /></div>
+      <div className="absolute bottom-20 right-10 text-gold-300 star-sparkle" style={{ animationDelay: '-1.5s' }}><Star size={14} fill="currentColor" /></div>
 
       {/* Navbar */}
       <nav className="px-8 py-8 flex justify-center items-center relative z-10 animate-fade-in">
         <div className="flex items-center gap-3">
-          <Flower2 className="w-5 h-5 text-olive-400" strokeWidth={1.5} />
-          <span className="font-serif text-xl tracking-wide font-medium text-clay-500">etheria</span>
+          <Moon className="w-5 h-5 text-gold-400" strokeWidth={1.5} />
+          <span className="font-display text-xl tracking-wide font-medium text-gold-300">ETHERIA</span>
         </div>
       </nav>
 
       {/* Main Content */}
       <section className="flex-1 flex flex-col items-center justify-center px-6 relative z-10 pb-20">
-        
+
         <div className="max-w-lg mx-auto text-center">
-          
+
           {/* Small decorative element */}
           <div className="flex justify-center items-center gap-4 mb-8 animate-slide-up opacity-0" style={{ animationDelay: '0.1s' }}>
-            <div className="w-12 h-px bg-sand-400/50"></div>
-            <Heart className="w-4 h-4 text-terracotta-400 animate-float" fill="currentColor" />
-            <div className="w-12 h-px bg-sand-400/50"></div>
+            <div className="w-12 h-px bg-gold-400/60"></div>
+            <Heart className="w-4 h-4 text-gold-300 animate-float star-sparkle" fill="currentColor" />
+            <div className="w-12 h-px bg-gold-400/60"></div>
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif text-4xl md:text-6xl text-clay-600 leading-tight mb-6 animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
+          <h1 className="font-serif text-4xl md:text-6xl text-white leading-tight mb-6 animate-slide-up opacity-0 drop-shadow-lg" style={{ animationDelay: '0.2s' }}>
             discover your
             <br />
-            <span className="italic text-terracotta-500">inner energy</span>
+            <span className="font-display text-gold-300 celestial-glow">inner energy</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base md:text-lg text-clay-500 leading-relaxed max-w-sm mx-auto mb-12 animate-slide-up opacity-0" style={{ animationDelay: '0.3s' }}>
+          <p className="text-base md:text-lg text-white leading-relaxed max-w-sm mx-auto mb-12 animate-slide-up opacity-0 drop-shadow-md" style={{ animationDelay: '0.3s' }}>
             a gentle journey to understand yourself better through mindful reflection
           </p>
 
           {/* Illustration placeholder - decorative card */}
           <div className="mb-12 animate-slide-up opacity-0" style={{ animationDelay: '0.4s' }}>
-            <div className="inline-flex items-center gap-4 px-8 py-5 bg-warm-50 hand-drawn cozy-shadow">
-              <div className="w-12 h-12 bg-olive-200/50 rounded-full flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-olive-500" />
+            <div className="inline-flex items-center gap-4 px-8 py-5 bg-cosmic-400/50 rounded-xl mystical-border backdrop-blur-md cosmic-shadow">
+              <div className="w-12 h-12 bg-gold-500/30 rounded-full flex items-center justify-center mystical-border">
+                <Sparkles className="w-5 h-5 text-gold-300" />
               </div>
               <div className="text-left">
-                <p className="text-sm text-clay-400 font-medium">2 minute quiz</p>
-                <p className="text-xs text-clay-300">9 thoughtful questions</p>
+                <p className="text-sm text-white font-medium">2 minute quiz</p>
+                <p className="text-xs text-moon-200">9 thoughtful questions</p>
               </div>
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="animate-slide-up opacity-0" style={{ animationDelay: '0.5s' }}>
-            <button 
-              onClick={onStart} 
-              className="group relative px-10 py-4 bg-clay-500 text-warm-50 hand-drawn transition-all duration-300 hover:bg-terracotta-400 cozy-shadow cozy-shadow-hover"
+            <button
+              onClick={onStart}
+              className="group relative px-10 py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-cosmic-600 rounded-lg transition-all duration-300 hover:from-gold-500 hover:to-gold-400 cosmic-shadow cosmic-shadow-hover celestial-glow"
             >
               <span className="relative z-10 text-sm tracking-wider font-medium flex items-center gap-2">
                 begin your journey
@@ -78,9 +78,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
 
           {/* Trust badges */}
           <div className="mt-10 flex items-center justify-center gap-6 animate-fade-in opacity-0" style={{ animationDelay: '0.7s' }}>
-            <span className="text-xs text-clay-300">✦ self-discovery</span>
-            <span className="text-xs text-clay-300">✦ mindfulness</span>
-            <span className="text-xs text-clay-300">✦ growth</span>
+            <span className="text-xs text-gold-200">✦ self-discovery</span>
+            <span className="text-xs text-gold-200">✦ mindfulness</span>
+            <span className="text-xs text-gold-200">✦ growth</span>
           </div>
         </div>
 
@@ -88,7 +88,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
 
       {/* Footer */}
       <div className="relative z-10 py-8 text-center animate-fade-in opacity-0" style={{ animationDelay: '0.8s' }}>
-        <p className="text-xs text-clay-300 tracking-wide">
+        <p className="text-xs text-moon-300 tracking-wide">
           made with care © 2024
         </p>
       </div>

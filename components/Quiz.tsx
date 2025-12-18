@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { QUESTIONS } from '../constants';
 import { ArchetypeID, SubNeedID, QuizResult, DetailedAnswer } from '../types';
 import { calculateArchetype, calculateSubNeed } from '../utils/quizLogic';
-import { ArrowLeft, Heart, Flower2, Send, Sparkles } from 'lucide-react';
+import { ArrowLeft, Moon, Star, Sparkles, Send } from 'lucide-react';
 
 interface QuizProps {
   onComplete: (result: QuizResult) => void;
@@ -29,9 +29,9 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
     setIsTransitioning(true);
 
     setTimeout(() => {
-      const newAnswers = [...answers, { 
-        questionId: currentQuestion.id, 
-        optionId: option.id, 
+      const newAnswers = [...answers, {
+        questionId: currentQuestion.id,
+        optionId: option.id,
         mapsTo: option.mapsTo,
         questionText: currentQuestion.question,
         answerText: option.text
@@ -100,37 +100,42 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
 
   const isZodiacQuestion = currentQuestion && currentQuestion.id === 9;
 
-  // Option colors for variety
-  const optionColors = [
-    'hover:bg-olive-100/50 hover:border-olive-300',
-    'hover:bg-terracotta-100/50 hover:border-terracotta-300',
-    'hover:bg-dusty-100/50 hover:border-dusty-300',
-    'hover:bg-sand-200/50 hover:border-sand-400',
-    'hover:bg-olive-100/50 hover:border-olive-300',
-  ];
-
   // --- VIEW: EMAIL CAPTURE ---
   if (showEmailCapture) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden bg-warm-100 animate-fade-in">
+      <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden cosmic-texture animate-fade-in" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
-        {/* Background shapes */}
-        <div className="absolute inset-0 paper-texture pointer-events-none"></div>
-        <div className="absolute top-20 right-20 w-32 h-32 bg-olive-200/30 blob-shape animate-blob"></div>
-        <div className="absolute bottom-32 left-16 w-24 h-24 bg-terracotta-200/30 blob-shape animate-blob" style={{ animationDelay: '-3s' }}></div>
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-cosmic-600/50 backdrop-blur-sm"></div>
+
+        {/* Floating stars */}
+        <div className="absolute top-20 left-20 text-gold-500 star-sparkle" style={{ animationDelay: '0s' }}>
+          <Star size={16} fill="currentColor" />
+        </div>
+        <div className="absolute top-40 right-32 text-gold-400 star-sparkle" style={{ animationDelay: '0.5s' }}>
+          <Star size={12} fill="currentColor" />
+        </div>
+        <div className="absolute bottom-32 left-1/4 text-gold-300 star-sparkle" style={{ animationDelay: '1s' }}>
+          <Star size={14} fill="currentColor" />
+        </div>
 
         <div className="max-w-sm w-full relative z-10 text-center">
-          
-          {/* Icon */}
+
+          {/* Moon icon */}
           <div className="mb-8 flex justify-center">
-            <div className="w-16 h-16 bg-warm-200 rounded-full flex items-center justify-center cozy-shadow">
-              <Send className="w-6 h-6 text-terracotta-400" />
+            <div className="w-20 h-20 bg-cosmic-400/50 rounded-full flex items-center justify-center celestial-glow mystical-border">
+              <Send className="w-8 h-8 text-gold-400" />
             </div>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-serif text-clay-600 mb-4">almost there!</h2>
-          <p className="text-clay-500 leading-relaxed mb-10 text-sm">
-            enter your email to receive your complete energy blueprint and personalized recommendations
+          {/* Moon phases decoration */}
+          <div className="mb-6 flex justify-center opacity-60">
+            <img src="/moon-phases.png" alt="" className="h-8" />
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-display text-gold-300 mb-4 celestial-glow">Almost There</h2>
+          <p className="text-white leading-relaxed mb-10 text-sm font-light">
+            Enter your email to receive your complete energy blueprint and personalized cosmic guidance
           </p>
 
           <form onSubmit={handleEmailSubmit} className="space-y-6">
@@ -138,24 +143,24 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="w-full p-4 bg-warm-50 border-2 border-sand-300 hand-drawn focus:border-terracotta-400 outline-none transition-colors text-clay-500 placeholder:text-clay-300 text-center"
+                className="w-full p-4 bg-cosmic-400/40 border-2 mystical-border focus:border-gold-500 outline-none transition-all text-white placeholder:text-moon-300 text-center rounded-lg backdrop-blur-md"
                 value={userEmail}
                 onChange={(e) => { setUserEmail(e.target.value); setEmailError(''); }}
               />
-              {emailError && <p className="text-terracotta-500 text-xs mt-3">{emailError}</p>}
+              {emailError && <p className="text-gold-200 text-xs mt-3">{emailError}</p>}
             </div>
 
             <button
               type="submit"
-              className="w-full py-4 bg-clay-500 text-warm-50 hand-drawn transition-all duration-300 hover:bg-terracotta-400 cozy-shadow text-sm tracking-wider font-medium"
+              className="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-cosmic-600 rounded-lg transition-all duration-300 hover:from-gold-500 hover:to-gold-400 cosmic-shadow cosmic-shadow-hover text-sm tracking-wider font-medium celestial-glow"
             >
-              reveal my results ✨
+              Reveal My Results ✨
             </button>
           </form>
 
           <button
             onClick={handleEmailSkip}
-            className="mt-6 text-xs text-clay-300 hover:text-terracotta-400 transition-colors"
+            className="mt-6 text-xs text-moon-400 hover:text-gold-400 transition-colors"
           >
             skip for now
           </button>
@@ -166,42 +171,51 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
 
   // --- VIEW: QUIZ ---
   return (
-    <div className="min-h-screen flex flex-col items-center relative overflow-hidden bg-warm-100">
+    <div className="min-h-screen flex flex-col items-center relative overflow-hidden cosmic-texture" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
 
-      {/* Background */}
-      <div className="absolute inset-0 paper-texture pointer-events-none"></div>
-      
-      {/* Decorative blobs */}
-      <div className="absolute top-32 left-8 w-20 h-20 bg-olive-200/30 blob-shape animate-blob"></div>
-      <div className="absolute top-60 right-12 w-16 h-16 bg-dusty-200/30 blob-shape animate-blob" style={{ animationDelay: '-2s' }}></div>
-      <div className="absolute bottom-40 left-1/3 w-24 h-24 bg-terracotta-200/20 blob-shape animate-blob" style={{ animationDelay: '-4s' }}></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-cosmic-600/40 backdrop-blur-sm pointer-events-none"></div>
+
+      {/* Floating stars */}
+      <div className="absolute top-24 left-16 text-gold-500 star-sparkle" style={{ animationDelay: '0s' }}>
+        <Star size={20} fill="currentColor" />
+      </div>
+      <div className="absolute top-48 right-20 text-gold-400 star-sparkle" style={{ animationDelay: '0.7s' }}>
+        <Star size={16} fill="currentColor" />
+      </div>
+      <div className="absolute bottom-40 left-1/3 text-gold-300 star-sparkle" style={{ animationDelay: '1.2s' }}>
+        <Star size={18} fill="currentColor" />
+      </div>
+      <div className="absolute top-1/3 right-1/4 text-ethereal-200 star-sparkle" style={{ animationDelay: '0.3s' }}>
+        <Star size={12} fill="currentColor" />
+      </div>
 
       {/* Progress Bar */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-warm-200 z-20">
+      <div className="absolute top-0 left-0 w-full h-1.5 bg-cosmic-700/50 z-20 backdrop-blur-sm">
         <div
-          className="h-full bg-gradient-to-r from-olive-400 via-terracotta-400 to-dusty-400 transition-all duration-700 ease-out"
+          className="h-full bg-gradient-to-r from-ethereal-400 via-gold-500 to-gold-400 transition-all duration-700 ease-out celestial-glow"
           style={{ width: `${progress}%` }}
         ></div>
       </div>
 
       {/* Top Nav */}
-      <div className="w-full max-w-2xl mx-auto px-6 py-6 flex justify-between items-center relative z-20">
+      <div className="w-full max-w-2xl mx-auto px-6 py-8 flex justify-between items-center relative z-20">
         <button
           onClick={handleBack}
           disabled={currentQIndex === 0}
-          className={`p-2 text-clay-400 hover:text-clay-500 transition-colors ${currentQIndex === 0 ? 'opacity-0 pointer-events-none' : ''}`}
+          className={`p-2 text-gold-400 hover:text-gold-300 transition-colors ${currentQIndex === 0 ? 'opacity-0 pointer-events-none' : ''}`}
         >
-          <ArrowLeft size={20} strokeWidth={1.5} />
+          <ArrowLeft size={22} strokeWidth={1.5} />
         </button>
 
-        <div className="flex items-center gap-2 px-4 py-2 bg-warm-50 hand-drawn">
-          <Flower2 className="w-3 h-3 text-olive-400" />
-          <span className="font-serif text-sm text-clay-400">
+        <div className="flex items-center gap-3 px-5 py-2.5 bg-cosmic-400/40 rounded-full mystical-border backdrop-blur-md">
+          <Moon className="w-4 h-4 text-gold-400" />
+          <span className="font-serif text-sm text-moon-200">
             {currentQIndex + 1} of {QUESTIONS.length}
           </span>
         </div>
 
-        <div className="w-9"></div>
+        <div className="w-10"></div>
       </div>
 
       <div className={`flex-1 flex flex-col justify-center w-full relative z-10 px-6 pb-16 transition-all duration-500 ease-out ${isTransitioning ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}`}>
@@ -209,44 +223,44 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
         <div className={`mx-auto ${isZodiacQuestion ? 'max-w-3xl' : 'max-w-lg'} w-full`}>
 
           {/* Question Card */}
-          <div className="mb-8 bg-warm-50 hand-drawn p-6 md:p-8 cozy-shadow">
-            <div className="flex items-center gap-2 mb-4">
-              <Heart className="w-4 h-4 text-terracotta-400" fill="currentColor" />
-              <span className="text-xs font-medium text-clay-400 tracking-wide">
-                question {currentQIndex + 1}
+          <div className="mb-10 bg-cosmic-400/50 rounded-2xl p-8 md:p-10 cosmic-shadow mystical-border backdrop-blur-md">
+            <div className="flex items-center gap-2 mb-5">
+              <Sparkles className="w-4 h-4 text-gold-300" />
+              <span className="text-xs font-medium text-gold-200 tracking-widest uppercase">
+                Question {currentQIndex + 1}
               </span>
             </div>
-            <h2 className="text-xl md:text-2xl font-serif text-clay-600 leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-serif text-white leading-relaxed">
               {currentQuestion.question}
             </h2>
           </div>
 
           {/* Options */}
-          <div className={`${isZodiacQuestion ? 'grid grid-cols-2 md:grid-cols-3 gap-3' : 'flex flex-col gap-3'}`}>
+          <div className={`${isZodiacQuestion ? 'grid grid-cols-2 md:grid-cols-3 gap-4' : 'flex flex-col gap-4'}`}>
             {currentQuestion.options.map((option, idx) => (
               <button
                 key={option.id}
                 onClick={() => handleOptionSelect(option)}
-                className={`group w-full text-left transition-all duration-300 ease-out bg-warm-50 border-2 border-warm-300 hand-drawn cozy-shadow cozy-shadow-hover ${optionColors[idx % optionColors.length]}
-                    ${isZodiacQuestion ? "p-4 flex flex-col items-center text-center" : "p-4 flex items-center gap-4"}`}
+                className={`group w-full text-left transition-all duration-300 ease-out bg-cosmic-400/40 mystical-border rounded-xl cosmic-shadow cosmic-shadow-hover backdrop-blur-md hover:bg-cosmic-300/60 hover:border-gold-400
+                    ${isZodiacQuestion ? "p-5 flex flex-col items-center text-center" : "p-5 flex items-center gap-4"}`}
               >
                 {isZodiacQuestion ? (
                   // --- ZODIAC STYLE ---
                   <>
-                    <span className="font-serif text-2xl text-clay-500 mb-2 group-hover:text-terracotta-500 transition-colors">{option.symbol}</span>
-                    <span className="block font-serif text-sm text-clay-600 mb-1 group-hover:text-clay-500 transition-colors">{option.text}</span>
-                    <span className="block text-[10px] text-clay-400">{option.detail}</span>
+                    <span className="font-serif text-3xl text-gold-300 mb-3 group-hover:text-gold-200 transition-colors group-hover:scale-110 transform duration-300">{option.symbol}</span>
+                    <span className="block font-serif text-base text-white mb-1 group-hover:text-gold-100 transition-colors">{option.text}</span>
+                    <span className="block text-xs text-moon-200">{option.detail}</span>
                   </>
                 ) : (
                   // --- STANDARD STYLE ---
                   <>
-                    <div className="w-8 h-8 rounded-full bg-warm-200 flex items-center justify-center flex-shrink-0 group-hover:bg-terracotta-200 transition-colors">
-                      <span className="text-xs font-semibold text-clay-500 group-hover:text-terracotta-600">{String.fromCharCode(65 + idx)}</span>
+                    <div className="w-10 h-10 rounded-full bg-cosmic-300/60 mystical-border flex items-center justify-center flex-shrink-0 group-hover:bg-gold-500/40 group-hover:border-gold-400 transition-all">
+                      <span className="text-sm font-semibold text-gold-300 group-hover:text-gold-200">{String.fromCharCode(65 + idx)}</span>
                     </div>
-                    <span className="text-sm md:text-base text-clay-600 group-hover:text-clay-500 transition-colors leading-relaxed flex-1">
+                    <span className="text-sm md:text-base text-white group-hover:text-gold-100 transition-colors leading-relaxed flex-1">
                       {option.text}
                     </span>
-                    <Sparkles className="w-4 h-4 text-clay-200 group-hover:text-terracotta-400 transition-colors opacity-0 group-hover:opacity-100" />
+                    <Sparkles className="w-5 h-5 text-gold-500 transition-all opacity-0 group-hover:opacity-100 star-sparkle" />
                   </>
                 )}
               </button>
