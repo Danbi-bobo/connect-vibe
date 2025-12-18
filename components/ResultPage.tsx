@@ -137,7 +137,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
    };
 
    return (
-      <div className="min-h-screen bg-cosmic-500 animate-fade-in selection:bg-olive-100 print:bg-white pb-20" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+      <div className="min-h-screen relative bg-cosmic-500 animate-fade-in selection:bg-olive-100 print:bg-white pb-20" style={{ backgroundImage: 'url(/celestial-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
 
          {/* Dark overlay for softer aesthetic - increased darkness */}
          <div className="absolute inset-0 bg-cosmic-600/50 backdrop-blur-sm pointer-events-none"></div>
