@@ -421,7 +421,6 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
                      <div className="flex items-baseline gap-3 mb-6">
                         <span className="font-serif text-2xl text-white">{recommendations.price}</span>
-                        <span className="text-xs uppercase tracking-wider text-olive-600 bg-olive-100 px-2 py-1 hand-drawn">in stock</span>
                      </div>
 
                      <p className="text-moon-100 text-base mb-6 leading-relaxed">{recommendations.description}</p>

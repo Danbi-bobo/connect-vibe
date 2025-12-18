@@ -40,9 +40,17 @@ export const ShareableCard: React.FC<ShareableCardProps> = ({ archetype }) => {
             const link = document.createElement('a');
             link.download = `${archetype.name.replace(/\s+/g, '-').toLowerCase()}-archetype.png`;
             link.href = url;
-            link.click();
 
-            window.URL.revokeObjectURL(url);
+            // For better mobile support
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Delay cleanup to ensure download starts on mobile
+            setTimeout(() => {
+                window.URL.revokeObjectURL(url);
+            }, 100);
+
             showNotification('✓ Image downloaded! Now you can upload it to Instagram or Facebook');
         } catch (error) {
             console.error('Failed to download image:', error);

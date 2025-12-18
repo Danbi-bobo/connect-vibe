@@ -218,49 +218,49 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
         <div className="w-10"></div>
       </div>
 
-      <div className={`flex-1 flex flex-col justify-center w-full relative z-10 px-6 pb-16 transition-all duration-500 ease-out ${isTransitioning ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}`}>
+      <div className={`flex-1 flex flex-col justify-center w-full relative z-10 px-4 py-8 md:px-6 md:py-16 transition-all duration-500 ease-out max-h-screen ${isTransitioning ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}`}>
 
         <div className={`mx-auto ${isZodiacQuestion ? 'max-w-3xl' : 'max-w-lg'} w-full`}>
 
           {/* Question Card */}
-          <div className="mb-10 bg-cosmic-400/50 rounded-2xl p-8 md:p-10 cosmic-shadow mystical-border backdrop-blur-md">
-            <div className="flex items-center gap-2 mb-5">
+          <div className="mb-6 md:mb-10 bg-cosmic-400/50 rounded-2xl p-5 md:p-10 cosmic-shadow mystical-border backdrop-blur-md">
+            <div className="flex items-center gap-2 mb-3 md:mb-5">
               <Sparkles className="w-4 h-4 text-gold-300" />
               <span className="text-xs font-medium text-gold-200 tracking-widest uppercase">
                 Question {currentQIndex + 1}
               </span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-serif text-white leading-relaxed">
+            <h2 className="text-xl md:text-3xl font-serif text-white leading-relaxed">
               {currentQuestion.question}
             </h2>
           </div>
 
           {/* Options */}
-          <div className={`${isZodiacQuestion ? 'grid grid-cols-2 md:grid-cols-3 gap-4' : 'flex flex-col gap-4'}`}>
+          <div className={`${isZodiacQuestion ? 'grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4' : 'flex flex-col gap-3 md:gap-4'} max-h-[50vh] overflow-y-auto`}>
             {currentQuestion.options.map((option, idx) => (
               <button
                 key={option.id}
                 onClick={() => handleOptionSelect(option)}
                 className={`group w-full text-left transition-all duration-300 ease-out bg-cosmic-400/40 mystical-border rounded-xl cosmic-shadow cosmic-shadow-hover backdrop-blur-md hover:bg-cosmic-300/60 hover:border-gold-400
-                    ${isZodiacQuestion ? "p-5 flex flex-col items-center text-center" : "p-5 flex items-center gap-4"}`}
+                    ${isZodiacQuestion ? "p-4 md:p-5 flex flex-col items-center text-center" : "p-3 md:p-5 flex items-center gap-3 md:gap-4"}`}
               >
                 {isZodiacQuestion ? (
                   // --- ZODIAC STYLE ---
                   <>
-                    <span className="font-serif text-3xl text-gold-300 mb-3 group-hover:text-gold-200 transition-colors group-hover:scale-110 transform duration-300">{option.symbol}</span>
-                    <span className="block font-serif text-base text-white mb-1 group-hover:text-gold-100 transition-colors">{option.text}</span>
+                    <span className="font-serif text-2xl md:text-3xl text-gold-300 mb-2 md:mb-3 group-hover:text-gold-200 transition-colors group-hover:scale-110 transform duration-300">{option.symbol}</span>
+                    <span className="block font-serif text-sm md:text-base text-white mb-1 group-hover:text-gold-100 transition-colors">{option.text}</span>
                     <span className="block text-xs text-moon-200">{option.detail}</span>
                   </>
                 ) : (
                   // --- STANDARD STYLE ---
                   <>
-                    <div className="w-10 h-10 rounded-full bg-cosmic-300/60 mystical-border flex items-center justify-center flex-shrink-0 group-hover:bg-gold-500/40 group-hover:border-gold-400 transition-all">
-                      <span className="text-sm font-semibold text-gold-300 group-hover:text-gold-200">{String.fromCharCode(65 + idx)}</span>
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-cosmic-300/60 mystical-border flex items-center justify-center flex-shrink-0 group-hover:bg-gold-500/40 group-hover:border-gold-400 transition-all">
+                      <span className="text-xs md:text-sm font-semibold text-gold-300 group-hover:text-gold-200">{String.fromCharCode(65 + idx)}</span>
                     </div>
                     <span className="text-sm md:text-base text-white group-hover:text-gold-100 transition-colors leading-relaxed flex-1">
                       {option.text}
                     </span>
-                    <Sparkles className="w-5 h-5 text-gold-500 transition-all opacity-0 group-hover:opacity-100 star-sparkle" />
+                    <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-gold-500 transition-all opacity-0 group-hover:opacity-100 star-sparkle" />
                   </>
                 )}
               </button>
