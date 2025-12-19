@@ -472,10 +472,10 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                            <div className="mb-6 pb-6 border-b border-white/30">
                               <div className="flex items-center gap-2 mb-2">
                                  <Sparkles size={14} className="text-white" />
-                                 <span className="text-xs uppercase tracking-widest text-moon-100 font-medium">divine alignment set</span>
+                                 <span className="text-xs uppercase tracking-widest text-white font-medium">divine alignment set</span>
                               </div>
-                              <h3 className="font-serif text-2xl md:text-3xl italic text-moon-100 mb-2">the complete ritual</h3>
-                              <p className="text-moon-100 text-xs max-w-xs">
+                              <h3 className="font-serif text-2xl md:text-3xl italic text-warm-50 mb-2">the complete ritual</h3>
+                              <p className="text-warm-200 text-xs max-w-xs">
                                  includes the {recommendations.name} + {recommendations.upsells.length} harmonizers
                               </p>
                            </div>
