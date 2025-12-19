@@ -3,6 +3,7 @@ import { QUESTIONS } from '../constants';
 import { ArchetypeID, SubNeedID, QuizResult, DetailedAnswer } from '../types';
 import { calculateArchetype, calculateSubNeed } from '../utils/quizLogic';
 import { ArrowLeft, Moon, Star, Sparkles, Send } from 'lucide-react';
+import { trackLead, trackInitiateCheckout } from '../utils/facebookPixel';
 
 interface QuizProps {
   onComplete: (result: QuizResult) => void;
@@ -20,6 +21,10 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Track quiz start on first question
+    if (currentQIndex === 0) {
+      trackInitiateCheckout();
+    }
   }, [currentQIndex]);
 
   const currentQuestion = QUESTIONS[currentQIndex];
@@ -78,6 +83,8 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       setEmailError('Please enter a valid email address.');
       return;
     }
+    // Track Lead event when email is submitted
+    trackLead(userEmail);
     finishQuiz(answers, userEmail);
   };
 
