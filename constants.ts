@@ -69,7 +69,7 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 
     symbol: "The Mountain",
     symbolMeaning: "The Mountain represents ancient, immovable presence. It witnesses the changing seasons and storms without being altered by them. It is the ultimate symbol of shelter and perspective.",
-    symbolUpsell: { name: "Nine-Eye Dzi Bead Power Bracelet", description: "Tibetan protection symbol with Black Onyx.", image: IMG.NINE_EYE_DZI, url: "https://store.taichigemstone.com/products/nine-eye-dzi-bead-power-bracelet" },
+    symbolUpsell: { name: "Nine-Eye Dzi Bead Power Bracelet", description: "Tibetan protection symbol with Black Onyx.", image: IMG.NINE_EYE_DZI, url: "https://store.taichigemstone.com/products/nine-eye-dzi-bead-power-bracelet-black-onyx" },
 
     inRelationships: "Absolutely loyal and dependable, always ready to support. Shows love through practical actions and creates safety for their partner.",
     atWork: "Highly reliable and responsible, excels in support roles. Manages details expertly and maintains systems with precision.",

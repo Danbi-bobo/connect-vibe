@@ -8410,7 +8410,11 @@
                     "value": "Default Title"
                 }
             ],
-            "image": null,
+            "image": {
+                "id": "gid://shopify/ProductImage/51379196166425",
+                "url": "https://cdn.shopify.com/s/files/1/0977/7027/5097/files/3_d4ff1a0f-05e7-4444-b002-18aaf59bf6dc.webp?v=1765438479",
+                "altText": null
+            },
             "inventoryQuantity": 1000,
             "inventoryItem": {
                 "id": "gid://shopify/InventoryItem/53728150552857",
@@ -8457,7 +8461,11 @@
                     "value": "Default Title"
                 }
             ],
-            "image": null,
+            "image": {
+                "id": "gid://shopify/ProductImage/51379196166425",
+                "url": "https://cdn.shopify.com/s/files/1/0977/7027/5097/files/3_d4ff1a0f-05e7-4444-b002-18aaf59bf6dc.webp?v=1765438479",
+                "altText": null
+            },
             "inventoryQuantity": 50,
             "inventoryItem": {
                 "id": "gid://shopify/InventoryItem/53728150585625",
