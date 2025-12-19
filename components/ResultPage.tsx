@@ -1,9 +1,10 @@
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 import { QuizResult, ArchetypeID, ProductRecommendation } from '../types';
 import { ARCHETYPES, PRODUCT_MATRIX } from '../constants';
 import { RefreshCw, Download, Quote, ArrowDown, Plus, Check, ArrowRight, Star, Heart, Briefcase, Crown, AlertTriangle, TrendingUp, Flower2, Sparkles } from 'lucide-react';
 import { enhanceProduct } from '../utils/productEnhancer';
 import { ShareableCard } from './ShareableCard';
+import { trackCompleteRegistration, trackViewContent, trackAddToCart } from '../utils/facebookPixel';
 // import { supabase } from '@/src/integrations/supabase/client'; // Temporarily disabled
 
 interface ResultPageProps {
@@ -25,6 +26,12 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
    const recommendations = useMemo(() => {
       return enhanceProduct(baseRecommendations);
    }, [baseRecommendations]);
+
+   // Track Facebook Pixel events on result page load
+   useEffect(() => {
+      trackCompleteRegistration(archetype.name, result.subNeed);
+      trackViewContent(recommendations.name, parsePrice(recommendations.price));
+   }, [archetype.name, result.subNeed, recommendations.name, recommendations.price]);
 
    const parsePrice = (priceStr?: string) => {
       if (!priceStr) return 0;
@@ -95,6 +102,9 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
    const handleClaimBundle = () => {
       try {
+         // Track AddToCart event
+         trackAddToCart(recommendations.name + ' Bundle', bundlePrice);
+         
          const variantIds: string[] = [];
          if (recommendations.variantId) {
             variantIds.push(recommendations.variantId);
