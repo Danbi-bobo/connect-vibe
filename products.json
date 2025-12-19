@@ -336,7 +336,11 @@
                     "value": "Natural Stone"
                 }
             ],
-            "image": null,
+            "image": {
+                "id": "gid://shopify/ProductImage/51379196166425",
+                "url": "https://cdn.shopify.com/s/files/1/0977/7027/5097/files/Center_the_Nine-Eye_Dzi_Bead_Power_Bracelet_made_o-1765359060310_14d0a737-eaac-4b5d-8efc-2a2509c6e87f.webp?v=1765451072",
+                "altText": null
+            },
             "inventoryQuantity": 10000,
             "inventoryItem": {
                 "id": "gid://shopify/InventoryItem/53718580592921",
