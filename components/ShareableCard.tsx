@@ -152,7 +152,7 @@ export const ShareableCard: React.FC<ShareableCardProps> = ({ archetype }) => {
             </div>
 
             {/* Share Buttons */}
-            {/* <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-3">
                 <button
                     onClick={handleDownload}
                     disabled={isDownloading}
@@ -193,10 +193,10 @@ export const ShareableCard: React.FC<ShareableCardProps> = ({ archetype }) => {
                 >
                     WhatsApp
                 </button>
-            </div> */}
+            </div>
 
             {/* Mobile Instructions */}
-            {/* <div className="md:hidden text-center px-4">
+            <div className="md:hidden text-center px-4">
                 <div className="bg-cosmic-600/50 backdrop-blur-sm border border-gold-400/30 rounded-xl p-4">
                     <p className="text-xs text-moon-100 mb-2">📱 To share on Instagram or Facebook:</p>
                     <ol className="text-xs text-white space-y-1 text-left max-w-xs mx-auto">
@@ -205,7 +205,7 @@ export const ShareableCard: React.FC<ShareableCardProps> = ({ archetype }) => {
                         <li>3. Create a new post and upload the saved image</li>
                     </ol>
                 </div>
-            </div> */}
+            </div>
 
             {/* Quiz Link Display */}
             <div className="text-center">

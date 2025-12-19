@@ -1,10 +1,9 @@
-import React, { useState, useRef, useMemo, useEffect } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import { QuizResult, ArchetypeID, ProductRecommendation } from '../types';
 import { ARCHETYPES, PRODUCT_MATRIX } from '../constants';
 import { RefreshCw, Download, Quote, ArrowDown, Plus, Check, ArrowRight, Star, Heart, Briefcase, Crown, AlertTriangle, TrendingUp, Flower2, Sparkles } from 'lucide-react';
 import { enhanceProduct } from '../utils/productEnhancer';
 import { ShareableCard } from './ShareableCard';
-import { trackCompleteRegistration, trackViewContent, trackAddToCart } from '../utils/facebookPixel';
 // import { supabase } from '@/src/integrations/supabase/client'; // Temporarily disabled
 
 interface ResultPageProps {
@@ -26,12 +25,6 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
    const recommendations = useMemo(() => {
       return enhanceProduct(baseRecommendations);
    }, [baseRecommendations]);
-
-   // Track Facebook Pixel events on result page load
-   useEffect(() => {
-      trackCompleteRegistration(archetype.name, result.subNeed);
-      trackViewContent(recommendations.name, parsePrice(recommendations.price));
-   }, [archetype.name, result.subNeed, recommendations.name, recommendations.price]);
 
    const parsePrice = (priceStr?: string) => {
       if (!priceStr) return 0;
@@ -102,9 +95,6 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
    const handleClaimBundle = () => {
       try {
-         // Track AddToCart event
-         trackAddToCart(recommendations.name + ' Bundle', bundlePrice);
-         
          const variantIds: string[] = [];
          if (recommendations.variantId) {
             variantIds.push(recommendations.variantId);
@@ -476,10 +466,10 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                            <div className="mb-6 pb-6 border-b border-white/30">
                               <div className="flex items-center gap-2 mb-2">
                                  <Sparkles size={14} className="text-white" />
-                                 <span className="text-xs uppercase tracking-widest text-moon-100 font-medium">divine alignment set</span>
+                                 <span className="text-xs uppercase tracking-widest text-white font-medium">divine alignment set</span>
                               </div>
-                              <h3 className="font-serif text-2xl md:text-3xl italic text-moon-100 mb-2">the complete ritual</h3>
-                              <p className="text-moon-100 text-xs max-w-xs">
+                              <h3 className="font-serif text-2xl md:text-3xl italic text-warm-50 mb-2">the complete ritual</h3>
+                              <p className="text-warm-200 text-xs max-w-xs">
                                  includes the {recommendations.name} + {recommendations.upsells.length} harmonizers
                               </p>
                            </div>
