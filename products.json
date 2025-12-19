@@ -120,7 +120,11 @@
                     "value": "Agarwood (Oud)"
                 }
             ],
-            "image": null,
+            "image": {
+                "id": "gid://shopify/ProductImage/51379196166425",
+                "url": "https://cdn.shopify.com/s/files/1/0977/7027/5097/files/Rotate_the_Grounding_Healing_Bracelet_Agarwood_in_-1765359155182_7846ba7a-95d4-45b9-8664-c3a02c419b97.webp?v=1765451158",
+                "altText": null
+            },
             "inventoryQuantity": 10000,
             "inventoryItem": {
                 "id": "gid://shopify/InventoryItem/53718535373081",
@@ -7775,7 +7779,11 @@
                     "value": "Default Title"
                 }
             ],
-            "image": null,
+            "image": {
+                "id": "gid://shopify/ProductImage/51379196166425",
+                "url": "https://cdn.shopify.com/s/files/1/0977/7027/5097/files/2_b93db039-aa67-486c-8ec7-b0ed1f29c05a.webp?v=1765438469",
+                "altText": null
+            },
             "inventoryQuantity": 1000,
             "inventoryItem": {
                 "id": "gid://shopify/InventoryItem/53728148160793",
