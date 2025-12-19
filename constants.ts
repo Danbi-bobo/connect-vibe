@@ -61,7 +61,7 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 
     chakra: "Root Chakra",
     chakraMeaning: "The Root Chakra (Muladhara) is your energetic foundation. Located at the base of the spine, it governs your sense of safety, survival, and physical belonging. When balanced, it provides the 'unshakable' quality you are known for.",
-    chakraUpsell: { name: "Tiger Eye Pixiu Bracelet", description: "Ultimate guardian talisman for protection & wealth.", image: IMG.TIGER_EYE_PIXIU, url: "https://store.taichigemstone.com/products/tiger-eye-pixiu-bracelet" },
+    chakraUpsell: { name: "Chakra Balance Bracelet", description: "Ultimate guardian talisman for protection & wealth.", image: "https://cdn.shopify.com/s/files/1/0977/7027/5097/files/IMG_5823.jpg?v=1765360685", url: "https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones" },
 
     element: "Earth",
     elementMeaning: "Earth energy is dense, physical, and slow-moving. It is the builder's frequency—capable of turning abstract ideas into tangible reality. It provides the container for all life to flourish.",
@@ -71,7 +71,6 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
     symbolMeaning: "The Mountain represents ancient, immovable presence. It witnesses the changing seasons and storms without being altered by them. It is the ultimate symbol of shelter and perspective.",
     symbolUpsell: { name: "Nine-Eye Dzi Bead Power Bracelet", description: "Tibetan protection symbol with Black Onyx.", image: IMG.NINE_EYE_DZI, url: "https://store.taichigemstone.com/products/nine-eye-dzi-bead-power-bracelet" },
 
-    // Personality & Lifestyle
     inRelationships: "Absolutely loyal and dependable, always ready to support. Shows love through practical actions and creates safety for their partner.",
     atWork: "Highly reliable and responsible, excels in support roles. Manages details expertly and maintains systems with precision.",
     leadershipStyle: "Servant leadership approach. Creates stable environments, cares deeply for team welfare, and maintains beneficial traditions.",
@@ -100,9 +99,8 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 
     symbol: "The Lotus",
     symbolMeaning: "The Lotus rises from the mud to bloom in the sun, symbolizing the alchemy of turning pain into wisdom. It represents purity of heart untouched by the chaos of the environment.",
-    symbolUpsell: { name: "Energy Alignment Jewelry Set", description: "Full harmonization set for emotional balance.", image: IMG.ENERGY_SET, url: "https://store.taichigemstone.com/products/energy-alignment-jewelry-set-titanium" },
+    symbolUpsell: { name: "Pinky flower bracelet", description: "Full harmonization for emotional balance.", image: "https://cdn.shopify.com/s/files/1/0977/7027/5097/files/3_8924bded-0c8d-4adb-b34e-5d6d7ef8c743.webp?v=1765438471", url: "https://store.taichigemstone.com/products/lucky-four-leaf-clover-bracelet" },
 
-    // Personality & Lifestyle
     inRelationships: "Creates deep connections through high empathy and genuine listening. Provides an emotionally safe space for authentic expression.",
     atWork: "Builds positive work culture, resolves conflicts effectively, and inspires through authentic values. Creates cohesive, trusting teams.",
     leadershipStyle: "Inspirational and people-focused. Encourages personal development, creates meaning, and leads through emotional intelligence.",
@@ -127,13 +125,12 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 
     element: "Fire",
     elementMeaning: "Fire is the great transformer. It consumes the old to create the new, providing heat, light, and inspiration. It is projective, radiant, and impossible to ignore.",
-    elementUpsell: { name: "Lucky Pixiu Stone Yellow", description: "Wealth protection talisman.", image: IMG.PIXIU_YELLOW, url: "https://store.taichigemstone.com/products/pixiu-stone-yellow" },
+    elementUpsell: { name: "Fire Horse Fortune Bracelet Red Agate", description: "Passion and drive for manifestation.", image: IMG.FIRE_HORSE_AGATE, url: "https://store.taichigemstone.com/products/fire-horse-fortune-bracelet-red-agate" },
 
     symbol: "The Sun",
     symbolMeaning: "The Sun represents the divine masculine frequency—outward-facing, life-giving, and constant. It reminds you that your nature is to shine, not to shrink.",
-    symbolUpsell: { name: "Lucky Fox Queen Stone Yellow", description: "Social charisma enhancer for leaders.", image: IMG.FOX_YELLOW, url: "https://store.taichigemstone.com/products/fox-queen-stone-yellow" },
+    symbolUpsell: { name: "Lucky Four-Leaf Clover Bracelet", description: "Luck enhancer for abundant living.", image: IMG.FOUR_LEAF_CLOVER, url: "https://store.taichigemstone.com/products/lucky-four-leaf-clover-bracelet" },
 
-    // Personality & Lifestyle
     inRelationships: "Generous and positive, spreads good energy naturally. Encourages partner growth and shares opportunities freely.",
     atWork: "Creates new opportunities and drives growth. Motivates teams effectively and sees potential in every challenge.",
     leadershipStyle: "Visionary leadership that encourages innovation. Empowers teams and creates a culture of growth and possibility.",
@@ -164,7 +161,6 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
     symbolMeaning: "Still Water reflects the world perfectly without distortion. It represents a mind so quiet that it can perceive the truth of things without the ripples of reactive emotion.",
     symbolUpsell: { name: "Grounding Healing Bracelet Agarwood", description: "Anxiety reduction through wood energy.", image: IMG.AGARWOOD, url: "https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood" },
 
-    // Personality & Lifestyle
     inRelationships: "Calm and patient, creates peace naturally. Accepts others without judgment and serves as an excellent, deep listener.",
     atWork: "Outstanding conflict mediator who maintains team harmony. Works steadily and creates a peaceful, productive environment.",
     leadershipStyle: "Peaceful leadership that seeks consensus. Respects diverse opinions and avoids imposing personal agenda on others.",
@@ -189,13 +185,12 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 
     element: "Ether",
     elementMeaning: "Ether (Spirit) is the vastness of space. It is the void from which all other elements manifest—pure potentiality, holding the blueprint of what is yet to come.",
-    elementUpsell: { name: "Cat's Eye Fox Queen Necklace", description: "Vision enhancement talisman.", image: IMG.CATS_EYE_FOX, url: "https://store.taichigemstone.com/products/cat-s-eye-fox-queen-necklace" },
+    elementUpsell: { name: "Quartz Crystal Point Cuff", description: "Vision amplifier for mystics.", image: IMG.QUARTZ_CUFF, url: "https://store.taichigemstone.com/products/crystal-point-energy-amplifier-quartz-charm" },
 
     symbol: "The Moon",
     symbolMeaning: "The Moon illuminates the dark. It represents cycles, shadows, and the feminine mystery of the subconscious. It guides not by burning bright, but by reflecting the hidden.",
-    symbolUpsell: { name: "Quartz Crystal Point Cuff", description: "Intention amplifier for mystics.", image: IMG.QUARTZ_CUFF, url: "https://store.taichigemstone.com/products/quartz-crystal-point-cuff" },
+    symbolUpsell: { name: "Zodiac Energy Bracelet", description: "Cosmic connection enhancer.", image: IMG.ZODIAC_ENERGY, url: "https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones" },
 
-    // Personality & Lifestyle
     inRelationships: "Creative and inspiring, shares vision freely. Encourages exploration in partners and creates new, meaningful experiences.",
     atWork: "Contributes unique ideas and sees future possibilities. Adapts flexibly and connects creative concepts innovatively.",
     leadershipStyle: "Creative leadership that encourages innovation. Grants creative freedom and guides long-term vision for the team.",
@@ -208,7 +203,6 @@ export const ARCHETYPES: Record<ArchetypeID, ArchetypeResult> = {
 // QUESTIONS
 // ============================================
 export const QUESTIONS: QuizQuestion[] = [
-  // STAGE 1: Archetype Discovery
   {
     id: 1,
     stage: 1,
@@ -269,7 +263,6 @@ export const QUESTIONS: QuizQuestion[] = [
       { id: 'E', text: "Curiosity and vision." }
     ]
   },
-  // STAGE 2: Sub-need Identification
   {
     id: 6,
     stage: 2,
@@ -294,7 +287,6 @@ export const QUESTIONS: QuizQuestion[] = [
       { id: 'E', text: "Lack of clarity or direction.", mapsTo: SubNeedID.Intuition }
     ]
   },
-  // STAGE 3: Completion & Personalization
   {
     id: 8,
     stage: 3,
@@ -329,11 +321,12 @@ export const QUESTIONS: QuizQuestion[] = [
 ];
 
 // ============================================
-// PRODUCT_MATRIX - Fully Mapped from CSV
+// PRODUCT_MATRIX - Optimized Upsells (<$99, No Duplicates)
 // ============================================
 export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecommendation>> = {
 
   // === GROUNDED PROTECTOR (Earth) ===
+  // Best upsells: Agarwood, Nine-Eye Dzi, Obsidian Zodiac, Zodiac Alignment, Chakra Balance
   [ArchetypeID.Protector]: {
     [SubNeedID.Protection]: {
       id: 'gp1',
@@ -344,12 +337,12 @@ export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecomm
       ritual: 'Wear on the left hand to welcome stability and shield your aura from chaotic environments.',
       image: IMG.TIGER_EYE_PIXIU,
       url: 'https://store.taichigemstone.com/products/tiger-eye-pixiu-bracelet',
-      variantId: '51754990764313',
+      variantId: '51754993156377',
       tags: [SubNeedID.Protection],
       upsells: [
-        { id: 'gp1-up1', name: 'Grounding Healing Bracelet Agarwood', price: '$49', description: 'Ancient wood energy to root you deeply into the earth.', image: IMG.AGARWOOD, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Rub to release grounding scent.', url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood', variantId: '51751956218137' },
-        { id: 'gp1-up2', name: 'Obsidian Lava Stone Zodiac Protection', price: '$59', description: 'Use during difficult days as a reminder of your grounded nature.', image: IMG.OBSIDIAN_ZODIAC, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Wear for stability.', url: 'https://store.taichigemstone.com/products/obsidian-lava-stone-zodiac-protection', variantId: '51750260539673' },
-        { id: 'gp1-up3', name: 'Nine-Eye Dzi Bead Power Bracelet', price: '$69', description: 'Maintain your "mountain" energy—unmoved and solid.', image: IMG.NINE_EYE_DZI, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Wear during conflict.', url: 'https://store.taichigemstone.com/products/nine-eye-dzi-bead-power-bracelet', variantId: '51745577435417' }
+        { id: 'gp1-up1', name: 'Grounding Healing Bracelet Agarwood', price: '$49', description: 'Ancient wood energy to root you deeply into the earth.', image: IMG.AGARWOOD, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Rub beads to release grounding scent during stress.', url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood', variantId: '51745532379417' },
+        { id: 'gp1-up2', name: 'Obsidian Zodiac Protection Bracelet', price: '$59', description: 'Volcanic stone absorbs negativity and shields your energy field.', image: IMG.OBSIDIAN_ZODIAC, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Wear on difficult days for energetic shielding.', url: 'https://store.taichigemstone.com/products/premium-zodiac-power-bracelet-natural-stones', variantId: '51750260539673' },
+        { id: 'gp1-up3', name: 'Nine-Eye Dzi Bead Power Bracelet', price: '$69', description: 'Tibetan protection symbol amplifies your mountain-like stability.', image: IMG.NINE_EYE_DZI, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Hold during conflict to remain unmoved.', url: 'https://store.taichigemstone.com/products/nine-eye-dzi-bead-power-bracelet-black-onyx', variantId: '51745577435417' }
       ]
     },
     [SubNeedID.Confidence]: {
@@ -361,77 +354,81 @@ export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecomm
       ritual: 'Hold the stone while setting intentions for success.',
       image: IMG.TIGER_EYE_PIXIU,
       url: 'https://store.taichigemstone.com/products/tiger-eye-pixiu-bracelet',
-      variantId: '51754990764313',
+      variantId: '51754993156377',
       tags: [SubNeedID.Confidence],
       upsells: [
-        { id: 'gp-conf-2', name: 'Grounding Healing Bracelet Agarwood', price: '$49', description: 'Promotes a sense of calm authority and steadfast presence.', image: IMG.AGARWOOD, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wear for authority.', url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood', variantId: '51751956218137' }
+        { id: 'gp-conf-up1', name: 'Nine-Eye Dzi Bead Power Bracelet', price: '$69', description: 'Ancient Tibetan energy for leadership presence.', image: IMG.NINE_EYE_DZI, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wear to important meetings.', url: 'https://store.taichigemstone.com/products/nine-eye-dzi-bead-power-bracelet-black-onyx', variantId: '51745577435417' },
+        { id: 'gp-conf-up2', name: 'Grounding Healing Bracelet Agarwood', price: '$49', description: 'Promotes calm authority and steadfast presence.', image: IMG.AGARWOOD, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wear for calm confidence.', url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood', variantId: '51745532379417' }
       ]
     },
     [SubNeedID.Calm]: {
       id: 'gp-calm-1',
-      name: 'Nine-Eye Dzi Bead Power Bracelet Black Onyx',
+      name: 'Nine-Eye Dzi Bead Power Bracelet',
       type: 'Primary',
       price: '$69',
       description: 'Absorbs stress and negative thought patterns during meditation.',
       ritual: 'Use as a focal point during meditation.',
       image: IMG.NINE_EYE_DZI,
-      url: 'https://store.taichigemstone.com/products/nine-eye-dzi-bead-power-bracelet',
+      url: 'https://store.taichigemstone.com/products/nine-eye-dzi-bead-power-bracelet-black-onyx',
       variantId: '51745577435417',
       tags: [SubNeedID.Calm],
       upsells: [
-        { id: 'gp-calm-2', name: 'Grounding Healing Bracelet Agarwood', price: '$49', description: 'Ancient wood energy to root you deeply into the earth.', image: IMG.AGARWOOD, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Inhale scent for calm.', url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood', variantId: '51751956218137' },
-        { id: 'gp-calm-sec', name: 'Zodiac Alignment Bracelet', price: '$49', description: 'Aligns your personal earth energy for emotional stability.', image: IMG.ZODIAC_ALIGNMENT, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Daily anchor.', url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet', variantId: '51747345563929' }
+        { id: 'gp-calm-up1', name: 'Grounding Healing Bracelet Agarwood', price: '$49', description: 'Aromatherapy bracelet calms the nervous system.', image: IMG.AGARWOOD, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Inhale scent when anxious.', url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood', variantId: '51745532379417' },
+        { id: 'gp-calm-up2', name: 'Zodiac Alignment Bracelet', price: '$49', description: 'Aligns personal earth energy for emotional stability.', image: IMG.ZODIAC_ALIGNMENT, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Daily anchor for peace.', url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone', variantId: '51747345563929' }
       ]
     },
     [SubNeedID.EmotionalBalance]: {
       id: 'gp-em-1',
-      name: 'Zodiac Alignment Bracelet Natural Stone',
+      name: 'Zodiac Alignment Bracelet',
       type: 'Primary',
       price: '$49',
       description: 'Aligns your personal earth energy for emotional stability.',
       ritual: 'Carry daily as your energetic anchor.',
       image: IMG.ZODIAC_ALIGNMENT,
-      url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet',
+      url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone',
       variantId: '51747345563929',
       tags: [SubNeedID.EmotionalBalance],
       upsells: [
-        { id: 'gp-em-sec', name: 'Chakra Balance Bracelet', price: '$49', description: 'Ensures your foundation supports your vision.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Wear for balance.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet', variantId: '51745535918361' }
+        { id: 'gp-em-up1', name: 'Chakra Balance Bracelet', price: '$49', description: 'Ensures all energy centers support emotional health.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Morning alignment ritual.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones', variantId: '51745535918361' },
+        { id: 'gp-em-up2', name: 'Grounding Healing Bracelet Agarwood', price: '$49', description: 'Wood energy stabilizes emotional fluctuations.', image: IMG.AGARWOOD, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Touch when overwhelmed.', url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood', variantId: '51745532379417' }
       ]
     },
     [SubNeedID.Intuition]: {
       id: 'gp-int-1',
-      name: 'Chakra Balance Bracelet Mixed Stones',
+      name: 'Chakra Balance Bracelet',
       type: 'Primary',
       price: '$49',
-      description: 'Ensures your foundation supports your vision.',
+      description: 'Ensures your foundation supports your intuitive vision.',
       ritual: 'Meditation aid for grounded intuition.',
       image: IMG.CHAKRA_BALANCE,
-      url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet',
+      url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones',
       variantId: '51745535918361',
       tags: [SubNeedID.Intuition],
       upsells: [
-        { id: 'gp-int-sec', name: 'Zodiac Alignment Bracelet', price: '$49', description: 'Aligns your personal earth energy.', image: IMG.ZODIAC_ALIGNMENT, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Grounding tool.', url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet', variantId: '51747345563929' }
+        { id: 'gp-int-up1', name: 'Zodiac Alignment Bracelet', price: '$49', description: 'Connects cosmic wisdom to earthly action.', image: IMG.ZODIAC_ALIGNMENT, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Wear for grounded insight.', url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone', variantId: '51747345563929' },
+        { id: 'gp-int-up2', name: 'Nine-Eye Dzi Bead Power Bracelet', price: '$69', description: 'Tibetan wisdom enhances inner knowing.', image: IMG.NINE_EYE_DZI, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Hold during decision-making.', url: 'https://store.taichigemstone.com/products/nine-eye-dzi-bead-power-bracelet-black-onyx', variantId: '51745577435417' }
       ]
     },
   },
 
   // === HEART ALIGNER (Water) ===
+  // Best upsells: Chakra Balance, Chakra 7, Zodiac Energy, Quartz Cuff, Healing Necklace
   [ArchetypeID.Heart]: {
     [SubNeedID.EmotionalBalance]: {
       id: 'ha-em-1',
-      name: 'Healing Necklace Natural Stone Titanium Chain',
+      name: 'Healing Necklace Natural Stone',
       type: 'Primary',
       price: '$79',
       description: 'Hold the stone to your heart when overwhelmed by others\' emotions to reset your boundary.',
       ritual: 'Wear over the heart chakra daily.',
       image: IMG.HEALING_NECKLACE,
       url: 'https://store.taichigemstone.com/products/healing-necklace-natural-stone-titanium-chain',
-      variantId: '51745520288025',
+      variantId: '51747359326489',
       tags: [SubNeedID.EmotionalBalance],
       upsells: [
-        { id: 'ha-em-2', name: 'Chakra Balance Bracelet Mixed Stones', price: '$49', description: 'Visualize light moving through each chakra.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Morning visualization.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones', variantId: '51751977550105' },
-        { id: 'ha-em-3', name: '7 Chakra Healing Bracelet', price: '$49', description: 'Align all energy centers so empathy remains a gift.', image: IMG.CHAKRA_7, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Wear for alignment.', url: 'https://store.taichigemstone.com/products/7-chakra-healing-bracelet-natural-stones', variantId: '51751977550105' },
-        { id: 'ha-em-4', name: 'Energy Alignment Jewelry Set', price: '$119', description: 'Complete harmonization set for heart-centered souls.', image: IMG.ENERGY_SET, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Full ritual wear.', variantId: '51745529889049' }
+        { id: 'ha-em-up1', name: 'Chakra Balance Bracelet', price: '$49', description: 'Visualize light moving through each chakra for complete alignment.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Morning visualization practice.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones', variantId: '51745535918361' },
+        { id: 'ha-em-up2', name: '7 Chakra Healing Bracelet', price: '$49', description: 'Align all energy centers so empathy remains a gift, not a burden.', image: IMG.CHAKRA_7, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Touch each bead for alignment.', url: 'https://store.taichigemstone.com/products/7-chakra-healing-bracelet-natural-stones', variantId: '51745534476569' },
+        { id: 'ha-em-up3', name: 'Zodiac Energy Bracelet', price: '$49', description: 'Connects your emotional flow to cosmic rhythms.', image: IMG.ZODIAC_ENERGY, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Wear during emotional processing.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' }
       ]
     },
     [SubNeedID.Protection]: {
@@ -443,25 +440,27 @@ export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecomm
       ritual: 'Touch each bead to seal your energy field.',
       image: IMG.CHAKRA_7,
       url: 'https://store.taichigemstone.com/products/7-chakra-healing-bracelet-natural-stones',
-      variantId: '51751977550105',
+      variantId: '51745534476569',
       tags: [SubNeedID.Protection],
       upsells: [
-        { id: 'ha-prot-2', name: 'Chakra Balance Bracelet', price: '$49', description: 'Creates energetic boundary while maintaining heart openness.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Protective wear.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones', variantId: '51751977550105' }
+        { id: 'ha-prot-up1', name: 'Chakra Balance Bracelet', price: '$49', description: 'Creates energetic boundary while maintaining heart openness.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Layer with main bracelet.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones', variantId: '51745535918361' },
+        { id: 'ha-prot-up2', name: 'Zodiac Energy Bracelet', price: '$49', description: 'Aligns your natural defenses with cosmic timing.', image: IMG.ZODIAC_ENERGY, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Wear in crowded spaces.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' }
       ]
     },
     [SubNeedID.Intuition]: {
       id: 'ha-int-1',
-      name: 'Energy Alignment Jewelry Set Titanium',
+      name: 'Tarot Guidance Necklace',
       type: 'Primary',
-      price: '$119',
-      description: 'Wear when you need to make decisions from a place of love, not fear.',
-      ritual: 'Adorn yourself before seeking guidance.',
-      image: IMG.ENERGY_SET,
-      url: 'https://store.taichigemstone.com/products/energy-alignment-jewelry-set-titanium',
-      variantId: '51745520288025',
+      price: '$79',
+      description: 'Trust the wisdom of your heart to guide decisions with love.',
+      ritual: 'Hold pendant when seeking heart-centered answers.',
+      image: IMG.TAROT_NECKLACE,
+      url: 'https://store.taichigemstone.com/products/tarot-guidance-necklace-titanium-natural-stone',
+      variantId: '51747364569369',
       tags: [SubNeedID.Intuition],
       upsells: [
-        { id: 'ha-calm-sec', name: 'Quartz Crystal Point Cuff', price: '$69', description: 'Amplifies healing energy for peaceful heart.', image: IMG.QUARTZ_CUFF, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Amplify intentions.', variantId: '51751941144857' }
+        { id: 'ha-int-up1', name: 'Quartz Crystal Point Cuff', price: '$69', description: 'Amplifies intuitive heart wisdom.', image: IMG.QUARTZ_CUFF, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Wear during journaling.', url: 'https://store.taichigemstone.com/products/crystal-point-energy-amplifier-quartz-charm', variantId: '51751941144857' },
+        { id: 'ha-int-up2', name: 'Zodiac Energy Bracelet', price: '$49', description: 'Connects heart wisdom to universal patterns.', image: IMG.ZODIAC_ENERGY, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Wear for clarity.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' }
       ]
     },
     [SubNeedID.Calm]: {
@@ -472,31 +471,34 @@ export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecomm
       description: 'Amplifies healing energy for a peaceful heart.',
       ritual: 'Morning intention setting ritual.',
       image: IMG.QUARTZ_CUFF,
-      url: 'https://store.taichigemstone.com/products/quartz-crystal-point-cuff',
+      url: 'https://store.taichigemstone.com/products/crystal-point-energy-amplifier-quartz-charm',
       variantId: '51751941144857',
       tags: [SubNeedID.Calm],
       upsells: [
-        { id: 'ha-conf-sec', name: 'Tarot Guidance Necklace', price: '$79', description: 'Trust the wisdom of your heart.', image: IMG.TAROT_NECKLACE, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Inner knowing.', url: 'https://store.taichigemstone.com/products/tarot-guidance-necklace-titanium-natural-stone', variantId: '51747364569369' }
+        { id: 'ha-calm-up1', name: '7 Chakra Healing Bracelet', price: '$49', description: 'Balances all centers for deep peace.', image: IMG.CHAKRA_7, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Breathwork companion.', url: 'https://store.taichigemstone.com/products/7-chakra-healing-bracelet-natural-stones', variantId: '51745534476569' },
+        { id: 'ha-calm-up2', name: 'Chakra Balance Bracelet', price: '$49', description: 'Harmonizes emotional waters.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Wear during meditation.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones', variantId: '51745535918361' }
       ]
     },
     [SubNeedID.Confidence]: {
       id: 'ha-conf-1',
-      name: 'Tarot Guidance Necklace',
+      name: 'Healing Necklace Natural Stone',
       type: 'Primary',
       price: '$79',
-      description: 'Trust the wisdom of your heart.',
+      description: 'Trust the wisdom of your heart for authentic self-expression.',
       ritual: 'Wear for self-trust and inner knowing.',
-      image: IMG.TAROT_NECKLACE,
-      url: 'https://store.taichigemstone.com/products/tarot-guidance-necklace-titanium-natural-stone',
-      variantId: '51747364569369',
+      image: IMG.HEALING_NECKLACE,
+      url: 'https://store.taichigemstone.com/products/healing-necklace-natural-stone-titanium-chain',
+      variantId: '51747359326489',
       tags: [SubNeedID.Confidence],
       upsells: [
-        { id: 'ha-em-sec', name: 'Healing Necklace', price: '$79', description: 'Heart chakra activation.', image: IMG.HEALING_NECKLACE, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Emotional grounding.', url: 'https://store.taichigemstone.com/products/healing-necklace-natural-stone-titanium-chain', variantId: '51745520288025' }
+        { id: 'ha-conf-up1', name: 'Quartz Crystal Point Cuff', price: '$69', description: 'Amplifies authentic voice and presence.', image: IMG.QUARTZ_CUFF, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wear for public speaking.', url: 'https://store.taichigemstone.com/products/crystal-point-energy-amplifier-quartz-charm', variantId: '51751941144857' },
+        { id: 'ha-conf-up2', name: 'Zodiac Energy Bracelet', price: '$49', description: 'Connects personal power to cosmic support.', image: IMG.ZODIAC_ENERGY, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wear for courage.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' }
       ]
     },
   },
 
   // === ABUNDANCE MOVER (Fire) ===
+  // Best upsells: Fire Horse String, Fire Horse Agate, Four Leaf Clover, Emerald Set, Mixed Zodiac
   [ArchetypeID.Abundance]: {
     [SubNeedID.Confidence]: {
       id: 'am-conf-1',
@@ -504,45 +506,47 @@ export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecomm
       type: 'Primary',
       price: '$49',
       description: 'Wear on your dominant hand to project your will and attract opportunity.',
-      ritual: 'Activate with a specific goal in mind.',
+      ritual: 'Activate with a specific goal in mind each morning.',
       image: IMG.FIRE_HORSE_STRING,
       url: 'https://store.taichigemstone.com/products/fortune-bracelet-red-string-fire-horse-charm',
       variantId: '51749940953369',
       tags: [SubNeedID.Confidence],
       upsells: [
-        { id: 'am-conf-2', name: 'Fire Horse Fortune Bracelet Red Agate', price: '$59', description: 'Represents unbridled passion and drive for manifestation.', image: IMG.FIRE_HORSE_AGATE, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wear for drive.', url: 'https://store.taichigemstone.com/products/fire-horse-fortune-bracelet-red-agate', variantId: '51751793918233' },
-        { id: 'am-conf-3', name: 'Lucky Pixiu Stone - Yellow', price: '$99', description: 'Place in workspace to guard your creative outputs.', image: IMG.PIXIU_YELLOW, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Workspace totem.', url: 'https://store.taichigemstone.com/products/pixiu-stone-yellow', variantId: '51754990829849' },
-        { id: 'am-conf-4', name: 'Lucky Fox Queen Stone - Yellow', price: '$99', description: 'Wear during negotiations to heighten social intuition.', image: IMG.FOX_YELLOW, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Negotiation aid.', url: 'https://store.taichigemstone.com/products/fox-queen-stone-yellow', variantId: '51754990960921' }
+        { id: 'am-conf-up1', name: 'Fire Horse Fortune Bracelet Red Agate', price: '$59', description: 'Amplifies passion and unstoppable drive for manifestation.', image: IMG.FIRE_HORSE_AGATE, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Stack with red string for power.', url: 'https://store.taichigemstone.com/products/fire-horse-fortune-bracelet-red-agate', variantId: '51751793918233' },
+        { id: 'am-conf-up2', name: 'Emerald Titanium Gold Solar Set', price: '$69', description: 'Elegant energy for high-stakes negotiations.', image: IMG.EMERALD_SET, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wear to business meetings.', url: 'https://store.taichigemstone.com/products/solar-energy-protection-jewelry-set-titanium-emerald', variantId: '51745520288025' },
+        { id: 'am-conf-up3', name: 'Lucky Four-Leaf Clover Bracelet', price: '$49', description: 'Luck amplifier for bold moves.', image: IMG.FOUR_LEAF_CLOVER, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Touch before pitches.', url: 'https://store.taichigemstone.com/products/lucky-four-leaf-clover-bracelet', variantId: '51754990764313' }
       ]
     },
     [SubNeedID.Protection]: {
       id: 'am-prot-1',
-      name: 'Lucky Pixiu Stone - Yellow',
+      name: 'Fire Horse Fortune Bracelet Red Agate',
       type: 'Primary',
-      price: '$99',
+      price: '$59',
       description: 'Protects your accumulated abundance from draining away.',
-      ritual: 'Place in your "wealth corner" (far left from door).',
-      image: IMG.PIXIU_YELLOW,
-      url: 'https://store.taichigemstone.com/products/pixiu-stone-yellow',
-      variantId: '51754990829849',
+      ritual: 'Wear consistently to guard your prosperity.',
+      image: IMG.FIRE_HORSE_AGATE,
+      url: 'https://store.taichigemstone.com/products/fire-horse-fortune-bracelet-red-agate',
+      variantId: '51751793918233',
       tags: [SubNeedID.Protection],
       upsells: [
-        { id: 'am-prot-2', name: 'Fortune Bracelet Red String', price: '$49', description: 'Red string of fate protects your manifestation journey.', image: IMG.FIRE_HORSE_STRING, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Daily protection.', url: 'https://store.taichigemstone.com/products/fortune-bracelet-red-string-fire-horse-charm', variantId: '51749940953369' }
+        { id: 'am-prot-up1', name: 'Fortune Bracelet Red String', price: '$49', description: 'Red string of fate protects manifestation journey.', image: IMG.FIRE_HORSE_STRING, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Never remove during projects.', url: 'https://store.taichigemstone.com/products/fortune-bracelet-red-string-fire-horse-charm', variantId: '51749940953369' },
+        { id: 'am-prot-up2', name: 'Lucky Four-Leaf Clover Bracelet', price: '$49', description: 'Shields good fortune from envy.', image: IMG.FOUR_LEAF_CLOVER, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Wear in competitive environments.', url: 'https://store.taichigemstone.com/products/lucky-four-leaf-clover-bracelet', variantId: '51754990764313' }
       ]
     },
     [SubNeedID.Intuition]: {
       id: 'am-int-1',
-      name: 'Lucky Fox Queen Stone - Yellow',
+      name: 'Emerald Titanium Gold Solar Set',
       type: 'Primary',
-      price: '$99',
-      description: 'Brings cleverness, adaptability, and social charisma for visionary leaders.',
-      ritual: 'Wear when networking.',
-      image: IMG.FOX_YELLOW,
-      url: 'https://store.taichigemstone.com/products/fox-queen-stone-yellow',
-      variantId: '51754990960921',
+      price: '$69',
+      description: 'Sharpens business intuition and opportunity recognition.',
+      ritual: 'Wear when making strategic decisions.',
+      image: IMG.EMERALD_SET,
+      url: 'https://store.taichigemstone.com/products/solar-energy-protection-jewelry-set-titanium-emerald',
+      variantId: '51745520288025',
       tags: [SubNeedID.Intuition],
       upsells: [
-        { id: 'am-calm-sec', name: 'Emerald Titanium Gold Solar Set', price: '$69', description: 'Grounded growth with elegant solar energy.', image: IMG.EMERALD_SET, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Wear for elegance.', variantId: '51745520288025' }
+        { id: 'am-int-up1', name: 'Fire Horse Fortune Bracelet Red Agate', price: '$59', description: 'Connects gut instinct to action.', image: IMG.FIRE_HORSE_AGATE, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Wear for quick decisions.', url: 'https://store.taichigemstone.com/products/fire-horse-fortune-bracelet-red-agate', variantId: '51751793918233' },
+        { id: 'am-int-up2', name: 'Mixed Stone Zodiac Bracelet', price: '$49', description: 'Cosmic timing for opportunities.', image: IMG.MIXED_ZODIAC, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Check alignment before deals.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' }
       ]
     },
     [SubNeedID.Calm]: {
@@ -550,65 +554,69 @@ export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecomm
       name: 'Emerald Titanium Gold Solar Set',
       type: 'Primary',
       price: '$69',
-      description: 'Grounded growth with elegant solar energy.',
-      ritual: 'Wear for steady progress and balanced ambition.',
+      description: 'Grounded growth with elegant solar energy for balanced ambition.',
+      ritual: 'Wear for steady progress without burnout.',
       image: IMG.EMERALD_SET,
-      url: 'https://store.taichigemstone.com/products/emerald-titanium-gold-solar-set',
+      url: 'https://store.taichigemstone.com/products/solar-energy-protection-jewelry-set-titanium-emerald',
       variantId: '51745520288025',
       tags: [SubNeedID.Calm],
       upsells: [
-        { id: 'am-em-sec', name: 'Lucky Four-Leaf Clover Bracelet', price: '$49', description: 'Luck and ease for emotional harmony.', image: IMG.FOUR_LEAF_CLOVER, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Wear for ease.', url: 'https://store.taichigemstone.com/products/lucky-four-leaf-clover-bracelet', variantId: '51754990764313' }
+        { id: 'am-calm-up1', name: 'Lucky Four-Leaf Clover Bracelet', price: '$49', description: 'Invites ease and flow into your hustle.', image: IMG.FOUR_LEAF_CLOVER, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Touch when feeling rushed.', url: 'https://store.taichigemstone.com/products/lucky-four-leaf-clover-bracelet', variantId: '51754990764313' },
+        { id: 'am-calm-up2', name: 'Fortune Bracelet Red String', price: '$49', description: 'Grounds fire energy without dimming it.', image: IMG.FIRE_HORSE_STRING, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Breathe and touch string.', url: 'https://store.taichigemstone.com/products/fortune-bracelet-red-string-fire-horse-charm', variantId: '51749940953369' }
       ]
     },
     [SubNeedID.EmotionalBalance]: {
       id: 'am-em-1',
-      name: 'LUCKY FOUR-LEAF CLOVER BRACELET',
+      name: 'Lucky Four-Leaf Clover Bracelet',
       type: 'Primary',
       price: '$49',
-      description: 'Luck and ease for emotional harmony.',
-      ritual: 'Carry for good fortune and lightness.',
+      description: 'Luck and ease for emotional harmony in your abundance journey.',
+      ritual: 'Carry for good fortune and lightness of heart.',
       image: IMG.FOUR_LEAF_CLOVER,
       url: 'https://store.taichigemstone.com/products/lucky-four-leaf-clover-bracelet',
       variantId: '51754990764313',
       tags: [SubNeedID.EmotionalBalance],
       upsells: [
-        { id: 'am-conf-sec', name: 'Fire Horse Fortune Bracelet', price: '$59', description: 'Passion and drive.', image: IMG.FIRE_HORSE_AGATE, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wear for energy.', url: 'https://store.taichigemstone.com/products/fire-horse-fortune-bracelet-red-agate', variantId: '51751793918233' }
+        { id: 'am-em-up1', name: 'Fire Horse Fortune Bracelet Red Agate', price: '$59', description: 'Balances drive with emotional wellness.', image: IMG.FIRE_HORSE_AGATE, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Wear during reflection.', url: 'https://store.taichigemstone.com/products/fire-horse-fortune-bracelet-red-agate', variantId: '51751793918233' },
+        { id: 'am-em-up2', name: 'Mixed Stone Zodiac Bracelet', price: '$49', description: 'Harmonizes ambition with inner peace.', image: IMG.MIXED_ZODIAC, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Evening wind-down ritual.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' }
       ]
     },
   },
 
   // === CALM SEEKER (Air/Water) ===
+  // Best upsells: Zodiac Alignment, Mixed Zodiac, Premium Zodiac, Agarwood, Tarot Necklace
   [ArchetypeID.Calm]: {
     [SubNeedID.Calm]: {
       id: 'cs-calm-1',
-      name: 'Zodiac Alignment Bracelet Natural Stone',
+      name: 'Zodiac Alignment Bracelet',
       type: 'Primary',
       price: '$49',
       description: 'Use as a touchstone throughout the day. When you touch it, take one deep, conscious breath.',
-      ritual: 'Touchstone for breathwork.',
+      ritual: 'Touchstone for breathwork and presence.',
       image: IMG.ZODIAC_ALIGNMENT,
       url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone',
       variantId: '51747345563929',
       tags: [SubNeedID.Calm],
       upsells: [
-        { id: 'cs-calm-2', name: 'Mixed Stone Zodiac Symbol Bracelet', price: '$49', description: 'Harmonizes your natural frequency and reduces internal static.', image: IMG.MIXED_ZODIAC, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Wear for harmony.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' },
-        { id: 'cs-calm-3', name: 'Premium Zodiac Power Bracelet', price: '$69', description: 'Resonant stones chosen for your specific sign.', image: IMG.PREMIUM_ZODIAC, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Power wear.', url: 'https://store.taichigemstone.com/products/premium-zodiac-power-bracelet-natural-stones', variantId: '51750260539673' },
-        { id: 'cs-calm-4', name: 'Grounding Healing Bracelet Agarwood', price: '$49', description: 'Scent and wood energy to pull you out of your head.', image: IMG.AGARWOOD, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Aromatherapy.', url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood', variantId: '51751956218137' }
+        { id: 'cs-calm-up1', name: 'Mixed Stone Zodiac Bracelet', price: '$49', description: 'Harmonizes your natural frequency and reduces internal static.', image: IMG.MIXED_ZODIAC, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Stack for deeper harmony.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' },
+        { id: 'cs-calm-up2', name: 'Premium Zodiac Power Bracelet', price: '$69', description: 'Resonant stones chosen specifically for your sign.', image: IMG.PREMIUM_ZODIAC, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Wear during stressful periods.', url: 'https://store.taichigemstone.com/products/premium-zodiac-power-bracelet-natural-stones', variantId: '51750260539673' },
+        { id: 'cs-calm-up3', name: 'Grounding Healing Bracelet Agarwood', price: '$49', description: 'Sacred scent pulls you out of mental loops.', image: IMG.AGARWOOD, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Inhale for instant calm.', url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood', variantId: '51745532379417' }
       ]
     },
     [SubNeedID.EmotionalBalance]: {
       id: 'cs-em-1',
-      name: 'Zodiac Alignment Bracelet Natural Stone',
+      name: 'Mixed Stone Zodiac Bracelet',
       type: 'Primary',
       price: '$49',
       description: 'Brings your scattered energy back to its center.',
-      ritual: 'Place under your pillow to encourage peaceful, restorative sleep.',
-      image: IMG.ZODIAC_ALIGNMENT,
-      url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone',
-      variantId: '51747345563929',
+      ritual: 'Place under pillow for restorative sleep.',
+      image: IMG.MIXED_ZODIAC,
+      url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones',
+      variantId: '51747373809945',
       tags: [SubNeedID.EmotionalBalance],
       upsells: [
-        { id: 'cs-em-2', name: 'Premium Zodiac Power Bracelet', price: '$69', description: 'Resonant stones for your sign.', image: IMG.PREMIUM_ZODIAC, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Sleep aid.', url: 'https://store.taichigemstone.com/products/premium-zodiac-power-bracelet-natural-stones', variantId: '51750260539673' }
+        { id: 'cs-em-up1', name: 'Premium Zodiac Power Bracelet', price: '$69', description: 'Deeper resonance for emotional regulation.', image: IMG.PREMIUM_ZODIAC, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Wear during difficult days.', url: 'https://store.taichigemstone.com/products/premium-zodiac-power-bracelet-natural-stones', variantId: '51750260539673' },
+        { id: 'cs-em-up2', name: 'Zodiac Alignment Bracelet', price: '$49', description: 'Centers emotional fluctuations.', image: IMG.ZODIAC_ALIGNMENT, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Touch when overwhelmed.', url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone', variantId: '51747345563929' }
       ]
     },
     [SubNeedID.Protection]: {
@@ -616,29 +624,31 @@ export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecomm
       name: 'Grounding Healing Bracelet Agarwood',
       type: 'Primary',
       price: '$49',
-      description: 'Wear when entering chaotic environments to maintain your "bubble" of peace.',
-      ritual: 'Creates a protective scent barrier.',
+      description: 'Wear when entering chaotic environments to maintain your bubble of peace.',
+      ritual: 'Creates a protective scent barrier around you.',
       image: IMG.AGARWOOD,
       url: 'https://store.taichigemstone.com/products/grounding-healing-bracelet-agarwood',
-      variantId: '51751956218137',
+      variantId: '51745532379417',
       tags: [SubNeedID.Protection],
       upsells: [
-        { id: 'cs-conf-sec', name: 'Lucky Pixiu Stone - White', price: '$99', description: 'Pure clarity and protection for clear speech.', image: IMG.PIXIU_WHITE, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Clear speech.', url: 'https://store.taichigemstone.com/products/pixiu-stone-white', variantId: '51754990862617' }
+        { id: 'cs-prot-up1', name: 'Zodiac Alignment Bracelet', price: '$49', description: 'Reinforces your energetic boundary.', image: IMG.ZODIAC_ALIGNMENT, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Layer for double protection.', url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone', variantId: '51747345563929' },
+        { id: 'cs-prot-up2', name: 'Premium Zodiac Power Bracelet', price: '$69', description: 'Shields your peace from external chaos.', image: IMG.PREMIUM_ZODIAC, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Wear in crowded spaces.', url: 'https://store.taichigemstone.com/products/premium-zodiac-power-bracelet-natural-stones', variantId: '51750260539673' }
       ]
     },
     [SubNeedID.Confidence]: {
       id: 'cs-conf-1',
-      name: 'Lucky Pixiu Stone - White',
+      name: 'Premium Zodiac Power Bracelet',
       type: 'Primary',
-      price: '$99',
-      description: 'Pure clarity and protection for clear speech.',
-      ritual: 'Wear for confident, calm communication.',
-      image: IMG.PIXIU_WHITE,
-      url: 'https://store.taichigemstone.com/products/pixiu-stone-white',
-      variantId: '51754990862617',
+      price: '$69',
+      description: 'Personal frequency enhancer for confident, calm communication.',
+      ritual: 'Wear for presentations and important conversations.',
+      image: IMG.PREMIUM_ZODIAC,
+      url: 'https://store.taichigemstone.com/products/premium-zodiac-power-bracelet-natural-stones',
+      variantId: '51750260539673',
       tags: [SubNeedID.Confidence],
       upsells: [
-        { id: 'cs-int-sec', name: 'Tarot Guidance Necklace', price: '$79', description: 'Quiet wisdom for meditation focus.', image: IMG.TAROT_NECKLACE, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Focus aid.', url: 'https://store.taichigemstone.com/products/tarot-guidance-necklace-titanium-natural-stone', variantId: '51747364569369' }
+        { id: 'cs-conf-up1', name: 'Tarot Guidance Necklace', price: '$79', description: 'Connects to inner wisdom for authentic expression.', image: IMG.TAROT_NECKLACE, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Hold before speaking up.', url: 'https://store.taichigemstone.com/products/tarot-guidance-necklace-titanium-natural-stone', variantId: '51747364569369' },
+        { id: 'cs-conf-up2', name: 'Zodiac Alignment Bracelet', price: '$49', description: 'Grounds confidence in authenticity.', image: IMG.ZODIAC_ALIGNMENT, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Touch for reassurance.', url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone', variantId: '51747345563929' }
       ]
     },
     [SubNeedID.Intuition]: {
@@ -646,23 +656,25 @@ export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecomm
       name: 'Tarot Guidance Necklace',
       type: 'Primary',
       price: '$79',
-      description: 'Quiet wisdom for meditation focus.',
+      description: 'Quiet wisdom for meditation focus and inner knowing.',
       ritual: 'Meditation and reflection companion.',
       image: IMG.TAROT_NECKLACE,
       url: 'https://store.taichigemstone.com/products/tarot-guidance-necklace-titanium-natural-stone',
       variantId: '51747364569369',
       tags: [SubNeedID.Intuition],
       upsells: [
-        { id: 'cs-calm-sec', name: 'Zodiac Alignment Bracelet', price: '$49', description: 'Harmonizes frequency.', image: IMG.ZODIAC_ALIGNMENT, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Daily harmony.', url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone', variantId: '51747345563929' }
+        { id: 'cs-int-up1', name: 'Zodiac Alignment Bracelet', price: '$49', description: 'Grounds intuitive insights into action.', image: IMG.ZODIAC_ALIGNMENT, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Pair during meditation.', url: 'https://store.taichigemstone.com/products/zodiac-alignment-bracelet-natural-stone', variantId: '51747345563929' },
+        { id: 'cs-int-up2', name: 'Mixed Stone Zodiac Bracelet', price: '$49', description: 'Connects personal wisdom to universal flow.', image: IMG.MIXED_ZODIAC, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Wear during reflection.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' }
       ]
     },
   },
 
   // === INTUITIVE EXPLORER (Ether/Air) ===
+  // Best upsells: Tarot Necklace, Quartz Cuff, Zodiac Energy, Chakra Balance, Cat's Eye Fox
   [ArchetypeID.Intuitive]: {
     [SubNeedID.Intuition]: {
       id: 'ie-int-1',
-      name: 'Tarot Guidance Necklace Titanium',
+      name: 'Tarot Guidance Necklace',
       type: 'Primary',
       price: '$79',
       description: 'Hold the pendant when seeking an answer. Trust the first image or word that comes to mind.',
@@ -672,68 +684,73 @@ export const PRODUCT_MATRIX: Record<ArchetypeID, Record<SubNeedID, ProductRecomm
       variantId: '51747364569369',
       tags: [SubNeedID.Intuition],
       upsells: [
-        { id: 'ie-int-2', name: 'CAT\'S EYE FOX QUEEN NECKLACE', price: '$89', description: 'Enhances vision in the dark, brings wit and adaptability.', image: IMG.CATS_EYE_FOX, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Night vision.', url: 'https://store.taichigemstone.com/products/cat-s-eye-fox-queen-necklace', variantId: '51754990960921' },
-        { id: 'ie-int-3', name: 'Quartz Crystal Point Cuff', price: '$69', description: 'Program this stone with a specific question before you wear it.', image: IMG.QUARTZ_CUFF, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Question programming.', url: 'https://store.taichigemstone.com/products/quartz-crystal-point-cuff', variantId: '51751941144857' },
-        { id: 'ie-int-4', name: 'Lucky Fox Queen Stone - Green', price: '$99', description: 'Fox spirit brings cleverness and mystical connection.', image: IMG.FOX_GREEN, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Nature connection.', url: 'https://store.taichigemstone.com/products/fox-queen-stone-green', variantId: '51754991092993' }
+        { id: 'ie-int-up1', name: 'Quartz Crystal Point Cuff', price: '$69', description: 'Amplifies and focuses your visions.', image: IMG.QUARTZ_CUFF, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Program with a question.', url: 'https://store.taichigemstone.com/products/crystal-point-energy-amplifier-quartz-charm', variantId: '51751941144857' },
+        { id: 'ie-int-up2', name: 'Zodiac Energy Bracelet', price: '$49', description: 'Connects personal intuition to cosmic patterns.', image: IMG.ZODIAC_ENERGY, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Wear during readings.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' },
+        { id: 'ie-int-up3', name: 'Chakra Balance Bracelet', price: '$49', description: 'Opens all channels for clear receiving.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Third eye activation.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones', variantId: '51745535918361' }
       ]
     },
     [SubNeedID.Confidence]: {
       id: 'ie-conf-1',
-      name: 'CAT\'S EYE FOX QUEEN NECKLACE',
+      name: 'Quartz Crystal Point Cuff',
       type: 'Primary',
-      price: '$89',
-      description: 'Wear when exploring new ideas or places to stay sharp and protected.',
-      ritual: 'Wear for travel or new ventures.',
-      image: IMG.CATS_EYE_FOX,
-      url: 'https://store.taichigemstone.com/products/cat-s-eye-fox-queen-necklace',
-      variantId: '51754990960921',
+      price: '$69',
+      description: 'Amplifies your unique perspective and creative voice.',
+      ritual: 'Wear when sharing your visions with others.',
+      image: IMG.QUARTZ_CUFF,
+      url: 'https://store.taichigemstone.com/products/crystal-point-energy-amplifier-quartz-charm',
+      variantId: '51751941144857',
       tags: [SubNeedID.Confidence],
       upsells: [
-        { id: 'ie-conf-2', name: 'Tarot Guidance Necklace', price: '$79', description: 'Connects you to archetypal wisdom.', image: IMG.TAROT_NECKLACE, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wisdom connection.', url: 'https://store.taichigemstone.com/products/tarot-guidance-necklace-titanium-natural-stone', variantId: '51747364569369' }
+        { id: 'ie-conf-up1', name: 'Tarot Guidance Necklace', price: '$79', description: 'Trust your inner knowing publicly.', image: IMG.TAROT_NECKLACE, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Wear to presentations.', url: 'https://store.taichigemstone.com/products/tarot-guidance-necklace-titanium-natural-stone', variantId: '51747364569369' },
+        { id: 'ie-conf-up2', name: 'Zodiac Energy Bracelet', price: '$49', description: 'Cosmic support for bold expressions.', image: IMG.ZODIAC_ENERGY, type: 'Supportive', tags: [SubNeedID.Confidence], ritual: 'Touch before speaking.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' }
       ]
     },
     [SubNeedID.Calm]: {
       id: 'ie-calm-1',
-      name: 'Quartz Crystal Point Cuff',
+      name: 'Zodiac Energy Bracelet',
       type: 'Primary',
-      price: '$69',
-      description: 'Acts as an antenna for your intentions, clarifying the mental noise.',
-      ritual: 'Wear for mental clarity.',
-      image: IMG.QUARTZ_CUFF,
-      url: 'https://store.taichigemstone.com/products/quartz-crystal-point-cuff',
-      variantId: '51751941144857',
+      price: '$49',
+      description: 'Grounds scattered mystical energy into peaceful flow.',
+      ritual: 'Wear when feeling unmoored from reality.',
+      image: IMG.ZODIAC_ENERGY,
+      url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones',
+      variantId: '51747373809945',
       tags: [SubNeedID.Calm],
       upsells: [
-        { id: 'ie-prot-sec', name: 'Lucky Fox Queen Stone - Green', price: '$99', description: 'Growth and safe travels.', image: IMG.FOX_GREEN, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Travel safety.', url: 'https://store.taichigemstone.com/products/fox-queen-stone-green', variantId: '51754991092993' }
+        { id: 'ie-calm-up1', name: 'Quartz Crystal Point Cuff', price: '$69', description: 'Clarifies mental noise without blocking insight.', image: IMG.QUARTZ_CUFF, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Wear during meditation.', url: 'https://store.taichigemstone.com/products/crystal-point-energy-amplifier-quartz-charm', variantId: '51751941144857' },
+        { id: 'ie-calm-up2', name: 'Chakra Balance Bracelet', price: '$49', description: 'Balances visionary mind with peaceful body.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.Calm], ritual: 'Evening grounding.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones', variantId: '51745535918361' }
       ]
     },
     [SubNeedID.Protection]: {
       id: 'ie-prot-1',
-      name: 'Lucky Fox Queen Stone - Green',
+      name: 'Chakra Balance Bracelet',
       type: 'Primary',
-      price: '$99',
-      description: 'Growth and safe travels on your spiritual adventures.',
-      ritual: 'Wear on adventures for protection and insight.',
-      image: IMG.FOX_GREEN,
-      url: 'https://store.taichigemstone.com/products/fox-queen-stone-green',
-      variantId: '51754991092993',
+      price: '$49',
+      description: 'Seals your energy field while keeping third eye open.',
+      ritual: 'Wear on spiritual adventures and explorations.',
+      image: IMG.CHAKRA_BALANCE,
+      url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones',
+      variantId: '51745535918361',
       tags: [SubNeedID.Protection],
       upsells: [
-        { id: 'ie-em-sec', name: 'Zodiac Energy Bracelet', price: '$49', description: 'Universal connection for emotional grounding.', image: IMG.ZODIAC_ENERGY, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Grounding.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' }
+        { id: 'ie-prot-up1', name: 'Zodiac Energy Bracelet', price: '$49', description: 'Cosmic shield for sensitive explorers.', image: IMG.ZODIAC_ENERGY, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Layer for journeys.', url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones', variantId: '51747373809945' },
+        { id: 'ie-prot-up2', name: 'Quartz Crystal Point Cuff', price: '$69', description: 'Amplifies protective intentions.', image: IMG.QUARTZ_CUFF, type: 'Supportive', tags: [SubNeedID.Protection], ritual: 'Set protection before travel.', url: 'https://store.taichigemstone.com/products/crystal-point-energy-amplifier-quartz-charm', variantId: '51751941144857' }
       ]
     },
     [SubNeedID.EmotionalBalance]: {
       id: 'ie-em-1',
-      name: 'Zodiac Energy Bracelet Mixed Natural Stones',
+      name: 'Zodiac Energy Bracelet',
       type: 'Primary',
       price: '$49',
-      description: 'Universal connection for emotional grounding.',
-      ritual: 'Daily grounding for the mystical mind.',
+      description: 'Universal connection for emotional grounding of the mystical mind.',
+      ritual: 'Daily grounding for sensitive explorers.',
       image: IMG.ZODIAC_ENERGY,
-      variantId: '51747386753305',
+      url: 'https://store.taichigemstone.com/products/zodiac-energy-bracelet-mixed-natural-stones',
+      variantId: '51747373809945',
       tags: [SubNeedID.EmotionalBalance],
       upsells: [
-        { id: 'ie-int-sec', name: 'Tarot Guidance Necklace', price: '$79', description: 'Trust the wisdom.', image: IMG.TAROT_NECKLACE, type: 'Supportive', tags: [SubNeedID.Intuition], ritual: 'Consultation.', variantId: '51747364569369' }
+        { id: 'ie-em-up1', name: 'Chakra Balance Bracelet', price: '$49', description: 'Aligns emotions with spiritual flow.', image: IMG.CHAKRA_BALANCE, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Morning alignment.', url: 'https://store.taichigemstone.com/products/chakra-balance-bracelet-mixed-stones', variantId: '51745535918361' },
+        { id: 'ie-em-up2', name: 'Tarot Guidance Necklace', price: '$79', description: 'Wisdom for processing emotions.', image: IMG.TAROT_NECKLACE, type: 'Supportive', tags: [SubNeedID.EmotionalBalance], ritual: 'Consult during overwhelm.', url: 'https://store.taichigemstone.com/products/tarot-guidance-necklace-titanium-natural-stone', variantId: '51747364569369' }
       ]
     },
   }

@@ -396,7 +396,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
                {/* LEFT COLUMN: Main Image */}
                <div className="lg:col-span-6 lg:sticky lg:top-20">
-                  <a href={recommendations.url || "#"} target="_blank" rel="noopener noreferrer" className="relative aspect-[4/5] bg-cosmic-600/80 overflow-hidden cosmic-shadow group rounded-2xl mystical-border block">
+                  <a href={recommendations.url || "#"} target="_blank" rel="noopener noreferrer" className="relative aspect-square bg-cosmic-600/80 overflow-hidden cosmic-shadow group rounded-2xl mystical-border block">
                      <img src={recommendations.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt={recommendations.name} />
                      <div className="absolute top-4 left-4 bg-cosmic-600/80 px-3 py-2 rounded-lg mystical-border backdrop-blur-md">
                         <span className="text-xs uppercase tracking-wider text-gold-300 font-semibold flex items-center gap-2">
@@ -445,7 +445,13 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
                         <div className="space-y-4">
                            {recommendations.upsells.map((item, idx) => (
-                              <div key={idx} className="flex gap-4 items-center group cursor-pointer hover:bg-cosmic-400/30 p-2 rounded-xl transition-colors">
+                              <a
+                                 key={idx}
+                                 href={item.url || "#"}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="flex gap-4 items-center group cursor-pointer hover:bg-cosmic-400/30 p-2 rounded-xl transition-colors"
+                              >
                                  <div className="w-16 h-16 shrink-0 bg-cosmic-600/80 overflow-hidden rounded-lg">
                                     <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                  </div>
@@ -453,7 +459,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                                     <h4 className="font-serif text-base text-white leading-tight mb-1 group-hover:text-gold-300 transition-colors">{item.name}</h4>
                                     <span className="text-sm text-moon-100">{item.price}</span>
                                  </div>
-                              </div>
+                              </a>
                            ))}
                         </div>
                      </div>
