@@ -29,9 +29,10 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
   const handleOptionSelect = (option: any) => {
     setIsTransitioning(true);
 
-    // Track question completion with Meta Pixel
-    trackCustomEvent('QuizQuestionCompleted', {
-      question_number: currentQIndex + 1,
+    // Track question completion with Meta Pixel - unique event name per question
+    const questionNumber = currentQIndex + 1;
+    trackCustomEvent(`QuizQuestion${questionNumber}Completed`, {
+      question_number: questionNumber,
       question_id: currentQuestion.id,
       question_text: currentQuestion.question,
       answer_id: option.id,
