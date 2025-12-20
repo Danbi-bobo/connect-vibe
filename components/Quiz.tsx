@@ -50,7 +50,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       setAnswers(newAnswers);
 
       if (currentQIndex < QUESTIONS.length - 1) {
-        setCurrentQIndex(currentQIndex + 1);
+        setCurrentQIndex(prev => prev + 1);
         setIsTransitioning(false);
       } else {
         setShowEmailCapture(true);
