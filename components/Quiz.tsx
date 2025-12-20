@@ -3,6 +3,7 @@ import { QUESTIONS } from '../constants';
 import { ArchetypeID, SubNeedID, QuizResult, DetailedAnswer } from '../types';
 import { calculateArchetype, calculateSubNeed } from '../utils/quizLogic';
 import { ArrowLeft, Moon, Star, Sparkles, Send } from 'lucide-react';
+import { trackEvent, trackCustomEvent } from '../utils/facebookPixel';
 
 interface QuizProps {
   onComplete: (result: QuizResult) => void;
@@ -27,6 +28,15 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
 
   const handleOptionSelect = (option: any) => {
     setIsTransitioning(true);
+
+    // Track question completion with Meta Pixel
+    trackCustomEvent('QuizQuestionCompleted', {
+      question_number: currentQIndex + 1,
+      question_id: currentQuestion.id,
+      question_text: currentQuestion.question,
+      answer_id: option.id,
+      answer_text: option.text
+    });
 
     setTimeout(() => {
       const newAnswers = [...answers, {
@@ -78,6 +88,14 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       setEmailError('Please enter a valid email address.');
       return;
     }
+    
+    // Track Lead event with Meta Pixel
+    trackEvent('Lead', {
+      content_name: 'Quiz Email Capture',
+      content_category: 'Quiz Completion',
+      email_provided: true
+    });
+    
     finishQuiz(answers, userEmail);
   };
 
