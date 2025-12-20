@@ -1,9 +1,10 @@
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 import { QuizResult, ArchetypeID, ProductRecommendation } from '../types';
 import { ARCHETYPES, PRODUCT_MATRIX } from '../constants';
 import { RefreshCw, Download, Quote, ArrowDown, Plus, Check, ArrowRight, Star, Heart, Briefcase, Crown, AlertTriangle, TrendingUp, Flower2, Sparkles } from 'lucide-react';
 import { enhanceProduct } from '../utils/productEnhancer';
 import { ShareableCard } from './ShareableCard';
+import { trackEvent } from '../utils/facebookPixel';
 // import { supabase } from '@/src/integrations/supabase/client'; // Temporarily disabled
 
 interface ResultPageProps {
@@ -25,6 +26,16 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
    const recommendations = useMemo(() => {
       return enhanceProduct(baseRecommendations);
    }, [baseRecommendations]);
+
+   // Track ViewContent when result page loads
+   useEffect(() => {
+      trackEvent('ViewContent', {
+         content_name: archetype.name,
+         content_category: 'Quiz Result',
+         content_type: result.archetype,
+         sub_need: result.subNeed
+      });
+   }, [archetype.name, result.archetype, result.subNeed]);
 
    const parsePrice = (priceStr?: string) => {
       if (!priceStr) return 0;
@@ -94,6 +105,15 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
    };
 
    const handleClaimBundle = () => {
+      // Track InitiateCheckout with Meta Pixel
+      trackEvent('InitiateCheckout', {
+         content_name: recommendations.name,
+         content_category: result.archetype,
+         value: bundlePrice,
+         currency: 'USD',
+         num_items: 1 + (recommendations.upsells?.length || 0)
+      });
+
       try {
          const variantIds: string[] = [];
          if (recommendations.variantId) {
