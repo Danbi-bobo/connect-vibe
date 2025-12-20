@@ -104,6 +104,54 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
       productSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
    };
 
+   // Track upsell product clicks (Chakra, Element, Symbol)
+   const handleChakraUpsellClick = () => {
+      trackEvent('ViewContent', {
+         content_name: archetype.chakraUpsell.name,
+         content_category: 'Chakra Upsell',
+         content_type: 'product_click'
+      });
+   };
+
+   const handleElementUpsellClick = () => {
+      trackEvent('ViewContent', {
+         content_name: archetype.elementUpsell.name,
+         content_category: 'Element Upsell',
+         content_type: 'product_click'
+      });
+   };
+
+   const handleSymbolUpsellClick = () => {
+      trackEvent('ViewContent', {
+         content_name: archetype.symbolUpsell.name,
+         content_category: 'Symbol Upsell',
+         content_type: 'product_click'
+      });
+   };
+
+   // Track main product click
+   const handleMainProductClick = () => {
+      trackEvent('ViewContent', {
+         content_name: recommendations.name,
+         content_category: 'Main Product',
+         content_type: 'product_click',
+         value: parsePrice(recommendations.price),
+         currency: 'USD'
+      });
+   };
+
+   // Track pairs with product clicks
+   const handlePairsWithClick = (item: { name: string; price?: string }, index: number) => {
+      trackEvent('ViewContent', {
+         content_name: item.name,
+         content_category: 'Pairs With Upsell',
+         content_type: 'product_click',
+         item_index: index + 1,
+         value: parsePrice(item.price),
+         currency: 'USD'
+      });
+   };
+
    const handleClaimBundle = () => {
       // Track InitiateCheckout with Meta Pixel
       trackEvent('InitiateCheckout', {
@@ -221,7 +269,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
                      <div className="p-4">
                         <p className="text-xs uppercase tracking-wider text-gold-200 font-medium mb-3">harmonizing tool</p>
-                        <a href={archetype.chakraUpsell.url || "#"} target="_blank" rel="noopener noreferrer" className="block">
+                        <a href={archetype.chakraUpsell.url || "#"} target="_blank" rel="noopener noreferrer" className="block" onClick={handleChakraUpsellClick}>
                            <div className="aspect-square w-full overflow-hidden mb-3">
                               <img src={archetype.chakraUpsell.image} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt={archetype.chakraUpsell.name} />
                            </div>
@@ -239,7 +287,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
                      <div className="p-4">
                         <p className="text-xs uppercase tracking-wider text-gold-200 font-medium mb-3">elemental tool</p>
-                        <a href={archetype.elementUpsell.url || "#"} target="_blank" rel="noopener noreferrer" className="block">
+                        <a href={archetype.elementUpsell.url || "#"} target="_blank" rel="noopener noreferrer" className="block" onClick={handleElementUpsellClick}>
                            <div className="aspect-square w-full overflow-hidden mb-3">
                               <img src={archetype.elementUpsell.image} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt={archetype.elementUpsell.name} />
                            </div>
@@ -257,7 +305,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
                      <div className="p-4">
                         <p className="text-xs uppercase tracking-wider text-gold-200 font-medium mb-3">symbolic totem</p>
-                        <a href={archetype.symbolUpsell.url || "#"} target="_blank" rel="noopener noreferrer" className="block">
+                        <a href={archetype.symbolUpsell.url || "#"} target="_blank" rel="noopener noreferrer" className="block" onClick={handleSymbolUpsellClick}>
                            <div className="aspect-square w-full overflow-hidden mb-3">
                               <img src={archetype.symbolUpsell.image} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt={archetype.symbolUpsell.name} />
                            </div>
@@ -450,7 +498,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                         <p className="text-sm italic text-white">"{recommendations.ritual}"</p>
                      </div>
 
-                     <a href={recommendations.url || "#"} target="_blank" rel="noopener noreferrer" className="w-full md:w-auto px-10 py-4 border-2 border-gold-400 text-white text-sm tracking-wider font-medium hover:bg-gold-400 hover:text-cosmic-600 transition-all flex items-center justify-center gap-3 rounded-xl cosmic-shadow cosmic-shadow-hover mystical-border">
+                     <a href={recommendations.url || "#"} target="_blank" rel="noopener noreferrer" onClick={handleMainProductClick} className="w-full md:w-auto px-10 py-4 border-2 border-gold-400 text-white text-sm tracking-wider font-medium hover:bg-gold-400 hover:text-cosmic-600 transition-all flex items-center justify-center gap-3 rounded-xl cosmic-shadow cosmic-shadow-hover mystical-border">
                         discover your anchor <Plus size={14} />
                      </a>
                   </div>
@@ -470,6 +518,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
                                  href={item.url || "#"}
                                  target="_blank"
                                  rel="noopener noreferrer"
+                                 onClick={() => handlePairsWithClick(item, idx)}
                                  className="flex gap-4 items-center group cursor-pointer hover:bg-cosmic-400/30 p-2 rounded-xl transition-colors"
                               >
                                  <div className="w-16 h-16 shrink-0 bg-cosmic-600/80 overflow-hidden rounded-lg">
