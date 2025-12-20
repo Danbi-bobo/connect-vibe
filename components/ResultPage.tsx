@@ -107,6 +107,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
    // Track upsell product clicks (Chakra, Element, Symbol)
    const handleChakraUpsellClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
       e.preventDefault();
+      console.log('🔵 Chakra upsell clicked:', archetype.chakraUpsell.name, url);
       trackEvent('ViewContent', {
          content_name: archetype.chakraUpsell.name,
          content_category: 'Chakra Upsell',
@@ -117,6 +118,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
    const handleElementUpsellClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
       e.preventDefault();
+      console.log('🟢 Element upsell clicked:', archetype.elementUpsell.name, url);
       trackEvent('ViewContent', {
          content_name: archetype.elementUpsell.name,
          content_category: 'Element Upsell',
@@ -127,6 +129,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
 
    const handleSymbolUpsellClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
       e.preventDefault();
+      console.log('🟣 Symbol upsell clicked:', archetype.symbolUpsell.name, url);
       trackEvent('ViewContent', {
          content_name: archetype.symbolUpsell.name,
          content_category: 'Symbol Upsell',
@@ -151,6 +154,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ result, onRetake }) => {
    // Track pairs with product clicks
    const handlePairsWithClick = (e: React.MouseEvent<HTMLAnchorElement>, item: { name: string; price?: string; url?: string }, index: number) => {
       e.preventDefault();
+      console.log('🟠 Pairs with clicked:', item.name, index, item.url);
       trackEvent('ViewContent', {
          content_name: item.name,
          content_category: 'Pairs With Upsell',

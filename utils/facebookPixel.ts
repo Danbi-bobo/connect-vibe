@@ -16,8 +16,12 @@ declare global {
  * Track a standard Facebook Pixel event (e.g., Lead, ViewContent, InitiateCheckout)
  */
 export const trackEvent = (eventName: string, params?: Record<string, unknown>) => {
+  console.log('📊 FB Pixel trackEvent:', eventName, params);
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', eventName, params);
+    console.log('✅ FB Pixel event sent successfully');
+  } else {
+    console.warn('⚠️ Facebook Pixel (fbq) not loaded');
   }
 };
 
@@ -25,7 +29,11 @@ export const trackEvent = (eventName: string, params?: Record<string, unknown>) 
  * Track a custom Facebook Pixel event (e.g., QuizQuestionCompleted)
  */
 export const trackCustomEvent = (eventName: string, params?: Record<string, unknown>) => {
+  console.log('📊 FB Pixel trackCustomEvent:', eventName, params);
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('trackCustom', eventName, params);
+    console.log('✅ FB Pixel custom event sent successfully');
+  } else {
+    console.warn('⚠️ Facebook Pixel (fbq) not loaded');
   }
 };
