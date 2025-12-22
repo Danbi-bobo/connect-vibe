@@ -103,6 +103,14 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       setNameError("Please enter your name.");
       return;
     }
+    
+    // Track Name Submitted with Meta Pixel (no PII sent)
+    trackCustomEvent("NameSubmitted", {
+      content_name: "Name Capture",
+      content_category: "Quiz Progress",
+      step: "name_input"
+    });
+    
     setShowNameCapture(false);
     setShowDobCapture(true);
   };
@@ -113,6 +121,14 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       setDobError("Please select your date of birth.");
       return;
     }
+    
+    // Track Date of Birth Submitted with Meta Pixel (no PII sent)
+    trackCustomEvent("DateOfBirthSubmitted", {
+      content_name: "DOB Capture",
+      content_category: "Quiz Progress",
+      step: "dob_input"
+    });
+    
     setShowDobCapture(false);
     setShowEmailCapture(true);
   };
