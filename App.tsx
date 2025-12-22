@@ -35,6 +35,8 @@ function App() {
           preference: quizResult.preference || null,
           zodiac: quizResult.zodiac || null,
           email: quizResult.email || null,
+          name: quizResult.name || null,
+          date_of_birth: quizResult.dateOfBirth || null,
           answers: (quizResult.answers as unknown as Json) || null
         }]);
       
