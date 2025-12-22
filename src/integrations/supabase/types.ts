@@ -19,8 +19,10 @@ export type Database = {
           answers: Json | null
           archetype: string
           created_at: string
+          date_of_birth: string | null
           email: string | null
           id: string
+          name: string | null
           preference: string | null
           sub_need: string
           zodiac: string | null
@@ -29,8 +31,10 @@ export type Database = {
           answers?: Json | null
           archetype: string
           created_at?: string
+          date_of_birth?: string | null
           email?: string | null
           id?: string
+          name?: string | null
           preference?: string | null
           sub_need: string
           zodiac?: string | null
@@ -39,8 +43,10 @@ export type Database = {
           answers?: Json | null
           archetype?: string
           created_at?: string
+          date_of_birth?: string | null
           email?: string | null
           id?: string
+          name?: string | null
           preference?: string | null
           sub_need?: string
           zodiac?: string | null

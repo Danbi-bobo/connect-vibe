@@ -97,5 +97,7 @@ export interface QuizResult {
   preference: string; // From Q8
   zodiac?: string; // From Q10
   email?: string;
+  name?: string; // User's name
+  dateOfBirth?: string; // User's date of birth
   answers?: DetailedAnswer[]; // Full question/answer content
 }

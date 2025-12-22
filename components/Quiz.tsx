@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { QUESTIONS } from "../constants";
 import { ArchetypeID, SubNeedID, QuizResult, DetailedAnswer } from "../types";
 import { calculateArchetype, calculateSubNeed } from "../utils/quizLogic";
-import { ArrowLeft, Moon, Star, Sparkles, Send } from "lucide-react";
+import { ArrowLeft, Moon, Star, Sparkles, Send, User, Calendar } from "lucide-react";
 import { trackEvent, trackCustomEvent } from "../utils/facebookPixel";
 
 interface QuizProps {
@@ -16,9 +16,15 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
   >([]);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Email Capture State
+  // Name & DOB & Email Capture State
+  const [showNameCapture, setShowNameCapture] = useState(false);
+  const [showDobCapture, setShowDobCapture] = useState(false);
   const [showEmailCapture, setShowEmailCapture] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [userDob, setUserDob] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [dobError, setDobError] = useState("");
   const [emailError, setEmailError] = useState("");
 
   useEffect(() => {
@@ -58,13 +64,14 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
         setCurrentQIndex((prev) => prev + 1);
         setIsTransitioning(false);
       } else {
-        setShowEmailCapture(true);
+        // After last question, show name capture first
+        setShowNameCapture(true);
         setIsTransitioning(false);
       }
     }, 400);
   };
 
-  const finishQuiz = (finalAnswers: typeof answers, email?: string) => {
+  const finishQuiz = (finalAnswers: typeof answers, email?: string, name?: string, dob?: string) => {
     const archetype = calculateArchetype(finalAnswers);
     const subNeed = calculateSubNeed(finalAnswers);
     const preference = finalAnswers.find((a) => a.questionId === 8)?.optionId || "A";
@@ -84,8 +91,30 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       preference,
       zodiac,
       email,
+      name,
+      dateOfBirth: dob,
       answers: detailedAnswers,
     });
+  };
+
+  const handleNameSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!userName.trim()) {
+      setNameError("Please enter your name.");
+      return;
+    }
+    setShowNameCapture(false);
+    setShowDobCapture(true);
+  };
+
+  const handleDobSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!userDob) {
+      setDobError("Please select your date of birth.");
+      return;
+    }
+    setShowDobCapture(false);
+    setShowEmailCapture(true);
   };
 
   const handleEmailSubmit = (e: React.FormEvent) => {
@@ -102,16 +131,22 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
       email_provided: true,
     });
 
-    finishQuiz(answers, userEmail);
-  };
-
-  const handleEmailSkip = () => {
-    finishQuiz(answers, undefined);
+    finishQuiz(answers, userEmail, userName, userDob);
   };
 
   const handleBack = () => {
     if (showEmailCapture) {
       setShowEmailCapture(false);
+      setShowDobCapture(true);
+      return;
+    }
+    if (showDobCapture) {
+      setShowDobCapture(false);
+      setShowNameCapture(true);
+      return;
+    }
+    if (showNameCapture) {
+      setShowNameCapture(false);
       setAnswers(answers.slice(0, -1));
       setIsTransitioning(false);
       return;
@@ -124,17 +159,15 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
 
   const isZodiacQuestion = currentQuestion && currentQuestion.id === 9;
 
-  // --- VIEW: EMAIL CAPTURE ---
-  if (showEmailCapture) {
+  // --- VIEW: NAME CAPTURE ---
+  if (showNameCapture) {
     return (
       <div
         className="min-h-screen flex flex-col items-center justify-center p-6 pb-20 relative overflow-hidden cosmic-texture animate-fade-in"
         style={{ backgroundImage: "url(/celestial-bg.png)", backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        {/* Overlay for readability */}
         <div className="absolute inset-0 bg-cosmic-600/50 backdrop-blur-sm"></div>
 
-        {/* Floating stars */}
         <div className="absolute top-20 left-20 text-gold-500 star-sparkle" style={{ animationDelay: "0s" }}>
           <Star size={16} fill="currentColor" />
         </div>
@@ -145,15 +178,160 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
           <Star size={14} fill="currentColor" />
         </div>
 
+        {/* Back button */}
+        <button
+          onClick={handleBack}
+          className="absolute top-8 left-6 p-2 text-gold-400 hover:text-gold-300 transition-colors z-20"
+        >
+          <ArrowLeft size={22} strokeWidth={1.5} />
+        </button>
+
         <div className="max-w-sm w-full relative z-10 text-center">
-          {/* Moon icon */}
+          <div className="mb-8 flex justify-center">
+            <div className="w-20 h-20 bg-cosmic-400/50 rounded-full flex items-center justify-center celestial-glow mystical-border">
+              <User className="w-8 h-8 text-gold-400" />
+            </div>
+          </div>
+
+          <div className="mb-6 flex justify-center opacity-60">
+            <img src="/moon-phases.png" alt="" className="h-8" />
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-display text-gold-300 mb-4 celestial-glow">What's Your Name?</h2>
+          <p className="text-white leading-relaxed mb-10 text-sm font-light">
+            Share your name so we can personalize your cosmic reading
+          </p>
+
+          <form onSubmit={handleNameSubmit} className="space-y-6">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="w-full p-4 bg-cosmic-400/40 border-2 mystical-border focus:border-gold-500 outline-none transition-all text-white placeholder:text-moon-300 text-center rounded-lg backdrop-blur-md"
+                value={userName}
+                onChange={(e) => {
+                  setUserName(e.target.value);
+                  setNameError("");
+                }}
+              />
+              {nameError && <p className="text-gold-200 text-xs mt-3">{nameError}</p>}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-cosmic-600 rounded-lg transition-all duration-300 hover:from-gold-500 hover:to-gold-400 cosmic-shadow cosmic-shadow-hover text-sm tracking-wider font-medium celestial-glow"
+            >
+              Continue ✨
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  // --- VIEW: DATE OF BIRTH CAPTURE ---
+  if (showDobCapture) {
+    return (
+      <div
+        className="min-h-screen flex flex-col items-center justify-center p-6 pb-20 relative overflow-hidden cosmic-texture animate-fade-in"
+        style={{ backgroundImage: "url(/celestial-bg.png)", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-cosmic-600/50 backdrop-blur-sm"></div>
+
+        <div className="absolute top-20 left-20 text-gold-500 star-sparkle" style={{ animationDelay: "0s" }}>
+          <Star size={16} fill="currentColor" />
+        </div>
+        <div className="absolute top-40 right-32 text-gold-400 star-sparkle" style={{ animationDelay: "0.5s" }}>
+          <Star size={12} fill="currentColor" />
+        </div>
+        <div className="absolute bottom-32 left-1/4 text-gold-300 star-sparkle" style={{ animationDelay: "1s" }}>
+          <Star size={14} fill="currentColor" />
+        </div>
+
+        {/* Back button */}
+        <button
+          onClick={handleBack}
+          className="absolute top-8 left-6 p-2 text-gold-400 hover:text-gold-300 transition-colors z-20"
+        >
+          <ArrowLeft size={22} strokeWidth={1.5} />
+        </button>
+
+        <div className="max-w-sm w-full relative z-10 text-center">
+          <div className="mb-8 flex justify-center">
+            <div className="w-20 h-20 bg-cosmic-400/50 rounded-full flex items-center justify-center celestial-glow mystical-border">
+              <Calendar className="w-8 h-8 text-gold-400" />
+            </div>
+          </div>
+
+          <div className="mb-6 flex justify-center opacity-60">
+            <img src="/moon-phases.png" alt="" className="h-8" />
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-display text-gold-300 mb-4 celestial-glow">When Were You Born?</h2>
+          <p className="text-white leading-relaxed mb-10 text-sm font-light">
+            Your birth date reveals your unique cosmic alignment
+          </p>
+
+          <form onSubmit={handleDobSubmit} className="space-y-6">
+            <div className="relative">
+              <input
+                type="date"
+                className="w-full p-4 bg-cosmic-400/40 border-2 mystical-border focus:border-gold-500 outline-none transition-all text-white text-center rounded-lg backdrop-blur-md [color-scheme:dark]"
+                value={userDob}
+                onChange={(e) => {
+                  setUserDob(e.target.value);
+                  setDobError("");
+                }}
+              />
+              {dobError && <p className="text-gold-200 text-xs mt-3">{dobError}</p>}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-cosmic-600 rounded-lg transition-all duration-300 hover:from-gold-500 hover:to-gold-400 cosmic-shadow cosmic-shadow-hover text-sm tracking-wider font-medium celestial-glow"
+            >
+              Continue ✨
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  // --- VIEW: EMAIL CAPTURE ---
+  if (showEmailCapture) {
+    return (
+      <div
+        className="min-h-screen flex flex-col items-center justify-center p-6 pb-20 relative overflow-hidden cosmic-texture animate-fade-in"
+        style={{ backgroundImage: "url(/celestial-bg.png)", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-cosmic-600/50 backdrop-blur-sm"></div>
+
+        <div className="absolute top-20 left-20 text-gold-500 star-sparkle" style={{ animationDelay: "0s" }}>
+          <Star size={16} fill="currentColor" />
+        </div>
+        <div className="absolute top-40 right-32 text-gold-400 star-sparkle" style={{ animationDelay: "0.5s" }}>
+          <Star size={12} fill="currentColor" />
+        </div>
+        <div className="absolute bottom-32 left-1/4 text-gold-300 star-sparkle" style={{ animationDelay: "1s" }}>
+          <Star size={14} fill="currentColor" />
+        </div>
+
+        {/* Back button */}
+        <button
+          onClick={handleBack}
+          className="absolute top-8 left-6 p-2 text-gold-400 hover:text-gold-300 transition-colors z-20"
+        >
+          <ArrowLeft size={22} strokeWidth={1.5} />
+        </button>
+
+        <div className="max-w-sm w-full relative z-10 text-center">
           <div className="mb-8 flex justify-center">
             <div className="w-20 h-20 bg-cosmic-400/50 rounded-full flex items-center justify-center celestial-glow mystical-border">
               <Send className="w-8 h-8 text-gold-400" />
             </div>
           </div>
 
-          {/* Moon phases decoration */}
           <div className="mb-6 flex justify-center opacity-60">
             <img src="/moon-phases.png" alt="" className="h-8" />
           </div>
@@ -185,13 +363,6 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
               Reveal My Results ✨
             </button>
           </form>
-
-          {/* <button
-            onClick={handleEmailSkip}
-            className="mt-6 text-xs text-moon-400 hover:text-gold-400 transition-colors"
-          >
-            skip for now
-          </button> */}
         </div>
       </div>
     );
